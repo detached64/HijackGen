@@ -29,7 +29,7 @@ namespace HijackGen.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btSelect = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
@@ -40,6 +40,7 @@ namespace HijackGen.GUI
             this.clmForwardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbPath = new System.Windows.Forms.Label();
             this.btGenH = new System.Windows.Forms.Button();
             this.btGenDef = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace HijackGen.GUI
             this.pnlControl = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbSearch = new System.Windows.Forms.Label();
-            this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -102,8 +102,8 @@ namespace HijackGen.GUI
             // clmAddress
             // 
             this.clmAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle2.Format = "X";
-            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "X";
+            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.clmAddress, "clmAddress");
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
@@ -143,6 +143,11 @@ namespace HijackGen.GUI
             // 
             this.lbStatus.Name = "lbStatus";
             resources.ApplyResources(this.lbStatus, "lbStatus");
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Name = "lbInfo";
+            resources.ApplyResources(this.lbInfo, "lbInfo");
             // 
             // lbPath
             // 
@@ -199,11 +204,6 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.lbSearch, "lbSearch");
             this.lbSearch.Name = "lbSearch";
             this.lbSearch.SizeChanged += new System.EventHandler(this.lbSearch_SizeChanged);
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.Name = "lbInfo";
-            resources.ApplyResources(this.lbInfo, "lbInfo");
             // 
             // MainForm
             // 
