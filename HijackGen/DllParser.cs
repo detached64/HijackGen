@@ -29,9 +29,11 @@ namespace HijackGen
             }
         }
 
-        public string Path { get; private set; }
+        private readonly string Path;
 
-        public PeFile Dll { get; private set; }
+        private PeFile Dll;
+
+        public string Architecture => Dll.Is64Bit ? "x64" : "x86";
 
         public List<DataItem> GetExportInfos()
         {
@@ -50,9 +52,26 @@ namespace HijackGen
             return items;
         }
 
+        #region IDisposable
+
+        private bool disposed = false;
+
+        private void Dispose(bool disposing)
+        {
+            if (disposed)
+            {
+                return;
+            }
+
+            Dll = null;
+            disposed = true;
+        }
+
         public void Dispose()
         {
-            Dll = null;
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
+        #endregion
     }
 }

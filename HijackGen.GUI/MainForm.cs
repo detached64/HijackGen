@@ -28,6 +28,7 @@ namespace HijackGen.GUI
             this.pnlControl.Enabled = false;
             this.dataGrid.AutoGenerateColumns = false;
             this.lbStatus.Text = Message.msgReady;
+            this.lbInfo.Alignment = ToolStripItemAlignment.Right;
             if (!string.IsNullOrWhiteSpace(Settings.Default.DllPath))
             {
                 this.txtPath.Text = Settings.Default.DllPath;
@@ -67,10 +68,12 @@ namespace HijackGen.GUI
             {
                 lbStatus.Text = ex.Message;
                 pnlControl.Enabled = false;
+                _parser = null;
                 _dataItems = null;
                 dataGrid.DataSource = null;
             }
             txtSearch.Text = string.Empty;
+            UpdateInfo();
             dataGrid.ClearSelection();
         }
 
@@ -167,6 +170,16 @@ namespace HijackGen.GUI
             }
             newPath = string.Empty;
             return false;
+        }
+
+        private void UpdateInfo()
+        {
+            if (_parser == null)
+            {
+                this.lbInfo.Text = string.Empty;
+                return;
+            }
+            this.lbInfo.Text = _parser.Architecture;
         }
     }
 }

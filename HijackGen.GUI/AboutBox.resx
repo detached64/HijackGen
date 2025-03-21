@@ -143,31 +143,31 @@
   <data name="&gt;&gt;lbName.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lbSite.AutoSize" type="System.Boolean, mscorlib">
+  <data name="linkSite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbSite.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="linkSite.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 170</value>
   </data>
-  <data name="lbSite.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="linkSite.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 24</value>
   </data>
-  <data name="lbSite.TabIndex" type="System.Int32, mscorlib">
+  <data name="linkSite.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lbSite.Text" xml:space="preserve">
+  <data name="linkSite.Text" xml:space="preserve">
     <value>Development Site</value>
   </data>
-  <data name="&gt;&gt;lbSite.Name" xml:space="preserve">
-    <value>lbSite</value>
+  <data name="&gt;&gt;linkSite.Name" xml:space="preserve">
+    <value>linkSite</value>
   </data>
-  <data name="&gt;&gt;lbSite.Type" xml:space="preserve">
+  <data name="&gt;&gt;linkSite.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbSite.Parent" xml:space="preserve">
+  <data name="&gt;&gt;linkSite.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbSite.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;linkSite.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="lbAuthor.AutoSize" type="System.Boolean, mscorlib">

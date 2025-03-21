@@ -29,7 +29,7 @@ namespace HijackGen.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btSelect = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
@@ -48,6 +48,7 @@ namespace HijackGen.GUI
             this.pnlControl = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lbSearch = new System.Windows.Forms.Label();
+            this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -101,8 +102,8 @@ namespace HijackGen.GUI
             // clmAddress
             // 
             this.clmAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle1.Format = "X";
-            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "X";
+            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.clmAddress, "clmAddress");
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
@@ -132,7 +133,9 @@ namespace HijackGen.GUI
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbStatus});
+            this.lbStatus,
+            this.lbInfo});
+            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
@@ -197,6 +200,11 @@ namespace HijackGen.GUI
             this.lbSearch.Name = "lbSearch";
             this.lbSearch.SizeChanged += new System.EventHandler(this.lbSearch_SizeChanged);
             // 
+            // lbInfo
+            // 
+            this.lbInfo.Name = "lbInfo";
+            resources.ApplyResources(this.lbInfo, "lbInfo");
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -246,6 +254,7 @@ namespace HijackGen.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHasForward;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmForwardName;
+        private System.Windows.Forms.ToolStripStatusLabel lbInfo;
     }
 }
 

@@ -30,7 +30,7 @@ namespace HijackGen.GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.lbName = new System.Windows.Forms.Label();
-            this.lbSite = new System.Windows.Forms.LinkLabel();
+            this.linkSite = new System.Windows.Forms.LinkLabel();
             this.lbAuthor = new System.Windows.Forms.Label();
             this.lbCopyright = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -40,12 +40,12 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.lbName, "lbName");
             this.lbName.Name = "lbName";
             // 
-            // lbSite
+            // linkSite
             // 
-            resources.ApplyResources(this.lbSite, "lbSite");
-            this.lbSite.Name = "lbSite";
-            this.lbSite.TabStop = true;
-            this.lbSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSite_LinkClicked);
+            resources.ApplyResources(this.linkSite, "linkSite");
+            this.linkSite.Name = "linkSite";
+            this.linkSite.TabStop = true;
+            this.linkSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSite_LinkClicked);
             // 
             // lbAuthor
             // 
@@ -63,7 +63,7 @@ namespace HijackGen.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbCopyright);
             this.Controls.Add(this.lbAuthor);
-            this.Controls.Add(this.lbSite);
+            this.Controls.Add(this.linkSite);
             this.Controls.Add(this.lbName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -78,7 +78,7 @@ namespace HijackGen.GUI
         #endregion
 
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.LinkLabel lbSite;
+        private System.Windows.Forms.LinkLabel linkSite;
         private System.Windows.Forms.Label lbAuthor;
         private System.Windows.Forms.Label lbCopyright;
     }
