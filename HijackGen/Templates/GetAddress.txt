@@ -1,0 +1,10 @@
+FARPROC GetAddress(LPCSTR lpProcName)
+{{
+    FARPROC pAddress = GetProcAddress(Real_Module, lpProcName);
+    if (pAddress == NULL)
+    {{
+        MessageBoxW(NULL, L"Get address failed", L"{0}", MB_OK);
+        ExitProcess(1);
+    }}
+    return pAddress;
+}}

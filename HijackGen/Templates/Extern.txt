@@ -1,0 +1,4 @@
+EXTERN_C __declspec(naked) void __cdecl Direct_{0}(void)
+{{
+    __asm jmp Real_{0};
+}}

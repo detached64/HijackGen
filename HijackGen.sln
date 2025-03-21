@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HijackGen.GUI", "HijackGen.GUI\HijackGen.GUI.csproj", "{BCAA9DAD-67D3-4935-9FA1-7A6303D1F776}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HijackGen", "HijackGen\HijackGen.csproj", "{F8751794-4716-480A-9890-0A89A8167F5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCAA9DAD-67D3-4935-9FA1-7A6303D1F776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAA9DAD-67D3-4935-9FA1-7A6303D1F776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAA9DAD-67D3-4935-9FA1-7A6303D1F776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAA9DAD-67D3-4935-9FA1-7A6303D1F776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8751794-4716-480A-9890-0A89A8167F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8751794-4716-480A-9890-0A89A8167F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8751794-4716-480A-9890-0A89A8167F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8751794-4716-480A-9890-0A89A8167F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B9CCB38-D61C-4B82-830A-7F3AB60E5D51}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+VOID WINAPI Init()
+{{
+    WCHAR real_dll_path[MAX_PATH];
+    GetSystemDirectoryW(real_dll_path, MAX_PATH);
+    lstrcatW(real_dll_path, L"\\{0}.dll");
+
+    Real_Module = LoadLibraryW(real_dll_path);
+    if (Real_Module == NULL)
+    {{
+        MessageBoxW(NULL, L"Load original dll failed", L"{0}", MB_OK);
+        ExitProcess(1);
+    }}
+
