@@ -27,8 +27,11 @@ namespace HijackGen.GUI
 
             this.pnlControl.Enabled = false;
             this.dataGrid.AutoGenerateColumns = false;
-            this.txtPath.Text = Settings.Default.DllPath;
             this.lbStatus.Text = Message.msgReady;
+            if (!string.IsNullOrWhiteSpace(Settings.Default.DllPath))
+            {
+                this.txtPath.Text = Settings.Default.DllPath;
+            }
         }
 
         private void MainForm_DragEnter(object sender, DragEventArgs e)
