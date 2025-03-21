@@ -12,6 +12,8 @@ Select or drag and drop the target dll file to the tool, then click the `Generat
 
 ## Reference
 
+* [PeNet](https://github.com/secana/PeNet)
+
 * [dll-hijack-by-proxying](https://github.com/tothi/dll-hijack-by-proxying)
 
 * [AheadLib-x86-x64](https://github.com/strivexjun/AheadLib-x86-x64)
