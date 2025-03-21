@@ -96,14 +96,15 @@ namespace HijackGen.GUI
         private void btGenDef_Click(object sender, EventArgs e)
         {
             lbStatus.Text = Message.msgWorking;
-            string former = string.IsNullOrWhiteSpace(Settings.Default.DefSavePath) ? Path.ChangeExtension(txtPath.Text, ".def") : Settings.Default.DefSavePath;
-            if (ChooseFilePath(former, "Def File|*.def", out string path))
+            string dir = string.IsNullOrWhiteSpace(Settings.Default.DefSaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.DefSaveDir;
+            string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".def";
+            if (ChooseFilePath(dir, name, "Def File|*.def", out string fullPath))
             {
-                Settings.Default.DefSavePath = path;
+                Settings.Default.DefSaveDir = Path.GetDirectoryName(fullPath);
                 Settings.Default.Save();
                 DefGenerator defGen = new DefGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), _dataItems);
-                File.WriteAllText(path, defGen.Generate());
-                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".def", path);
+                File.WriteAllText(fullPath, defGen.Generate());
+                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".def", fullPath);
             }
             else
             {
@@ -114,14 +115,15 @@ namespace HijackGen.GUI
         private void btGenH_Click(object sender, EventArgs e)
         {
             lbStatus.Text = Message.msgWorking;
-            string former = string.IsNullOrWhiteSpace(Settings.Default.HSavePath) ? Path.ChangeExtension(txtPath.Text, ".h") : Settings.Default.HSavePath;
-            if (ChooseFilePath(former, "C Header|*.h", out string path))
+            string dir = string.IsNullOrWhiteSpace(Settings.Default.HSaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.HSaveDir;
+            string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".h";
+            if (ChooseFilePath(dir, name, "C Header|*.h", out string fullPath))
             {
-                Settings.Default.HSavePath = path;
+                Settings.Default.HSaveDir = Path.GetDirectoryName(fullPath);
                 Settings.Default.Save();
                 HGenerator hGen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), _dataItems);
-                File.WriteAllText(path, hGen.Generate());
-                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", path);
+                File.WriteAllText(fullPath, hGen.Generate());
+                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
             }
             else
             {
@@ -150,13 +152,13 @@ namespace HijackGen.GUI
             this.txtSearch.Location = new Point(this.lbSearch.Location.X + this.lbSearch.Width + 5, this.txtSearch.Location.Y);
         }
 
-        private bool ChooseFilePath(string former, string filter, out string newPath)
+        private bool ChooseFilePath(string dir, string name, string filter, out string newPath)
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = $"{filter}|All Files|*.*";
-                sfd.InitialDirectory = Path.GetDirectoryName(former);
-                sfd.FileName = former;
+                sfd.InitialDirectory = dir;
+                sfd.FileName = name;
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     newPath = sfd.FileName;

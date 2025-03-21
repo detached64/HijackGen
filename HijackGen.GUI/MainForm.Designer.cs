@@ -66,6 +66,7 @@ namespace HijackGen.GUI
             // 
             resources.ApplyResources(this.btSelect, "btSelect");
             this.btSelect.Name = "btSelect";
+            this.btSelect.TabStop = false;
             this.btSelect.UseVisualStyleBackColor = true;
             this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
             // 
