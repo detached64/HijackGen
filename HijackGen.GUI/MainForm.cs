@@ -9,8 +9,8 @@ namespace HijackGen.GUI
 {
     public partial class MainForm : Form
     {
-        private DllParser _parser;
-        private List<DataItem> _dataItems;
+        private DllParser Parser;
+        private List<DataItem> Items;
 
         public MainForm()
         {
@@ -58,23 +58,23 @@ namespace HijackGen.GUI
             Settings.Default.Save();
             try
             {
-                _parser = new DllParser(txtPath.Text);
-                pnlControl.Enabled = true;
-                _dataItems = _parser.GetExportInfos();
-                dataGrid.DataSource = _dataItems;
-                lbStatus.Text = string.Format(Message.msgFound, _dataItems.Count);
+                Parser = new DllParser(txtPath.Text);
+                this.pnlControl.Enabled = true;
+                Items = Parser.GetExportInfos();
+                this.dataGrid.DataSource = Items;
+                this.lbStatus.Text = string.Format(Message.msgFound, Items.Count);
             }
             catch (Exception ex)
             {
-                lbStatus.Text = ex.Message;
-                pnlControl.Enabled = false;
-                _parser = null;
-                _dataItems = null;
-                dataGrid.DataSource = null;
+                this.lbStatus.Text = ex.Message;
+                this.pnlControl.Enabled = false;
+                Parser = null;
+                Items = null;
+                this.dataGrid.DataSource = null;
             }
-            txtSearch.Text = string.Empty;
+            this.txtSearch.Text = string.Empty;
             UpdateInfo();
-            dataGrid.ClearSelection();
+            this.dataGrid.ClearSelection();
         }
 
         private void btSelect_Click(object sender, EventArgs e)
@@ -98,39 +98,43 @@ namespace HijackGen.GUI
 
         private void btGenDef_Click(object sender, EventArgs e)
         {
-            lbStatus.Text = Message.msgWorking;
+            this.lbStatus.Text = Message.msgWorking;
             string dir = string.IsNullOrWhiteSpace(Settings.Default.DefSaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.DefSaveDir;
             string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".def";
             if (ChooseFilePath(dir, name, "Def File|*.def", out string fullPath))
             {
                 Settings.Default.DefSaveDir = Path.GetDirectoryName(fullPath);
                 Settings.Default.Save();
-                DefGenerator defGen = new DefGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), _dataItems);
-                File.WriteAllText(fullPath, defGen.Generate());
-                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".def", fullPath);
+                using (Generator gen = new DefGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
+                {
+                    File.WriteAllText(fullPath, gen.Generate());
+                }
+                this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".def", fullPath);
             }
             else
             {
-                lbStatus.Text = Message.msgCanceled;
+                this.lbStatus.Text = Message.msgCanceled;
             }
         }
 
         private void btGenH_Click(object sender, EventArgs e)
         {
-            lbStatus.Text = Message.msgWorking;
+            this.lbStatus.Text = Message.msgWorking;
             string dir = string.IsNullOrWhiteSpace(Settings.Default.HSaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.HSaveDir;
             string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".h";
             if (ChooseFilePath(dir, name, "C Header|*.h", out string fullPath))
             {
                 Settings.Default.HSaveDir = Path.GetDirectoryName(fullPath);
                 Settings.Default.Save();
-                HGenerator hGen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), _dataItems);
-                File.WriteAllText(fullPath, hGen.Generate());
-                lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
+                using (Generator gen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
+                {
+                    File.WriteAllText(fullPath, gen.Generate());
+                }
+                this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
             }
             else
             {
-                lbStatus.Text = Message.msgCanceled;
+                this.lbStatus.Text = Message.msgCanceled;
             }
         }
 
@@ -138,16 +142,16 @@ namespace HijackGen.GUI
         {
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                dataGrid.DataSource = _dataItems.FindAll(x => x.Ordinal.ToString().IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                this.dataGrid.DataSource = Items.FindAll(x => x.Ordinal.ToString().IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     x.HasForward.ToString().IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     x.HasForward && x.ForwardName.IndexOf(txtSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0);
             }
             else
             {
-                dataGrid.DataSource = _dataItems;
+                this.dataGrid.DataSource = Items;
             }
-            dataGrid.ClearSelection();
+            this.dataGrid.ClearSelection();
         }
 
         private void lbSearch_SizeChanged(object sender, EventArgs e)
@@ -174,12 +178,12 @@ namespace HijackGen.GUI
 
         private void UpdateInfo()
         {
-            if (_parser == null)
+            if (Parser == null)
             {
                 this.lbInfo.Text = string.Empty;
                 return;
             }
-            this.lbInfo.Text = _parser.Architecture;
+            this.lbInfo.Text = Parser.Architecture;
         }
     }
 }

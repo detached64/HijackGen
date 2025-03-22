@@ -22,7 +22,7 @@ namespace HijackGen.Templates
         }
     }
 
-    public class HeaderTemplates : Templates
+    public sealed class HeaderTemplates : Templates
     {
         public static string Tab = "    ";
         public static string BaseHeaders =
@@ -41,7 +41,7 @@ namespace HijackGen.Templates
             @"Real_{0} = GetAddress(""{0}"");";
     }
 
-    public class FunctionTemplates : Templates
+    public sealed class FunctionTemplates : Templates
     {
         public static string GetAddress = GetTemplate("GetAddress");
         public static string Free = GetTemplate("Free");

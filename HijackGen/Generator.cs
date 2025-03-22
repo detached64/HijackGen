@@ -1,26 +1,48 @@
 using HijackGen.Templates;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HijackGen
 {
-    public class Generator
+    public abstract class Generator : IDisposable
     {
-        public string DllName;
-        public List<DataItem> Items;
+        protected string DllName;
+        protected List<DataItem> Items;
 
         public Generator(string dllName, List<DataItem> items)
         {
             DllName = dllName;
             Items = items.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));   // Filter out empty names
         }
+
+        public abstract string Generate();
+
+        #region IDisposable
+        protected bool disposed;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                Items.Clear();
+                Items = null;
+                disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 
     public sealed class DefGenerator : Generator
     {
         public DefGenerator(string dll, List<DataItem> items) : base(dll, items) { }
 
-        public string Generate()
+        public override string Generate()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("EXPORTS");
@@ -36,7 +58,7 @@ namespace HijackGen
     {
         public HGenerator(string dll, List<DataItem> items) : base(dll, items) { }
 
-        public string Generate()
+        public override string Generate()
         {
             StringBuilder sb = new StringBuilder();
             // Header, includes, and linker comments
