@@ -58,7 +58,7 @@ namespace HijackGen.GUI
             // txtPath
             // 
             resources.ApplyResources(this.txtPath, "txtPath");
-            this.txtPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.txtPath.Name = "txtPath";
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);

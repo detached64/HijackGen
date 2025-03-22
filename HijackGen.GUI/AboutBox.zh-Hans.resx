@@ -120,7 +120,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>关于</value>
   </data>
-  <data name="lbSite.Text" xml:space="preserve">
+  <data name="linkSite.Text" xml:space="preserve">
     <value>开源地址</value>
   </data>
 </root>
