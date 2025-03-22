@@ -170,28 +170,31 @@
   <data name="&gt;&gt;linkSite.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lbAuthor.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbLicense.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbAuthor.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbLicense.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 90</value>
   </data>
-  <data name="lbAuthor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 24</value>
+  <data name="lbLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 24</value>
   </data>
-  <data name="lbAuthor.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbLicense.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;lbAuthor.Name" xml:space="preserve">
-    <value>lbAuthor</value>
+  <data name="lbLicense.Text" xml:space="preserve">
+    <value>MIT License</value>
   </data>
-  <data name="&gt;&gt;lbAuthor.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbLicense.Name" xml:space="preserve">
+    <value>lbLicense</value>
+  </data>
+  <data name="&gt;&gt;lbLicense.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbAuthor.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbLicense.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbAuthor.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbLicense.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="lbCopyright.AutoSize" type="System.Boolean, mscorlib">

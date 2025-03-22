@@ -31,7 +31,7 @@ namespace HijackGen.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.lbName = new System.Windows.Forms.Label();
             this.linkSite = new System.Windows.Forms.LinkLabel();
-            this.lbAuthor = new System.Windows.Forms.Label();
+            this.lbLicense = new System.Windows.Forms.Label();
             this.lbCopyright = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -47,10 +47,10 @@ namespace HijackGen.GUI
             this.linkSite.TabStop = true;
             this.linkSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbSite_LinkClicked);
             // 
-            // lbAuthor
+            // lbLicense
             // 
-            resources.ApplyResources(this.lbAuthor, "lbAuthor");
-            this.lbAuthor.Name = "lbAuthor";
+            resources.ApplyResources(this.lbLicense, "lbLicense");
+            this.lbLicense.Name = "lbLicense";
             // 
             // lbCopyright
             // 
@@ -62,7 +62,7 @@ namespace HijackGen.GUI
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbCopyright);
-            this.Controls.Add(this.lbAuthor);
+            this.Controls.Add(this.lbLicense);
             this.Controls.Add(this.linkSite);
             this.Controls.Add(this.lbName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -79,7 +79,7 @@ namespace HijackGen.GUI
 
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.LinkLabel linkSite;
-        private System.Windows.Forms.Label lbAuthor;
+        private System.Windows.Forms.Label lbLicense;
         private System.Windows.Forms.Label lbCopyright;
     }
 }
