@@ -138,4 +138,25 @@
   <data name="lbSearch.Text" xml:space="preserve">
     <value>搜索</value>
   </data>
+  <data name="clmOrdinal.HeaderText" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="clmAddress.HeaderText" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="clmName.HeaderText" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="clmHasForward.HeaderText" xml:space="preserve">
+    <value>是否有转发名称</value>
+  </data>
+  <data name="clmForwardName.HeaderText" xml:space="preserve">
+    <value>转发名称</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
 </root>
