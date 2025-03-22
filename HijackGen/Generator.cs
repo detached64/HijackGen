@@ -26,7 +26,10 @@ namespace HijackGen
             sb.AppendLine("EXPORTS");
             foreach (DataItem item in Items)
             {
-                sb.AppendLine($"{item.Name}={DllName}.{item.Name} @{item.Ordinal}");
+                if (!string.IsNullOrWhiteSpace(item.Name))
+                {
+                    sb.AppendLine($"{item.Name}={DllName}.{item.Name} @{item.Ordinal}");
+                }
             }
             return sb.ToString();
         }
@@ -38,16 +41,17 @@ namespace HijackGen
 
         public string Generate()
         {
+            var filtered = Items.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));
             StringBuilder sb = new StringBuilder();
             // Header, includes, and linker comments
             sb.AppendLine(HeaderTemplates.BaseHeaders).AppendLine();
-            foreach (DataItem item in Items)
+            foreach (DataItem item in filtered)
             {
-                sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, "Direct_" + item.Name, item.Ordinal).AppendLine();
+                sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, "Redirect_" + item.Name, item.Ordinal).AppendLine();
             }
             sb.AppendLine();
             // Real function & dll declarations
-            foreach (DataItem item in Items)
+            foreach (DataItem item in filtered)
             {
                 sb.AppendFormat(HeaderTemplates.RealFunc, item.Name).AppendLine();
             }
@@ -59,13 +63,13 @@ namespace HijackGen
             sb.AppendLine(FunctionTemplates.Free);
             // Init funcion
             sb.AppendFormat(FunctionTemplates.Init, DllName);
-            foreach (DataItem item in Items)
+            foreach (DataItem item in filtered)
             {
                 sb.Append(HeaderTemplates.Tab).AppendFormat(HeaderTemplates.InitRealFunc, item.Name).AppendLine();
             }
             sb.AppendLine("}").AppendLine();
             // Extern functions
-            foreach (DataItem item in Items)
+            foreach (DataItem item in filtered)
             {
                 sb.AppendFormat(FunctionTemplates.Extern, item.Name).AppendLine();
             }

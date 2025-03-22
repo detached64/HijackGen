@@ -1,4 +1,4 @@
-FARPROC GetAddress(LPCSTR lpProcName)
+FARPROC WINAPI GetAddress(LPCSTR lpProcName)
 {{
     FARPROC pAddress = GetProcAddress(Real_Module, lpProcName);
     if (pAddress == NULL)

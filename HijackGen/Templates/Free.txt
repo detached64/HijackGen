@@ -1,4 +1,4 @@
-VOID Free()
+VOID WINAPI Free()
 {
     if (Real_Module != NULL)
         FreeLibrary(Real_Module);
