@@ -19,19 +19,10 @@ namespace HijackGen.GUI
         [UserScopedSetting]
         [DebuggerNonUserCode]
         [DefaultSettingValue("")]
-        public string DefSaveDir
+        public string SaveDir
         {
-            get => (string)this[nameof(DefSaveDir)];
-            set => this[nameof(DefSaveDir)] = value;
-        }
-
-        [UserScopedSetting]
-        [DebuggerNonUserCode]
-        [DefaultSettingValue("")]
-        public string HSaveDir
-        {
-            get => (string)this[nameof(HSaveDir)];
-            set => this[nameof(HSaveDir)] = value;
+            get => (string)this[nameof(SaveDir)];
+            set => this[nameof(SaveDir)] = value;
         }
     }
 }
