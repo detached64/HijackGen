@@ -61,7 +61,7 @@ namespace HijackGen {
         }
         
         /// <summary>
-        ///   查找类似 Operation cancelled. 的本地化字符串。
+        ///   查找类似 Operation canceled. 的本地化字符串。
         /// </summary>
         public static string msgCanceled {
             get {
@@ -75,6 +75,15 @@ namespace HijackGen {
         public static string msgEmpty {
             get {
                 return ResourceManager.GetString("msgEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed to save. 的本地化字符串。
+        /// </summary>
+        public static string msgFailed {
+            get {
+                return ResourceManager.GetString("msgFailed", resourceCulture);
             }
         }
         
@@ -124,11 +133,11 @@ namespace HijackGen {
         }
         
         /// <summary>
-        ///   查找类似 {0} file saved: {1} 的本地化字符串。
+        ///   查找类似 Saved. 的本地化字符串。
         /// </summary>
-        public static string msgSaveSuccess {
+        public static string msgSuccess {
             get {
-                return ResourceManager.GetString("msgSaveSuccess", resourceCulture);
+                return ResourceManager.GetString("msgSuccess", resourceCulture);
             }
         }
         

@@ -97,7 +97,10 @@
     <EmbeddedResource Include="Templates\Init.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Templates\Extern.txt" />
+    <EmbeddedResource Include="Templates\ExternX86.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\ExternX64.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

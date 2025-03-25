@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbPath.Text" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="btSelect.Text" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="btGen.Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>关于</value>
-  </data>
-  <data name="linkSite.Text" xml:space="preserve">
-    <value>开源地址</value>
-  </data>
-  <data name="lbLicense.Text" xml:space="preserve">
-    <value>MIT License</value>
+    <value>选项（.def）</value>
   </data>
 </root>

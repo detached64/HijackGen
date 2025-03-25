@@ -240,7 +240,6 @@ namespace HijackGen.GUI
         private System.Windows.Forms.Button btSelect;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel lbStatus;
         private System.Windows.Forms.Label lbPath;
         private System.Windows.Forms.Button btGenH;
         private System.Windows.Forms.Button btGenDef;
@@ -255,6 +254,7 @@ namespace HijackGen.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHasForward;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmForwardName;
         private System.Windows.Forms.ToolStripStatusLabel lbInfo;
+        internal System.Windows.Forms.ToolStripStatusLabel lbStatus;
     }
 }
 

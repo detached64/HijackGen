@@ -250,16 +250,16 @@
     <value>17, 17</value>
   </metadata>
   <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
+    <value>0, 21</value>
   </data>
   <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
+    <value>0, 21</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 721</value>
+    <value>0, 715</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 22</value>
+    <value>1180, 28</value>
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -292,7 +292,7 @@
     <value>5</value>
   </data>
   <data name="lbPath.Text" xml:space="preserve">
-    <value>Path</value>
+    <value>Dll Path</value>
   </data>
   <data name="&gt;&gt;lbPath.Name" xml:space="preserve">
     <value>lbPath</value>

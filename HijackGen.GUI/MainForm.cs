@@ -10,7 +10,7 @@ namespace HijackGen.GUI
     public partial class MainForm : Form
     {
         private DllParser Parser;
-        private List<DataItem> Items;
+        internal static List<DataItem> Items;
 
         public MainForm()
         {
@@ -29,9 +29,9 @@ namespace HijackGen.GUI
             this.dataGrid.AutoGenerateColumns = false;
             this.lbStatus.Text = Message.msgReady;
             this.lbInfo.Alignment = ToolStripItemAlignment.Right;
-            if (!string.IsNullOrWhiteSpace(Settings.Default.DllPath))
+            if (!string.IsNullOrWhiteSpace(Settings.DllPath))
             {
-                this.txtPath.Text = Settings.Default.DllPath;
+                this.txtPath.Text = Settings.DllPath;
             }
         }
 
@@ -54,11 +54,11 @@ namespace HijackGen.GUI
 
         private void txtPath_TextChanged(object sender, EventArgs e)
         {
-            Settings.Default.DllPath = txtPath.Text;
+            Settings.DllPath = this.txtPath.Text;
             Settings.Default.Save();
             try
             {
-                Parser = new DllParser(txtPath.Text);
+                Parser = new DllParser(this.txtPath.Text);
                 this.pnlControl.Enabled = true;
                 Items = Parser.GetExportInfos();
                 this.dataGrid.DataSource = Items;
@@ -82,7 +82,7 @@ namespace HijackGen.GUI
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "DLL|*.dll|All Files|*.*";
-                ofd.InitialDirectory = string.IsNullOrWhiteSpace(txtPath.Text) ? Environment.GetFolderPath(Environment.SpecialFolder.System) : Path.GetDirectoryName(txtPath.Text);
+                ofd.InitialDirectory = string.IsNullOrWhiteSpace(txtPath.Text) ? Settings.DefaultDir : Path.GetDirectoryName(txtPath.Text);
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     txtPath.Text = ofd.FileName;
@@ -99,43 +99,37 @@ namespace HijackGen.GUI
         private void btGenDef_Click(object sender, EventArgs e)
         {
             this.lbStatus.Text = Message.msgWorking;
-            string dir = string.IsNullOrWhiteSpace(Settings.Default.SaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.SaveDir;
-            string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".def";
-            if (ChooseFilePath(dir, name, "Def File|*.def", out string fullPath))
+            using (DefOptions defOptions = new DefOptions())
             {
-                Settings.Default.SaveDir = Path.GetDirectoryName(fullPath);
-                Settings.Default.Save();
-                using (Generator gen = new DefGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
-                {
-                    File.WriteAllText(fullPath, gen.Generate());
-                }
-                this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".def", fullPath);
-            }
-            else
-            {
-                this.lbStatus.Text = Message.msgCanceled;
+                defOptions.ShowDialog();
+                this.lbStatus.Text = QueryResult(defOptions);
             }
         }
 
         private void btGenH_Click(object sender, EventArgs e)
         {
             this.lbStatus.Text = Message.msgWorking;
-            string dir = string.IsNullOrWhiteSpace(Settings.Default.SaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.SaveDir;
-            string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".h";
-            if (ChooseFilePath(dir, name, "C Header|*.h", out string fullPath))
+            using (HOptions hOptions = new HOptions())
             {
-                Settings.Default.SaveDir = Path.GetDirectoryName(fullPath);
-                Settings.Default.Save();
-                using (Generator gen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
-                {
-                    File.WriteAllText(fullPath, gen.Generate());
-                }
-                this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
+                hOptions.ShowDialog();
+                this.lbStatus.Text = QueryResult(hOptions);
             }
-            else
-            {
-                this.lbStatus.Text = Message.msgCanceled;
-            }
+            //string dir = string.IsNullOrWhiteSpace(Settings.Default.SaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.SaveDir;
+            //string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".h";
+            //if (ChooseFilePath(dir, name, "C Header|*.h", out string fullPath))
+            //{
+            //    Settings.Default.SaveDir = Path.GetDirectoryName(fullPath);
+            //    Settings.Default.Save();
+            //    using (Generator gen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
+            //    {
+            //        File.WriteAllText(fullPath, gen.Generate());
+            //    }
+            //    this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
+            //}
+            //else
+            //{
+            //    this.lbStatus.Text = Message.msgCanceled;
+            //}
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -185,5 +179,27 @@ namespace HijackGen.GUI
             }
             this.lbInfo.Text = Parser.Architecture;
         }
+
+        private string QueryResult(OptionsTemplate options)
+        {
+            switch (options.Result)
+            {
+                case OperationResult.Canceled:
+                    return Message.msgCanceled;
+                case OperationResult.Failed:
+                    return Message.msgFailed;
+                case OperationResult.Success:
+                    return Message.msgSuccess;
+                default:
+                    return string.Empty;
+            }
+        }
+    }
+
+    public enum OperationResult
+    {
+        Canceled,
+        Failed,
+        Success
     }
 }

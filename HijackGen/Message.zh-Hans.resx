@@ -132,9 +132,6 @@
   <data name="msgNoExport" xml:space="preserve">
     <value>未找到任何导出函数。</value>
   </data>
-  <data name="msgSaveSuccess" xml:space="preserve">
-    <value>已保存{0}文件：{1}</value>
-  </data>
   <data name="msgCanceled" xml:space="preserve">
     <value>操作被取消。</value>
   </data>
@@ -143,5 +140,11 @@
   </data>
   <data name="msgFound" xml:space="preserve">
     <value>共找到{0}个导出函数。</value>
+  </data>
+  <data name="msgSuccess" xml:space="preserve">
+    <value>保存成功。</value>
+  </data>
+  <data name="msgFailed" xml:space="preserve">
+    <value>保存失败。</value>
   </data>
 </root>

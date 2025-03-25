@@ -1,0 +1,1 @@
+void Redirect_{0}() {{ Real_{0}(); }}

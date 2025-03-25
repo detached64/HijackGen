@@ -26,13 +26,15 @@ namespace HijackGen.Templates
     {
         public static string Tab = "    ";
         public static string BaseHeaders =
-            @"#include <windows.h>";
+            @"#include <Windows.h>";
         public static string SystemDllPath =
             $@"{Environment.GetFolderPath(Environment.SpecialFolder.System)}" + @"\{0}.dll";
         public static string LinkerComment =
-            @"#pragma comment(linker, ""/EXPORT:{0}=_{1},@{2}"")";
-        public static string RealFunc =
+            @"#pragma comment(linker, ""/EXPORT:{0}=_Redirect_{1},@{2}"")";
+        public static string RealFuncX86 =
             @"PVOID Real_{0} = NULL;";
+        public static string RealFuncX64 =
+            @"FARPROC Real_{0} = NULL;";
         public static string RealDll =
             @"HMODULE Real_Module = NULL;";
         public static string InitRealDll =
@@ -46,6 +48,7 @@ namespace HijackGen.Templates
         public static string GetAddress = GetTemplate("GetAddress");
         public static string Free = GetTemplate("Free");
         public static string Init = GetTemplate("Init");
-        public static string Extern = GetTemplate("Extern");
+        public static string ExternX86 = GetTemplate("ExternX86");
+        public static string ExternX64 = GetTemplate("ExternX64");
     }
 }
