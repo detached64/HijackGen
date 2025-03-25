@@ -40,7 +40,7 @@ namespace HijackGen.GUI
 
         [UserScopedSetting]
         [DebuggerNonUserCode]
-        [DefaultSettingValue("false")]
+        [DefaultSettingValue("true")]
         public bool GenDefX64Internal
         {
             get => (bool)this[nameof(GenDefX64Internal)];
