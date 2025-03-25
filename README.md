@@ -2,13 +2,11 @@
 
 A simple tool to generate dll source code for dll hijacking.
 
-**Under development, not stable**
-
-![interface](./docs/interface.png)
+![interface](./docs/img/interface.png)
 
 ## Usage
 
-Select or drag and drop the target dll file to the tool, then click the `Generate .def` button to generate the .def file or click the `Generate .h` button for .h file.
+[English](./docs/usage.md) | [中文](./docs/usage_zh-CN.md)
 
 ## Reference
 
