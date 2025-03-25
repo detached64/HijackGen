@@ -55,13 +55,13 @@ namespace HijackGen.GUI
                         }
                     }
                     Result = OperationResult.Success;
-                    this.Close();
                 }
             }
             catch
             {
                 Result = OperationResult.Failed;
             }
+            this.Close();
         }
     }
 }

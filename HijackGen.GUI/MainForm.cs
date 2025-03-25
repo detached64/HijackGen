@@ -114,22 +114,6 @@ namespace HijackGen.GUI
                 hOptions.ShowDialog();
                 this.lbStatus.Text = QueryResult(hOptions);
             }
-            //string dir = string.IsNullOrWhiteSpace(Settings.Default.SaveDir) ? Path.GetDirectoryName(txtPath.Text) : Settings.Default.SaveDir;
-            //string name = Path.GetFileNameWithoutExtension(txtPath.Text) + ".h";
-            //if (ChooseFilePath(dir, name, "C Header|*.h", out string fullPath))
-            //{
-            //    Settings.Default.SaveDir = Path.GetDirectoryName(fullPath);
-            //    Settings.Default.Save();
-            //    using (Generator gen = new HGenerator(Path.GetFileNameWithoutExtension(txtPath.Text), Items))
-            //    {
-            //        File.WriteAllText(fullPath, gen.Generate());
-            //    }
-            //    this.lbStatus.Text = string.Format(Message.msgSaveSuccess, ".h", fullPath);
-            //}
-            //else
-            //{
-            //    this.lbStatus.Text = Message.msgCanceled;
-            //}
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

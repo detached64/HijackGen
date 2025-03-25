@@ -59,13 +59,13 @@ namespace HijackGen.GUI
                         }
                     }
                     Result = OperationResult.Success;
-                    this.Close();
                 }
             }
             catch
             {
                 Result = OperationResult.Failed;
             }
+            this.Close();
         }
 
         private void rbtX86_CheckedChanged(object sender, EventArgs e)
