@@ -6,7 +6,7 @@ A simple tool to generate dll source code for dll hijacking.
 
 ## Usage
 
-[English](./docs/usage.md) | [中文](./docs/usage_zh-CN.md)
+[English](./docs/Usage.md) | [中文](./docs/Usage_zh-CN.md)
 
 ## Reference
 
