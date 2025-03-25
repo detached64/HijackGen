@@ -1,4 +1,4 @@
-VOID WINAPI Init()
+VOID WINAPI InitHijack()
 {{
     WCHAR real_dll_path[MAX_PATH];
     GetSystemDirectoryW(real_dll_path, MAX_PATH);
