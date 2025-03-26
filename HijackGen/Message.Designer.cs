@@ -88,6 +88,15 @@ namespace HijackGen {
         }
         
         /// <summary>
+        ///   查找类似 Failed to save: {0} 的本地化字符串。
+        /// </summary>
+        public static string msgFailedWithMsg {
+            get {
+                return ResourceManager.GetString("msgFailedWithMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0} exported functions found. 的本地化字符串。
         /// </summary>
         public static string msgFound {

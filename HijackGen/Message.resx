@@ -124,6 +124,9 @@
   <data name="msgSuccess" xml:space="preserve">
     <value>Saved.</value>
   </data>
+  <data name="msgFailedWithMsg" xml:space="preserve">
+    <value>Failed to save: {0}</value>
+  </data>
   <data name="msgFailed" xml:space="preserve">
     <value>Failed to save.</value>
   </data>

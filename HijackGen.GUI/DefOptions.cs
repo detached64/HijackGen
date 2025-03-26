@@ -57,9 +57,10 @@ namespace HijackGen.GUI
                     Result = OperationResult.Success;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 Result = OperationResult.Failed;
+                Exception = ex;
             }
             this.Close();
         }

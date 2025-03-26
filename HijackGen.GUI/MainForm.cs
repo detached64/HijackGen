@@ -170,6 +170,8 @@ namespace HijackGen.GUI
             {
                 case OperationResult.Canceled:
                     return Message.msgCanceled;
+                case OperationResult.Failed when options.Exception != null:
+                    return string.Format(Message.msgFailedWithMsg, options.Exception.Message);
                 case OperationResult.Failed:
                     return Message.msgFailed;
                 case OperationResult.Success:

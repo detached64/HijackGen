@@ -144,6 +144,9 @@
   <data name="msgSuccess" xml:space="preserve">
     <value>保存成功。</value>
   </data>
+  <data name="msgFailedWithMsg" xml:space="preserve">
+    <value>保存失败：{0}</value>
+  </data>
   <data name="msgFailed" xml:space="preserve">
     <value>保存失败。</value>
   </data>

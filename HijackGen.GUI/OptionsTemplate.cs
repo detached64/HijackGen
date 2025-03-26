@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 
 namespace HijackGen.GUI
@@ -9,8 +10,10 @@ namespace HijackGen.GUI
             InitializeComponent();
         }
 
+        protected string SavePath { get; set; }
+
         public OperationResult Result { get; protected set; }
 
-        protected string SavePath { get; set; }
+        public Exception Exception { get; protected set; }
     }
 }
