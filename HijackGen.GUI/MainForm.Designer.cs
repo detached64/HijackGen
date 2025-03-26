@@ -3,14 +3,14 @@ namespace HijackGen.GUI
     partial class MainForm
     {
         /// <summary>
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// 清理所有正在使用的资源。
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,64 +20,103 @@ namespace HijackGen.GUI
             base.Dispose(disposing);
         }
 
-        #region Windows 窗体设计器生成的代码
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.btSelect = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pnl = new System.Windows.Forms.Panel();
+            this.table = new System.Windows.Forms.TableLayoutPanel();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.clmOrdinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmHasForward = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmForwardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbPath = new System.Windows.Forms.Label();
-            this.btGenH = new System.Windows.Forms.Button();
-            this.btGenDef = new System.Windows.Forms.Button();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlControl = new System.Windows.Forms.Panel();
+            this.pnlPath = new System.Windows.Forms.Panel();
+            this.btSelect = new System.Windows.Forms.Button();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.pnlOperation = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lbSearch = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.statusStrip.SuspendLayout();
+            this.btGenDef = new System.Windows.Forms.Button();
+            this.btGenH = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
-            this.pnlControl.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.pnl.SuspendLayout();
+            this.table.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            this.pnlPath.SuspendLayout();
+            this.pnlOperation.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtPath
+            // menuStrip
             // 
-            resources.ApplyResources(this.txtPath, "txtPath");
-            this.txtPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.txtPath.Name = "txtPath";
-            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.menuStrip.Name = "menuStrip";
             // 
-            // btSelect
+            // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.btSelect, "btSelect");
-            this.btSelect.Name = "btSelect";
-            this.btSelect.TabStop = false;
-            this.btSelect.UseVisualStyleBackColor = true;
-            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbStatus,
+            this.lbInfo});
+            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            resources.ApplyResources(this.statusStrip, "statusStrip");
+            this.statusStrip.Name = "statusStrip";
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.Name = "lbStatus";
+            resources.ApplyResources(this.lbStatus, "lbStatus");
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Name = "lbInfo";
+            resources.ApplyResources(this.lbInfo, "lbInfo");
+            // 
+            // pnl
+            // 
+            this.pnl.Controls.Add(this.table);
+            resources.ApplyResources(this.pnl, "pnl");
+            this.pnl.Name = "pnl";
+            // 
+            // table
+            // 
+            resources.ApplyResources(this.table, "table");
+            this.table.Controls.Add(this.dataGrid, 0, 2);
+            this.table.Controls.Add(this.lbPath, 0, 0);
+            this.table.Controls.Add(this.pnlPath, 0, 1);
+            this.table.Controls.Add(this.pnlOperation, 0, 3);
+            this.table.Name = "table";
             // 
             // dataGrid
             // 
             this.dataGrid.AllowUserToAddRows = false;
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dataGrid, "dataGrid");
             this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGrid.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -86,6 +125,7 @@ namespace HijackGen.GUI
             this.clmName,
             this.clmHasForward,
             this.clmForwardName});
+            resources.ApplyResources(this.dataGrid, "dataGrid");
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.RowHeadersVisible = false;
@@ -129,37 +169,46 @@ namespace HijackGen.GUI
             this.clmForwardName.Name = "clmForwardName";
             this.clmForwardName.ReadOnly = true;
             // 
-            // statusStrip
-            // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbStatus,
-            this.lbInfo});
-            this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            resources.ApplyResources(this.statusStrip, "statusStrip");
-            this.statusStrip.Name = "statusStrip";
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.Name = "lbStatus";
-            resources.ApplyResources(this.lbStatus, "lbStatus");
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.Name = "lbInfo";
-            resources.ApplyResources(this.lbInfo, "lbInfo");
-            // 
             // lbPath
             // 
             resources.ApplyResources(this.lbPath, "lbPath");
             this.lbPath.Name = "lbPath";
             // 
-            // btGenH
+            // pnlPath
             // 
-            resources.ApplyResources(this.btGenH, "btGenH");
-            this.btGenH.Name = "btGenH";
-            this.btGenH.UseVisualStyleBackColor = true;
-            this.btGenH.Click += new System.EventHandler(this.btGenH_Click);
+            this.pnlPath.Controls.Add(this.btSelect);
+            this.pnlPath.Controls.Add(this.txtPath);
+            resources.ApplyResources(this.pnlPath, "pnlPath");
+            this.pnlPath.Name = "pnlPath";
+            // 
+            // btSelect
+            // 
+            resources.ApplyResources(this.btSelect, "btSelect");
+            this.btSelect.Name = "btSelect";
+            this.btSelect.UseVisualStyleBackColor = true;
+            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
+            // 
+            // txtPath
+            // 
+            resources.ApplyResources(this.txtPath, "txtPath");
+            this.txtPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.txtPath.Name = "txtPath";
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
+            // 
+            // pnlOperation
+            // 
+            this.pnlOperation.Controls.Add(this.txtSearch);
+            this.pnlOperation.Controls.Add(this.btGenDef);
+            this.pnlOperation.Controls.Add(this.btGenH);
+            resources.ApplyResources(this.pnlOperation, "pnlOperation");
+            this.pnlOperation.Name = "pnlOperation";
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(this.txtSearch, "txtSearch");
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btGenDef
             // 
@@ -168,67 +217,36 @@ namespace HijackGen.GUI
             this.btGenDef.UseVisualStyleBackColor = true;
             this.btGenDef.Click += new System.EventHandler(this.btGenDef_Click);
             // 
-            // menuStrip
+            // btGenH
             // 
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
-            this.menuStrip.Name = "menuStrip";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // pnlControl
-            // 
-            resources.ApplyResources(this.pnlControl, "pnlControl");
-            this.pnlControl.Controls.Add(this.txtSearch);
-            this.pnlControl.Controls.Add(this.lbSearch);
-            this.pnlControl.Controls.Add(this.btGenDef);
-            this.pnlControl.Controls.Add(this.dataGrid);
-            this.pnlControl.Controls.Add(this.btGenH);
-            this.pnlControl.Name = "pnlControl";
-            // 
-            // txtSearch
-            // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // lbSearch
-            // 
-            resources.ApplyResources(this.lbSearch, "lbSearch");
-            this.lbSearch.Name = "lbSearch";
-            this.lbSearch.SizeChanged += new System.EventHandler(this.lbSearch_SizeChanged);
+            resources.ApplyResources(this.btGenH, "btGenH");
+            this.btGenH.Name = "btGenH";
+            this.btGenH.UseVisualStyleBackColor = true;
+            this.btGenH.Click += new System.EventHandler(this.btGenH_Click);
             // 
             // MainForm
             // 
-            this.AllowDrop = true;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.lbPath);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.pnl);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.btSelect);
-            this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.pnlControl);
-            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.pnlControl.ResumeLayout(false);
-            this.pnlControl.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.pnl.ResumeLayout(false);
+            this.table.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            this.pnlPath.ResumeLayout(false);
+            this.pnlPath.PerformLayout();
+            this.pnlOperation.ResumeLayout(false);
+            this.pnlOperation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,25 +254,26 @@ namespace HijackGen.GUI
 
         #endregion
 
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.Panel pnl;
+        private System.Windows.Forms.TableLayoutPanel table;
+        private System.Windows.Forms.Label lbPath;
+        private System.Windows.Forms.Panel pnlPath;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Button btSelect;
         private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.Label lbPath;
-        private System.Windows.Forms.Button btGenH;
-        private System.Windows.Forms.Button btGenDef;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlControl;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label lbSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmOrdinal;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHasForward;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmForwardName;
+        private System.Windows.Forms.Panel pnlOperation;
+        private System.Windows.Forms.Button btGenDef;
+        private System.Windows.Forms.Button btGenH;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel lbStatus;
         private System.Windows.Forms.ToolStripStatusLabel lbInfo;
-        internal System.Windows.Forms.ToolStripStatusLabel lbStatus;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
-

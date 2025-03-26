@@ -120,20 +120,20 @@
   <data name="btSelect.Text" xml:space="preserve">
     <value>…</value>
   </data>
-  <data name="lbPath.Text" xml:space="preserve">
+  <data name="label1.Text" xml:space="preserve">
     <value>路径</value>
   </data>
-  <data name="rbtX86.Text" xml:space="preserve">
-    <value>x86</value>
-  </data>
-  <data name="rbtX64.Text" xml:space="preserve">
-    <value>x64</value>
+  <data name="btGen.Text" xml:space="preserve">
+    <value>生成</value>
   </data>
   <data name="chkbxGenDefX64.Text" xml:space="preserve">
     <value>同时生成.def文件</value>
   </data>
-  <data name="btGen.Text" xml:space="preserve">
-    <value>生成</value>
+  <data name="rbtX64.Text" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="rbtX86.Text" xml:space="preserve">
+    <value>x86</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>选项（.h）</value>

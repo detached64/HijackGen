@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -15,17 +14,21 @@ namespace HijackGen.GUI
         public MainForm()
         {
             InitializeComponent();
+            #region DoubleBuffered Controls
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
+            Type table = this.table.GetType();
+            Type dataGrid = this.dataGrid.GetType();
+            PropertyInfo tableInfo = table.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            PropertyInfo dataGridInfo = dataGrid.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            tableInfo.SetValue(this.table, true, null);
+            dataGridInfo.SetValue(this.dataGrid, true, null);
+            #endregion
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint, true);
-            this.UpdateStyles();
-            Type type = this.dataGrid.GetType();
-            PropertyInfo pi = type.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
-            pi.SetValue(this.dataGrid, true, null);
-
-            this.pnlControl.Enabled = false;
+            this.pnlOperation.Enabled = false;
             this.dataGrid.AutoGenerateColumns = false;
             this.lbStatus.Text = Message.msgReady;
             this.lbInfo.Alignment = ToolStripItemAlignment.Right;
@@ -35,6 +38,7 @@ namespace HijackGen.GUI
             }
         }
 
+        #region DragDrop
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -51,6 +55,7 @@ namespace HijackGen.GUI
                 txtPath.Text = files[0];
             }
         }
+        #endregion
 
         private void txtPath_TextChanged(object sender, EventArgs e)
         {
@@ -59,7 +64,7 @@ namespace HijackGen.GUI
             try
             {
                 Parser = new DllParser(this.txtPath.Text);
-                this.pnlControl.Enabled = true;
+                this.pnlOperation.Enabled = true;
                 Items = Parser.GetExportInfos();
                 this.dataGrid.DataSource = Items;
                 this.lbStatus.Text = string.Format(Message.msgFound, Items.Count);
@@ -67,7 +72,7 @@ namespace HijackGen.GUI
             catch (Exception ex)
             {
                 this.lbStatus.Text = ex.Message;
-                this.pnlControl.Enabled = false;
+                this.pnlOperation.Enabled = false;
                 Parser = null;
                 Items = null;
                 this.dataGrid.DataSource = null;
@@ -92,8 +97,10 @@ namespace HijackGen.GUI
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox aboutBox = new AboutBox();
-            aboutBox.ShowDialog();
+            using (AboutBox about = new AboutBox())
+            {
+                about.ShowDialog();
+            }
         }
 
         private void btGenDef_Click(object sender, EventArgs e)
@@ -130,28 +137,6 @@ namespace HijackGen.GUI
                 this.dataGrid.DataSource = Items;
             }
             this.dataGrid.ClearSelection();
-        }
-
-        private void lbSearch_SizeChanged(object sender, EventArgs e)
-        {
-            this.txtSearch.Location = new Point(this.lbSearch.Location.X + this.lbSearch.Width + 5, this.txtSearch.Location.Y);
-        }
-
-        private bool ChooseFilePath(string dir, string name, string filter, out string newPath)
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog())
-            {
-                sfd.Filter = $"{filter}|All Files|*.*";
-                sfd.InitialDirectory = dir;
-                sfd.FileName = name;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    newPath = sfd.FileName;
-                    return true;
-                }
-            }
-            newPath = string.Empty;
-            return false;
         }
 
         private void UpdateInfo()
