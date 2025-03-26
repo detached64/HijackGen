@@ -61,7 +61,7 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.btSelect, "btSelect");
             this.btSelect.Name = "btSelect";
             this.btSelect.UseVisualStyleBackColor = true;
-            this.btSelect.TextChanged += new System.EventHandler(this.btSelect_Click);
+            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
             // 
             // txtPath
             // 
@@ -85,12 +85,12 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.btGen, "btGen");
             this.btGen.Name = "btGen";
             this.btGen.UseVisualStyleBackColor = true;
-            this.btGen.TextChanged += new System.EventHandler(this.btGen_Click);
+            this.btGen.Click += new System.EventHandler(this.btGen_Click);
             // 
             // DefOptions
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.table);
             this.Name = "DefOptions";
             this.Load += new System.EventHandler(this.DefOptions_Load);
@@ -99,7 +99,6 @@ namespace HijackGen.GUI
             this.pnlPath.ResumeLayout(false);
             this.pnlPath.PerformLayout();
             this.pnlOptions.ResumeLayout(false);
-            this.pnlOptions.PerformLayout();
             this.ResumeLayout(false);
 
         }

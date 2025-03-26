@@ -123,17 +123,17 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
+    <value>Right</value>
   </data>
   <data name="btSelect.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>841, 7</value>
+    <value>551, 4</value>
   </data>
   <data name="btSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 31</value>
+    <value>23, 23</value>
   </data>
   <data name="btSelect.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -157,10 +157,10 @@
     <value>Left, Right</value>
   </data>
   <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 7</value>
+    <value>0, 4</value>
   </data>
   <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>835, 31</value>
+    <value>545, 23</value>
   </data>
   <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -181,10 +181,10 @@
     <value>Fill</value>
   </data>
   <data name="pnlPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 54</value>
+    <value>3, 39</value>
   </data>
   <data name="pnlPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>872, 45</value>
+    <value>574, 30</value>
   </data>
   <data name="pnlPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -214,7 +214,7 @@
     <value>3, 0</value>
   </data>
   <data name="lbPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>872, 51</value>
+    <value>574, 36</value>
   </data>
   <data name="lbPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -238,19 +238,16 @@
     <value>1</value>
   </data>
   <data name="btGen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="btGen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>Right</value>
   </data>
   <data name="btGen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btGen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>737, 6</value>
+    <value>484, 4</value>
   </data>
   <data name="btGen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 34</value>
+    <value>90, 23</value>
   </data>
   <data name="btGen.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -274,10 +271,10 @@
     <value>Fill</value>
   </data>
   <data name="pnlOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 105</value>
+    <value>3, 75</value>
   </data>
   <data name="pnlOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>872, 46</value>
+    <value>574, 31</value>
   </data>
   <data name="pnlOptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -298,13 +295,13 @@
     <value>Fill</value>
   </data>
   <data name="table.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 25</value>
+    <value>32, 16</value>
   </data>
   <data name="table.RowCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="table.Size" type="System.Drawing.Size, System.Drawing">
-    <value>878, 154</value>
+    <value>580, 109</value>
   </data>
   <data name="table.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -327,11 +324,17 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>978, 204</value>
+    <value>644, 141</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Options (.def)</value>

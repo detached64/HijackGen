@@ -29,7 +29,7 @@ namespace HijackGen.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -62,7 +62,6 @@ namespace HijackGen.GUI
             // 
             // menuStrip
             // 
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
@@ -142,8 +141,8 @@ namespace HijackGen.GUI
             // clmAddress
             // 
             this.clmAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle2.Format = "X";
-            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "X";
+            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.clmAddress, "clmAddress");
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;

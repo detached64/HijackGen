@@ -123,10 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>2, 0</value>
+  </data>
+  <data name="lbName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 46</value>
+    <value>196, 29</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbName.TabIndex" type="System.Int32, mscorlib">
@@ -154,10 +157,13 @@
     <value>Fill</value>
   </data>
   <data name="linkSite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 138</value>
+    <value>2, 87</value>
+  </data>
+  <data name="linkSite.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="linkSite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 46</value>
+    <value>196, 32</value>
   </data>
   <data name="linkSite.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -187,10 +193,13 @@
     <value>Fill</value>
   </data>
   <data name="lbLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 46</value>
+    <value>2, 29</value>
+  </data>
+  <data name="lbLicense.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 46</value>
+    <value>196, 29</value>
   </data>
   <data name="lbLicense.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -223,10 +232,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 92</value>
+    <value>2, 58</value>
+  </data>
+  <data name="lbCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 46</value>
+    <value>196, 29</value>
   </data>
   <data name="lbCopyright.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -250,13 +262,16 @@
     <value>Fill</value>
   </data>
   <data name="table.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 30</value>
+    <value>32, 21</value>
+  </data>
+  <data name="table.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="table.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="table.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 184</value>
+    <value>200, 119</value>
   </data>
   <data name="table.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -280,19 +295,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 24</value>
+    <value>7, 17</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>428, 244</value>
+    <value>264, 161</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>50, 30, 50, 30</value>
+    <value>32, 21, 32, 21</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

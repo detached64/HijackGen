@@ -118,8 +118,8 @@ namespace HijackGen.GUI
             // 
             // HOptions
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.table);
             this.Name = "HOptions";
             this.Load += new System.EventHandler(this.HOptions_Load);
