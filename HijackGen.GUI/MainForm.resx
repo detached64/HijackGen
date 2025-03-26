@@ -129,7 +129,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>959, 31</value>
+    <value>957, 31</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
@@ -151,7 +151,7 @@
     <value>Top, Right</value>
   </data>
   <data name="btSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1057, 112</value>
+    <value>1055, 112</value>
   </data>
   <data name="btSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 31</value>
@@ -174,8 +174,47 @@
   <data name="&gt;&gt;btSelect.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="clmOrdinal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clmAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clmName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clmHasForward.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="clmForwardName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="dataGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 16</value>
+  </data>
+  <data name="dataGrid.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="dataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>995, 452</value>
+  </data>
+  <data name="dataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dataGrid.Name" xml:space="preserve">
+    <value>dataGrid</value>
+  </data>
+  <data name="&gt;&gt;dataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGrid.Parent" xml:space="preserve">
+    <value>pnlControl</value>
+  </data>
+  <data name="&gt;&gt;dataGrid.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="clmOrdinal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -222,44 +261,14 @@
   <data name="clmForwardName.MinimumWidth" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="dataGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 16</value>
-  </data>
-  <data name="dataGrid.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>62</value>
-  </data>
-  <data name="dataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>997, 451</value>
-  </data>
-  <data name="dataGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dataGrid.Name" xml:space="preserve">
-    <value>dataGrid</value>
-  </data>
-  <data name="&gt;&gt;dataGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGrid.Parent" xml:space="preserve">
-    <value>pnlControl</value>
-  </data>
-  <data name="&gt;&gt;dataGrid.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 21</value>
-  </data>
-  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 21</value>
-  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 715</value>
+    <value>0, 722</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 28</value>
+    <value>1178, 22</value>
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -279,6 +288,12 @@
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
+  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
   <data name="lbPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -286,7 +301,7 @@
     <value>87, 74</value>
   </data>
   <data name="lbPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 24</value>
+    <value>78, 24</value>
   </data>
   <data name="lbPath.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -316,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="btGenH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>970, 473</value>
+    <value>968, 474</value>
   </data>
   <data name="btGenH.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 34</value>
@@ -349,7 +364,7 @@
     <value>NoControl</value>
   </data>
   <data name="btGenDef.Location" type="System.Drawing.Point, System.Drawing">
-    <value>829, 473</value>
+    <value>827, 474</value>
   </data>
   <data name="btGenDef.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 34</value>
@@ -376,7 +391,7 @@
     <value>174, 17</value>
   </metadata>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 28</value>
+    <value>80, 30</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
@@ -385,7 +400,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 32</value>
+    <value>1178, 36</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -408,14 +423,59 @@
   <data name="pnlControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
+    <value>txtSearch</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
+    <value>pnlControl</value>
+  </data>
+  <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbSearch.Name" xml:space="preserve">
+    <value>lbSearch</value>
+  </data>
+  <data name="&gt;&gt;lbSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbSearch.Parent" xml:space="preserve">
+    <value>pnlControl</value>
+  </data>
+  <data name="&gt;&gt;lbSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 150</value>
+  </data>
+  <data name="pnlControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1178, 527</value>
+  </data>
+  <data name="pnlControl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pnlControl.Name" xml:space="preserve">
+    <value>pnlControl</value>
+  </data>
+  <data name="&gt;&gt;pnlControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlControl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txtSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>160, 475</value>
+    <value>160, 476</value>
   </data>
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 31</value>
+    <value>407, 31</value>
   </data>
   <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -439,7 +499,7 @@
     <value>True</value>
   </data>
   <data name="lbSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 478</value>
+    <value>87, 479</value>
   </data>
   <data name="lbSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 24</value>
@@ -462,35 +522,11 @@
   <data name="&gt;&gt;lbSearch.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnlControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 150</value>
-  </data>
-  <data name="pnlControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 526</value>
-  </data>
-  <data name="pnlControl.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;pnlControl.Name" xml:space="preserve">
-    <value>pnlControl</value>
-  </data>
-  <data name="&gt;&gt;pnlControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnlControl.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 24</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 743</value>
+    <value>1178, 744</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>

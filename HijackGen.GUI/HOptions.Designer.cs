@@ -89,8 +89,8 @@ namespace HijackGen.GUI
             // 
             // HOptions
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btGen);
             this.Controls.Add(this.chkbxGenDefX64);
             this.Controls.Add(this.rbtX64);

@@ -237,17 +237,11 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>11, 24</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>978, 204</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Options (.def)</value>
@@ -256,6 +250,6 @@
     <value>DefOptions</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.0.3, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -29,7 +29,7 @@ namespace HijackGen.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btSelect = new System.Windows.Forms.Button();
             this.dataGrid = new System.Windows.Forms.DataGridView();
@@ -102,8 +102,8 @@ namespace HijackGen.GUI
             // clmAddress
             // 
             this.clmAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle1.Format = "X";
-            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "X";
+            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.clmAddress, "clmAddress");
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
@@ -208,8 +208,8 @@ namespace HijackGen.GUI
             // MainForm
             // 
             this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbPath);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
