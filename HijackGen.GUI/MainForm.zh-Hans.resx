@@ -142,10 +142,10 @@
     <value>…</value>
   </data>
   <data name="btGenDef.Text" xml:space="preserve">
-    <value>生成.def文件</value>
+    <value>生成 .def 文件</value>
   </data>
   <data name="btGenH.Text" xml:space="preserve">
-    <value>生成.h文件</value>
+    <value>生成 .h 文件</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>HijackGen</value>

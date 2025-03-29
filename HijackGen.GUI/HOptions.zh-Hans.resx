@@ -120,9 +120,6 @@
   <data name="btSelect.Text" xml:space="preserve">
     <value>…</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>路径</value>
-  </data>
   <data name="btGen.Text" xml:space="preserve">
     <value>生成</value>
   </data>
@@ -145,9 +142,12 @@
     <value>|</value>
   </data>
   <data name="rbtCustom.Text" xml:space="preserve">
-    <value>自定义dll</value>
+    <value>自定义 dll</value>
   </data>
   <data name="rbtSystem.Text" xml:space="preserve">
-    <value>系统dll</value>
+    <value>系统 dll</value>
+  </data>
+  <data name="lbPath.Text" xml:space="preserve">
+    <value>路径</value>
   </data>
 </root>

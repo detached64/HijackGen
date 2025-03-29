@@ -33,7 +33,7 @@ namespace HijackGen.GUI
             this.pnlPath = new System.Windows.Forms.Panel();
             this.btSelect = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbPath = new System.Windows.Forms.Label();
             this.pnlOptions = new System.Windows.Forms.Panel();
             this.pnlExtraOptions = new System.Windows.Forms.Panel();
             this.chkbxGenDefX64 = new System.Windows.Forms.CheckBox();
@@ -58,7 +58,7 @@ namespace HijackGen.GUI
             // 
             resources.ApplyResources(this.table, "table");
             this.table.Controls.Add(this.pnlPath, 0, 1);
-            this.table.Controls.Add(this.label1, 0, 0);
+            this.table.Controls.Add(this.lbPath, 0, 0);
             this.table.Controls.Add(this.pnlOptions, 0, 2);
             this.table.Name = "table";
             // 
@@ -82,10 +82,10 @@ namespace HijackGen.GUI
             this.txtPath.Name = "txtPath";
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
-            // label1
+            // lbPath
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lbPath, "lbPath");
+            this.lbPath.Name = "lbPath";
             // 
             // pnlOptions
             // 
@@ -200,7 +200,7 @@ namespace HijackGen.GUI
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel table;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbPath;
         private System.Windows.Forms.Panel pnlPath;
         private System.Windows.Forms.Button btSelect;
         private System.Windows.Forms.TextBox txtPath;
