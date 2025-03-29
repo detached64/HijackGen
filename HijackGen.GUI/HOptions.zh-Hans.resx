@@ -138,4 +138,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>选项（.h）</value>
   </data>
+  <data name="lbSeparator.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="lbSeparator2.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="rbtCustom.Text" xml:space="preserve">
+    <value>自定义dll</value>
+  </data>
+  <data name="rbtSystem.Text" xml:space="preserve">
+    <value>系统dll</value>
+  </data>
 </root>

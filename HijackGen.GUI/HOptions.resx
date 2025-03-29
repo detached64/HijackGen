@@ -139,7 +139,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 4</value>
+    <value>561, 5</value>
   </data>
   <data name="btSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
@@ -169,10 +169,10 @@
     <value>Left, Right</value>
   </data>
   <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
+    <value>0, 5</value>
   </data>
   <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>545, 23</value>
+    <value>555, 23</value>
   </data>
   <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -193,10 +193,10 @@
     <value>Fill</value>
   </data>
   <data name="pnlPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
+    <value>3, 40</value>
   </data>
   <data name="pnlPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 30</value>
+    <value>584, 32</value>
   </data>
   <data name="pnlPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -226,7 +226,7 @@
     <value>3, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 36</value>
+    <value>584, 37</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -252,6 +252,345 @@
   <metadata name="pnlOptions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="pnlExtraOptions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="pnlExtraOptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pnlExtraOptions.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <metadata name="chkbxGenDefX64.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="chkbxGenDefX64.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkbxGenDefX64.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="chkbxGenDefX64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkbxGenDefX64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="chkbxGenDefX64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 33</value>
+  </data>
+  <data name="chkbxGenDefX64.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chkbxGenDefX64.Text" xml:space="preserve">
+    <value>Generate .def simultaneously</value>
+  </data>
+  <data name="&gt;&gt;chkbxGenDefX64.Name" xml:space="preserve">
+    <value>chkbxGenDefX64</value>
+  </data>
+  <data name="&gt;&gt;chkbxGenDefX64.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkbxGenDefX64.Parent" xml:space="preserve">
+    <value>pnlExtraOptions</value>
+  </data>
+  <data name="&gt;&gt;chkbxGenDefX64.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlExtraOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pnlExtraOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 0</value>
+  </data>
+  <data name="pnlExtraOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 33</value>
+  </data>
+  <data name="pnlExtraOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;pnlExtraOptions.Name" xml:space="preserve">
+    <value>pnlExtraOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlExtraOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlExtraOptions.Parent" xml:space="preserve">
+    <value>pnlOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlExtraOptions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lbSeparator2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lbSeparator2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lbSeparator2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbSeparator2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 0</value>
+  </data>
+  <data name="lbSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 33</value>
+  </data>
+  <data name="lbSeparator2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lbSeparator2.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="lbSeparator2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator2.Name" xml:space="preserve">
+    <value>lbSeparator2</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator2.Parent" xml:space="preserve">
+    <value>pnlOptions</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="pnlArchitecture.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="pnlArchitecture.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="rbtX64.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="rbtX64.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbtX64.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="rbtX64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbtX64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 0</value>
+  </data>
+  <data name="rbtX64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 33</value>
+  </data>
+  <data name="rbtX64.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="rbtX64.Text" xml:space="preserve">
+    <value>x64</value>
+  </data>
+  <data name="&gt;&gt;rbtX64.Name" xml:space="preserve">
+    <value>rbtX64</value>
+  </data>
+  <data name="&gt;&gt;rbtX64.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbtX64.Parent" xml:space="preserve">
+    <value>pnlArchitecture</value>
+  </data>
+  <data name="&gt;&gt;rbtX64.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="rbtX86.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="rbtX86.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbtX86.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="rbtX86.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbtX86.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rbtX86.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 33</value>
+  </data>
+  <data name="rbtX86.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="rbtX86.Text" xml:space="preserve">
+    <value>x86</value>
+  </data>
+  <data name="&gt;&gt;rbtX86.Name" xml:space="preserve">
+    <value>rbtX86</value>
+  </data>
+  <data name="&gt;&gt;rbtX86.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbtX86.Parent" xml:space="preserve">
+    <value>pnlArchitecture</value>
+  </data>
+  <data name="&gt;&gt;rbtX86.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlArchitecture.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pnlArchitecture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 0</value>
+  </data>
+  <data name="pnlArchitecture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 33</value>
+  </data>
+  <data name="pnlArchitecture.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;pnlArchitecture.Name" xml:space="preserve">
+    <value>pnlArchitecture</value>
+  </data>
+  <data name="&gt;&gt;pnlArchitecture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlArchitecture.Parent" xml:space="preserve">
+    <value>pnlOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlArchitecture.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="lbSeparator.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lbSeparator.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lbSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 0</value>
+  </data>
+  <data name="lbSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 33</value>
+  </data>
+  <data name="lbSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lbSeparator.Text" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="lbSeparator.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator.Name" xml:space="preserve">
+    <value>lbSeparator</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator.Parent" xml:space="preserve">
+    <value>pnlOptions</value>
+  </data>
+  <data name="&gt;&gt;lbSeparator.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="pnlDllType.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="pnlDllType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="rbtSystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="rbtSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbtSystem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="rbtSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="rbtSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 33</value>
+  </data>
+  <data name="rbtSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbtSystem.Text" xml:space="preserve">
+    <value>System dll</value>
+  </data>
+  <data name="&gt;&gt;rbtSystem.Name" xml:space="preserve">
+    <value>rbtSystem</value>
+  </data>
+  <data name="&gt;&gt;rbtSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbtSystem.Parent" xml:space="preserve">
+    <value>pnlDllType</value>
+  </data>
+  <data name="&gt;&gt;rbtSystem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="rbtCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="rbtCustom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbtCustom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="rbtCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rbtCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 0</value>
+  </data>
+  <data name="rbtCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 33</value>
+  </data>
+  <data name="rbtCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbtCustom.Text" xml:space="preserve">
+    <value>Custom dll</value>
+  </data>
+  <data name="&gt;&gt;rbtCustom.Name" xml:space="preserve">
+    <value>rbtCustom</value>
+  </data>
+  <data name="&gt;&gt;rbtCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbtCustom.Parent" xml:space="preserve">
+    <value>pnlDllType</value>
+  </data>
+  <data name="&gt;&gt;rbtCustom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlDllType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pnlDllType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlDllType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 33</value>
+  </data>
+  <data name="pnlDllType.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pnlDllType.Name" xml:space="preserve">
+    <value>pnlDllType</value>
+  </data>
+  <data name="&gt;&gt;pnlDllType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlDllType.Parent" xml:space="preserve">
+    <value>pnlOptions</value>
+  </data>
+  <data name="&gt;&gt;pnlDllType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="btGen.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -262,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="btGen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 4</value>
+    <value>494, 5</value>
   </data>
   <data name="btGen.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -283,124 +622,16 @@
     <value>pnlOptions</value>
   </data>
   <data name="&gt;&gt;btGen.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="chkbxGenDefX64.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="chkbxGenDefX64.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="chkbxGenDefX64.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkbxGenDefX64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkbxGenDefX64.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 6</value>
-  </data>
-  <data name="chkbxGenDefX64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 21</value>
-  </data>
-  <data name="chkbxGenDefX64.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkbxGenDefX64.Text" xml:space="preserve">
-    <value>Generate .def simultaneously</value>
-  </data>
-  <data name="&gt;&gt;chkbxGenDefX64.Name" xml:space="preserve">
-    <value>chkbxGenDefX64</value>
-  </data>
-  <data name="&gt;&gt;chkbxGenDefX64.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkbxGenDefX64.Parent" xml:space="preserve">
-    <value>pnlOptions</value>
-  </data>
-  <data name="&gt;&gt;chkbxGenDefX64.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="rbtX64.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="rbtX64.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbtX64.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="rbtX64.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbtX64.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 0</value>
-  </data>
-  <data name="rbtX64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 31</value>
-  </data>
-  <data name="rbtX64.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="rbtX64.Text" xml:space="preserve">
-    <value>x64</value>
-  </data>
-  <data name="&gt;&gt;rbtX64.Name" xml:space="preserve">
-    <value>rbtX64</value>
-  </data>
-  <data name="&gt;&gt;rbtX64.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbtX64.Parent" xml:space="preserve">
-    <value>pnlOptions</value>
-  </data>
-  <data name="&gt;&gt;rbtX64.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="rbtX86.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="rbtX86.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbtX86.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="rbtX86.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="rbtX86.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="rbtX86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 31</value>
-  </data>
-  <data name="rbtX86.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="rbtX86.Text" xml:space="preserve">
-    <value>x86</value>
-  </data>
-  <data name="&gt;&gt;rbtX86.Name" xml:space="preserve">
-    <value>rbtX86</value>
-  </data>
-  <data name="&gt;&gt;rbtX86.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbtX86.Parent" xml:space="preserve">
-    <value>pnlOptions</value>
-  </data>
-  <data name="&gt;&gt;rbtX86.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="pnlOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="pnlOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 75</value>
+    <value>3, 78</value>
   </data>
   <data name="pnlOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 31</value>
+    <value>584, 33</value>
   </data>
   <data name="pnlOptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -421,13 +652,13 @@
     <value>Fill</value>
   </data>
   <data name="table.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 16</value>
+    <value>27, 15</value>
   </data>
   <data name="table.RowCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="table.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 109</value>
+    <value>590, 114</value>
   </data>
   <data name="table.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -445,7 +676,7 @@
     <value>0</value>
   </data>
   <data name="table.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOptions" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOptions" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33334,Percent,33.33334" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -466,6 +697,6 @@
     <value>HOptions</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.1.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

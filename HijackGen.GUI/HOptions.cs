@@ -15,6 +15,8 @@ namespace HijackGen.GUI
         private void HOptions_Load(object sender, EventArgs e)
         {
             this.txtPath.Text = SavePath;
+            this.rbtSystem.Checked = Settings.IsSystemDll;
+            this.rbtCustom.Checked = !Settings.IsSystemDll;
             this.rbtX86.Checked = !Settings.IsX64;
             this.rbtX64.Checked = Settings.IsX64;
             this.chkbxGenDefX64.Checked = Settings.GenDefX64;
@@ -44,7 +46,7 @@ namespace HijackGen.GUI
         {
             try
             {
-                using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Items, Settings.IsX64, Settings.GenDefX64))
+                using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Items, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
                 {
                     foreach (var content in gen.Generate())
                     {
@@ -71,25 +73,27 @@ namespace HijackGen.GUI
 
         private void rbtX86_CheckedChanged(object sender, EventArgs e)
         {
-            Settings.IsX64 = !this.rbtX86.Checked;
-            if (this.rbtX86.Checked)
-            {
-                this.chkbxGenDefX64.Enabled = false;
-            }
+            this.chkbxGenDefX64.Enabled = Settings.IsX64 = !this.rbtX86.Checked;
         }
 
         private void rbtX64_CheckedChanged(object sender, EventArgs e)
         {
-            Settings.IsX64 = this.rbtX64.Checked;
-            if (this.rbtX64.Checked)
-            {
-                this.chkbxGenDefX64.Enabled = true;
-            }
+            this.chkbxGenDefX64.Enabled = Settings.IsX64 = this.rbtX64.Checked;
         }
 
         private void chkbxGenDefX64_CheckedChanged(object sender, EventArgs e)
         {
             Settings.GenDefX64 = this.chkbxGenDefX64.Checked;
+        }
+
+        private void rbtSystem_CheckedChanged(object sender, EventArgs e)
+        {
+            this.pnlArchitecture.Enabled = this.pnlExtraOptions.Enabled = Settings.IsSystemDll = this.rbtSystem.Checked;
+        }
+
+        private void rbtCustom_CheckedChanged(object sender, EventArgs e)
+        {
+            this.pnlArchitecture.Enabled = this.pnlExtraOptions.Enabled = Settings.IsSystemDll = !this.rbtCustom.Checked;
         }
     }
 }

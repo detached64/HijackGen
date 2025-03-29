@@ -56,20 +56,28 @@ namespace HijackGen
 
     public sealed class HGenerator : Generator
     {
+        private readonly bool IsSystemDll;
         private readonly bool IsX64;
         private readonly bool GenDefX64;
 
-        public HGenerator(string dll, List<DataItem> items, bool isX64, bool genDefX64) : base(dll, items) { IsX64 = isX64; GenDefX64 = genDefX64; }
+        public HGenerator(string dll, List<DataItem> items, bool isSystemDll, bool isX64, bool genDefX64) : base(dll, items) { IsSystemDll = isSystemDll; IsX64 = isX64; GenDefX64 = genDefX64; }
 
         public override Dictionary<FileProperty, string> Generate()
         {
-            if (IsX64)
+            if (IsSystemDll)
             {
-                return GenerateX64();
+                if (IsX64)
+                {
+                    return GenerateX64();
+                }
+                else
+                {
+                    return GenerateX86();
+                }
             }
             else
             {
-                return GenerateX86();
+                return GenerateCustom();
             }
         }
 
@@ -80,7 +88,7 @@ namespace HijackGen
             sb.AppendLine(HeaderTemplates.BaseHeaders).AppendLine();
             foreach (DataItem item in Items)
             {
-                sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, item.Name, item.Ordinal).AppendLine();
+                sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, HeaderTemplates.Redirect, item.Name, item.Ordinal).AppendLine();
             }
             sb.AppendLine();
             // Real function & dll declarations
@@ -160,6 +168,16 @@ namespace HijackGen
                 sb.AppendLine($"{item.Name}=Redirect_{item.Name} @{item.Ordinal}");
             }
             return sb.ToString();
+        }
+
+        private Dictionary<FileProperty, string> GenerateCustom()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (DataItem item in Items)
+            {
+                sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, DllName + ".", item.Name, item.Ordinal).AppendLine();
+            }
+            return new Dictionary<FileProperty, string> { { FileProperty.Header, sb.ToString() } };
         }
     }
 

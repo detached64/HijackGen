@@ -16,7 +16,12 @@ namespace HijackGen.GUI
 
         private void AboutBox_Load(object sender, EventArgs e)
         {
-            this.lbName.Text = Application.ProductName + " " + Application.ProductVersion + " " + (Environment.Is64BitProcess ? "x64" : "x86");
+            bool is_beta = !string.Equals(Application.ProductVersion.Split('.')[3], "0");
+            this.lbName.Text = $"{Application.ProductName} {Application.ProductVersion} {(Environment.Is64BitProcess ? "x64" : "x86")}";
+            if (is_beta)
+            {
+                this.lbName.Text += " Beta";
+            }
             this.lbCopyright.Text = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
         }
 

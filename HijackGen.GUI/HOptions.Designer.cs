@@ -35,13 +35,23 @@ namespace HijackGen.GUI
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlOptions = new System.Windows.Forms.Panel();
-            this.btGen = new System.Windows.Forms.Button();
+            this.pnlExtraOptions = new System.Windows.Forms.Panel();
             this.chkbxGenDefX64 = new System.Windows.Forms.CheckBox();
+            this.lbSeparator2 = new System.Windows.Forms.Label();
+            this.pnlArchitecture = new System.Windows.Forms.Panel();
             this.rbtX64 = new System.Windows.Forms.RadioButton();
             this.rbtX86 = new System.Windows.Forms.RadioButton();
+            this.lbSeparator = new System.Windows.Forms.Label();
+            this.pnlDllType = new System.Windows.Forms.Panel();
+            this.rbtSystem = new System.Windows.Forms.RadioButton();
+            this.rbtCustom = new System.Windows.Forms.RadioButton();
+            this.btGen = new System.Windows.Forms.Button();
             this.table.SuspendLayout();
             this.pnlPath.SuspendLayout();
             this.pnlOptions.SuspendLayout();
+            this.pnlExtraOptions.SuspendLayout();
+            this.pnlArchitecture.SuspendLayout();
+            this.pnlDllType.SuspendLayout();
             this.SuspendLayout();
             // 
             // table
@@ -79,19 +89,20 @@ namespace HijackGen.GUI
             // 
             // pnlOptions
             // 
+            this.pnlOptions.Controls.Add(this.pnlExtraOptions);
+            this.pnlOptions.Controls.Add(this.lbSeparator2);
+            this.pnlOptions.Controls.Add(this.pnlArchitecture);
+            this.pnlOptions.Controls.Add(this.lbSeparator);
+            this.pnlOptions.Controls.Add(this.pnlDllType);
             this.pnlOptions.Controls.Add(this.btGen);
-            this.pnlOptions.Controls.Add(this.chkbxGenDefX64);
-            this.pnlOptions.Controls.Add(this.rbtX64);
-            this.pnlOptions.Controls.Add(this.rbtX86);
             resources.ApplyResources(this.pnlOptions, "pnlOptions");
             this.pnlOptions.Name = "pnlOptions";
             // 
-            // btGen
+            // pnlExtraOptions
             // 
-            resources.ApplyResources(this.btGen, "btGen");
-            this.btGen.Name = "btGen";
-            this.btGen.UseVisualStyleBackColor = true;
-            this.btGen.Click += new System.EventHandler(this.btGen_Click);
+            resources.ApplyResources(this.pnlExtraOptions, "pnlExtraOptions");
+            this.pnlExtraOptions.Controls.Add(this.chkbxGenDefX64);
+            this.pnlExtraOptions.Name = "pnlExtraOptions";
             // 
             // chkbxGenDefX64
             // 
@@ -99,6 +110,18 @@ namespace HijackGen.GUI
             this.chkbxGenDefX64.Name = "chkbxGenDefX64";
             this.chkbxGenDefX64.UseVisualStyleBackColor = true;
             this.chkbxGenDefX64.CheckedChanged += new System.EventHandler(this.chkbxGenDefX64_CheckedChanged);
+            // 
+            // lbSeparator2
+            // 
+            resources.ApplyResources(this.lbSeparator2, "lbSeparator2");
+            this.lbSeparator2.Name = "lbSeparator2";
+            // 
+            // pnlArchitecture
+            // 
+            resources.ApplyResources(this.pnlArchitecture, "pnlArchitecture");
+            this.pnlArchitecture.Controls.Add(this.rbtX64);
+            this.pnlArchitecture.Controls.Add(this.rbtX86);
+            this.pnlArchitecture.Name = "pnlArchitecture";
             // 
             // rbtX64
             // 
@@ -116,6 +139,41 @@ namespace HijackGen.GUI
             this.rbtX86.UseVisualStyleBackColor = true;
             this.rbtX86.CheckedChanged += new System.EventHandler(this.rbtX86_CheckedChanged);
             // 
+            // lbSeparator
+            // 
+            resources.ApplyResources(this.lbSeparator, "lbSeparator");
+            this.lbSeparator.Name = "lbSeparator";
+            // 
+            // pnlDllType
+            // 
+            resources.ApplyResources(this.pnlDllType, "pnlDllType");
+            this.pnlDllType.Controls.Add(this.rbtSystem);
+            this.pnlDllType.Controls.Add(this.rbtCustom);
+            this.pnlDllType.Name = "pnlDllType";
+            // 
+            // rbtSystem
+            // 
+            resources.ApplyResources(this.rbtSystem, "rbtSystem");
+            this.rbtSystem.Name = "rbtSystem";
+            this.rbtSystem.TabStop = true;
+            this.rbtSystem.UseVisualStyleBackColor = true;
+            this.rbtSystem.CheckedChanged += new System.EventHandler(this.rbtSystem_CheckedChanged);
+            // 
+            // rbtCustom
+            // 
+            resources.ApplyResources(this.rbtCustom, "rbtCustom");
+            this.rbtCustom.Name = "rbtCustom";
+            this.rbtCustom.TabStop = true;
+            this.rbtCustom.UseVisualStyleBackColor = true;
+            this.rbtCustom.CheckedChanged += new System.EventHandler(this.rbtCustom_CheckedChanged);
+            // 
+            // btGen
+            // 
+            resources.ApplyResources(this.btGen, "btGen");
+            this.btGen.Name = "btGen";
+            this.btGen.UseVisualStyleBackColor = true;
+            this.btGen.Click += new System.EventHandler(this.btGen_Click);
+            // 
             // HOptions
             // 
             resources.ApplyResources(this, "$this");
@@ -129,6 +187,12 @@ namespace HijackGen.GUI
             this.pnlPath.PerformLayout();
             this.pnlOptions.ResumeLayout(false);
             this.pnlOptions.PerformLayout();
+            this.pnlExtraOptions.ResumeLayout(false);
+            this.pnlExtraOptions.PerformLayout();
+            this.pnlArchitecture.ResumeLayout(false);
+            this.pnlArchitecture.PerformLayout();
+            this.pnlDllType.ResumeLayout(false);
+            this.pnlDllType.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -145,5 +209,12 @@ namespace HijackGen.GUI
         private System.Windows.Forms.RadioButton rbtX64;
         private System.Windows.Forms.RadioButton rbtX86;
         private System.Windows.Forms.Button btGen;
+        private System.Windows.Forms.Panel pnlDllType;
+        private System.Windows.Forms.Panel pnlArchitecture;
+        private System.Windows.Forms.RadioButton rbtCustom;
+        private System.Windows.Forms.RadioButton rbtSystem;
+        private System.Windows.Forms.Label lbSeparator;
+        private System.Windows.Forms.Label lbSeparator2;
+        private System.Windows.Forms.Panel pnlExtraOptions;
     }
 }

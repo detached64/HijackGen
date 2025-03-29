@@ -139,7 +139,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>551, 4</value>
+    <value>561, 5</value>
   </data>
   <data name="btSelect.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 23</value>
@@ -169,10 +169,10 @@
     <value>Left, Right</value>
   </data>
   <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 4</value>
+    <value>0, 5</value>
   </data>
   <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>545, 23</value>
+    <value>555, 23</value>
   </data>
   <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -193,10 +193,10 @@
     <value>Fill</value>
   </data>
   <data name="pnlPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
+    <value>3, 40</value>
   </data>
   <data name="pnlPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 30</value>
+    <value>584, 32</value>
   </data>
   <data name="pnlPath.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -229,7 +229,7 @@
     <value>3, 0</value>
   </data>
   <data name="lbPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 36</value>
+    <value>584, 37</value>
   </data>
   <data name="lbPath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -265,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="btGen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>484, 4</value>
+    <value>494, 5</value>
   </data>
   <data name="btGen.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -292,10 +292,10 @@
     <value>Fill</value>
   </data>
   <data name="pnlOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 75</value>
+    <value>3, 78</value>
   </data>
   <data name="pnlOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 31</value>
+    <value>584, 33</value>
   </data>
   <data name="pnlOptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -316,13 +316,13 @@
     <value>Fill</value>
   </data>
   <data name="table.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 16</value>
+    <value>27, 15</value>
   </data>
   <data name="table.RowCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="table.Size" type="System.Drawing.Size, System.Drawing">
-    <value>580, 109</value>
+    <value>590, 114</value>
   </data>
   <data name="table.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -340,7 +340,7 @@
     <value>0</value>
   </data>
   <data name="table.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbPath" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOptions" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33333,Percent,33.33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbPath" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOptions" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,33.33333,Percent,33.33334,Percent,33.33334" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -367,6 +367,6 @@
     <value>DefOptions</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.1.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -29,8 +29,10 @@ namespace HijackGen.Templates
             @"#include <Windows.h>";
         public static string SystemDllPath =
             $@"{Environment.GetFolderPath(Environment.SpecialFolder.System)}" + @"\{0}.dll";
+        public static string Redirect =
+            @"_Redirect_";
         public static string LinkerComment =
-            @"#pragma comment(linker, ""/EXPORT:{0}=_Redirect_{1},@{2}"")";
+            @"#pragma comment(linker, ""/EXPORT:{0}={1}{2},@{3}"")";
         public static string RealFuncX86 =
             @"PVOID Real_{0} = NULL;";
         public static string RealFuncX64 =

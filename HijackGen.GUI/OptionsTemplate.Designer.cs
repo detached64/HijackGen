@@ -41,7 +41,7 @@ namespace HijackGen.GUI
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OptionsTemplate";
-            this.Padding = new System.Windows.Forms.Padding(32, 16, 32, 16);
+            this.Padding = new System.Windows.Forms.Padding(27, 15, 27, 12);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

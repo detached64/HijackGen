@@ -31,6 +31,15 @@ namespace HijackGen.GUI
 
         [UserScopedSetting]
         [DebuggerNonUserCode]
+        [DefaultSettingValue("true")]
+        public bool IsSystemDllInternal
+        {
+            get => (bool)this[nameof(IsSystemDllInternal)];
+            set => this[nameof(IsSystemDllInternal)] = value;
+        }
+
+        [UserScopedSetting]
+        [DebuggerNonUserCode]
         [DefaultSettingValue("false")]
         public bool IsX64Internal
         {
@@ -78,6 +87,19 @@ namespace HijackGen.GUI
             set
             {
                 Default.SaveDirInternal = value;
+                Default.Save();
+            }
+        }
+
+        public static bool IsSystemDll
+        {
+            get
+            {
+                return Default.IsSystemDllInternal;
+            }
+            set
+            {
+                Default.IsSystemDllInternal = value;
                 Default.Save();
             }
         }
