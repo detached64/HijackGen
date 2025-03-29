@@ -225,6 +225,7 @@ namespace HijackGen.GUI
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.pnl);
