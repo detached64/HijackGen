@@ -61,11 +61,13 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.btSelect, "btSelect");
             this.btSelect.Name = "btSelect";
             this.btSelect.UseVisualStyleBackColor = true;
+            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
             // 
             // txtPath
             // 
             resources.ApplyResources(this.txtPath, "txtPath");
             this.txtPath.Name = "txtPath";
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // lbPath
             // 
@@ -83,6 +85,7 @@ namespace HijackGen.GUI
             resources.ApplyResources(this.btGen, "btGen");
             this.btGen.Name = "btGen";
             this.btGen.UseVisualStyleBackColor = true;
+            this.btGen.Click += new System.EventHandler(this.btGen_Click);
             // 
             // DefOptions
             // 

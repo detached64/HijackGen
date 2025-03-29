@@ -367,6 +367,6 @@
     <value>DefOptions</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.1.2, Culture=neutral, PublicKeyToken=null</value>
+    <value>HijackGen.GUI.OptionsTemplate, HijackGen.GUI, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
