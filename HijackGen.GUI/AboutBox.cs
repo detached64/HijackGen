@@ -7,7 +7,7 @@ namespace HijackGen.GUI
 {
     public partial class AboutBox : Form
     {
-        private string Link = $"https://github.com/{Application.CompanyName}/{Application.ProductName}";
+        private readonly string Link = $"https://github.com/{Application.CompanyName}/{Application.ProductName}";
 
         public AboutBox()
         {

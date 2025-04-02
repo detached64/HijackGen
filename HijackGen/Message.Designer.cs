@@ -61,6 +61,78 @@ namespace HijackGen {
         }
         
         /// <summary>
+        ///   查找类似 Address 的本地化字符串。
+        /// </summary>
+        public static string clmAddress {
+            get {
+                return ResourceManager.GetString("clmAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dll Name 的本地化字符串。
+        /// </summary>
+        public static string clmDllName {
+            get {
+                return ResourceManager.GetString("clmDllName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Forward Name 的本地化字符串。
+        /// </summary>
+        public static string clmForwardName {
+            get {
+                return ResourceManager.GetString("clmForwardName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Has Forward 的本地化字符串。
+        /// </summary>
+        public static string clmHasForward {
+            get {
+                return ResourceManager.GetString("clmHasForward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hint 的本地化字符串。
+        /// </summary>
+        public static string clmHint {
+            get {
+                return ResourceManager.GetString("clmHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IAT Offset 的本地化字符串。
+        /// </summary>
+        public static string clmIATOffset {
+            get {
+                return ResourceManager.GetString("clmIATOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Name 的本地化字符串。
+        /// </summary>
+        public static string clmName {
+            get {
+                return ResourceManager.GetString("clmName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ordinal 的本地化字符串。
+        /// </summary>
+        public static string clmOrdinal {
+            get {
+                return ResourceManager.GetString("clmOrdinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Operation canceled. 的本地化字符串。
         /// </summary>
         public static string msgCanceled {
@@ -75,6 +147,15 @@ namespace HijackGen {
         public static string msgEmpty {
             get {
                 return ResourceManager.GetString("msgEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} exported functions found. 的本地化字符串。
+        /// </summary>
+        public static string msgExportFound {
+            get {
+                return ResourceManager.GetString("msgExportFound", resourceCulture);
             }
         }
         
@@ -97,11 +178,11 @@ namespace HijackGen {
         }
         
         /// <summary>
-        ///   查找类似 {0} exported functions found. 的本地化字符串。
+        ///   查找类似 {0} imported functions found. 的本地化字符串。
         /// </summary>
-        public static string msgFound {
+        public static string msgImportFound {
             get {
-                return ResourceManager.GetString("msgFound", resourceCulture);
+                return ResourceManager.GetString("msgImportFound", resourceCulture);
             }
         }
         
@@ -115,7 +196,7 @@ namespace HijackGen {
         }
         
         /// <summary>
-        ///   查找类似 FIle is not a dll: {0} 的本地化字符串。
+        ///   查找类似 Unknown PE type: {0} 的本地化字符串。
         /// </summary>
         public static string msgNotDll {
             get {

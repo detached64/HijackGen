@@ -120,16 +120,7 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="menuStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -156,18 +147,15 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="MenuAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 22</value>
+  </data>
+  <data name="MenuAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>183, 17</value>
   </metadata>
-  <metadata name="statusStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lbStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 472</value>
   </data>
@@ -192,193 +180,100 @@
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="pnl.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="table.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="LbStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="lbInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
   <data name="table.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <metadata name="dataGrid.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmOrdinal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmOrdinal.HeaderText" xml:space="preserve">
-    <value>Ordinal</value>
-  </data>
-  <data name="clmOrdinal.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <metadata name="clmAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmAddress.HeaderText" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="clmAddress.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <metadata name="clmName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmName.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="clmName.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <metadata name="clmHasForward.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmHasForward.HeaderText" xml:space="preserve">
-    <value>Has Forward</value>
-  </data>
-  <data name="clmHasForward.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <metadata name="clmForwardName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmForwardName.HeaderText" xml:space="preserve">
-    <value>Forward Name</value>
-  </data>
-  <data name="clmForwardName.MinimumWidth" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="dataGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="Data.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="dataGrid.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Data.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 56</value>
   </data>
-  <data name="dataGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="Data.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="dataGrid.RowHeadersWidth" type="System.Int32, mscorlib">
+  <data name="Data.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
-  <data name="dataGrid.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Data.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 323</value>
   </data>
-  <data name="dataGrid.TabIndex" type="System.Int32, mscorlib">
+  <data name="Data.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;dataGrid.Name" xml:space="preserve">
-    <value>dataGrid</value>
+  <data name="&gt;&gt;Data.Name" xml:space="preserve">
+    <value>Data</value>
   </data>
-  <data name="&gt;&gt;dataGrid.Type" xml:space="preserve">
+  <data name="&gt;&gt;Data.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGrid.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Data.Parent" xml:space="preserve">
     <value>table</value>
   </data>
-  <data name="&gt;&gt;dataGrid.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Data.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="lbPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lbPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="LbPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="lbPath.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 0</value>
   </data>
-  <data name="lbPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="LbPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
-  <data name="lbPath.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>680, 27</value>
   </data>
-  <data name="lbPath.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbPath.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lbPath.Text" xml:space="preserve">
-    <value>Dll Path</value>
+  <data name="LbPath.Text" xml:space="preserve">
+    <value>PE Path</value>
   </data>
-  <data name="lbPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LbPath.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;lbPath.Name" xml:space="preserve">
-    <value>lbPath</value>
+  <data name="&gt;&gt;LbPath.Name" xml:space="preserve">
+    <value>LbPath</value>
   </data>
-  <data name="&gt;&gt;lbPath.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbPath.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbPath.Parent" xml:space="preserve">
     <value>table</value>
   </data>
-  <data name="&gt;&gt;lbPath.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="pnlPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btSelect.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;BtnSelect.Name" xml:space="preserve">
+    <value>BtnSelect</value>
   </data>
-  <data name="btSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 0</value>
-  </data>
-  <data name="btSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
-  </data>
-  <data name="btSelect.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btSelect.Text" xml:space="preserve">
-    <value>…</value>
-  </data>
-  <data name="&gt;&gt;btSelect.Name" xml:space="preserve">
-    <value>btSelect</value>
-  </data>
-  <data name="&gt;&gt;btSelect.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnSelect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btSelect.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnSelect.Parent" xml:space="preserve">
     <value>pnlPath</value>
   </data>
-  <data name="&gt;&gt;btSelect.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnSelect.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="txtPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="txtPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
+  <data name="&gt;&gt;TextPath.Name" xml:space="preserve">
+    <value>TextPath</value>
   </data>
-  <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="txtPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 23</value>
-  </data>
-  <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtPath.Name" xml:space="preserve">
-    <value>txtPath</value>
-  </data>
-  <data name="&gt;&gt;txtPath.Type" xml:space="preserve">
+  <data name="&gt;&gt;TextPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtPath.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TextPath.Parent" xml:space="preserve">
     <value>pnlPath</value>
   </data>
-  <data name="&gt;&gt;txtPath.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TextPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="pnlPath.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -408,113 +303,29 @@
   <data name="&gt;&gt;pnlPath.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="pnlOperation.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="txtSearch.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="txtSearch.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+  <data name="&gt;&gt;pnlGen.Name" xml:space="preserve">
+    <value>pnlGen</value>
   </data>
-  <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;pnlGen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 23</value>
-  </data>
-  <data name="txtSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Name" xml:space="preserve">
-    <value>txtSearch</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtSearch.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pnlGen.Parent" xml:space="preserve">
     <value>pnlOperation</value>
   </data>
-  <data name="&gt;&gt;txtSearch.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlGen.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="btGenDef.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btGenDef.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;TextSearch.Name" xml:space="preserve">
+    <value>TextSearch</value>
   </data>
-  <data name="btGenDef.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;TextSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btGenDef.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 0</value>
-  </data>
-  <data name="btGenDef.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btGenDef.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 23</value>
-  </data>
-  <data name="btGenDef.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btGenDef.Text" xml:space="preserve">
-    <value>Generate .def</value>
-  </data>
-  <data name="&gt;&gt;btGenDef.Name" xml:space="preserve">
-    <value>btGenDef</value>
-  </data>
-  <data name="&gt;&gt;btGenDef.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btGenDef.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TextSearch.Parent" xml:space="preserve">
     <value>pnlOperation</value>
   </data>
-  <data name="&gt;&gt;btGenDef.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TextSearch.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <metadata name="btGenH.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btGenH.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btGenH.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="btGenH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btGenH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 0</value>
-  </data>
-  <data name="btGenH.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btGenH.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 23</value>
-  </data>
-  <data name="btGenH.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btGenH.Text" xml:space="preserve">
-    <value>Generate .h</value>
-  </data>
-  <data name="&gt;&gt;btGenH.Name" xml:space="preserve">
-    <value>btGenH</value>
-  </data>
-  <data name="&gt;&gt;btGenH.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btGenH.Parent" xml:space="preserve">
-    <value>pnlOperation</value>
-  </data>
-  <data name="&gt;&gt;btGenH.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="pnlOperation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -574,7 +385,7 @@
     <value>0</value>
   </data>
   <data name="table.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGrid" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbPath" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOperation" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,27,Absolute,27,Percent,100,Absolute,27" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Data" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LbPath" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlPath" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pnlOperation" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,27,Absolute,27,Percent,100,Absolute,27" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="pnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -606,10 +417,211 @@
   <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="BtnSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="BtnSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>657, 0</value>
+  </data>
+  <data name="BtnSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="BtnSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="BtnSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnSelect.Text" xml:space="preserve">
+    <value>…</value>
+  </data>
+  <data name="&gt;&gt;BtnSelect.Name" xml:space="preserve">
+    <value>BtnSelect</value>
+  </data>
+  <data name="&gt;&gt;BtnSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnSelect.Parent" xml:space="preserve">
+    <value>pnlPath</value>
+  </data>
+  <data name="&gt;&gt;BtnSelect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TextPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="TextPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TextPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="TextPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 23</value>
+  </data>
+  <data name="TextPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TextPath.Name" xml:space="preserve">
+    <value>TextPath</value>
+  </data>
+  <data name="&gt;&gt;TextPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextPath.Parent" xml:space="preserve">
+    <value>pnlPath</value>
+  </data>
+  <data name="&gt;&gt;TextPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlGen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Name" xml:space="preserve">
+    <value>BtnGenDef</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Parent" xml:space="preserve">
+    <value>pnlGen</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Name" xml:space="preserve">
+    <value>BtnGenH</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Parent" xml:space="preserve">
+    <value>pnlGen</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlGen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pnlGen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>428, 0</value>
+  </data>
+  <data name="pnlGen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 23</value>
+  </data>
+  <data name="pnlGen.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnlGen.Name" xml:space="preserve">
+    <value>pnlGen</value>
+  </data>
+  <data name="&gt;&gt;pnlGen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlGen.Parent" xml:space="preserve">
+    <value>pnlOperation</value>
+  </data>
+  <data name="&gt;&gt;pnlGen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnGenDef.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BtnGenDef.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="BtnGenDef.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="BtnGenDef.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="BtnGenDef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 23</value>
+  </data>
+  <data name="BtnGenDef.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="BtnGenDef.Text" xml:space="preserve">
+    <value>Generate .def</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Name" xml:space="preserve">
+    <value>BtnGenDef</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.Parent" xml:space="preserve">
+    <value>pnlGen</value>
+  </data>
+  <data name="&gt;&gt;BtnGenDef.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnGenH.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BtnGenH.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="BtnGenH.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnGenH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 0</value>
+  </data>
+  <data name="BtnGenH.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="BtnGenH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="BtnGenH.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnGenH.Text" xml:space="preserve">
+    <value>Generate .h</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Name" xml:space="preserve">
+    <value>BtnGenH</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.Parent" xml:space="preserve">
+    <value>pnlGen</value>
+  </data>
+  <data name="&gt;&gt;BtnGenH.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TextSearch.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="TextSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TextSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="TextSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 23</value>
+  </data>
+  <data name="TextSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TextSearch.Name" xml:space="preserve">
+    <value>TextSearch</value>
+  </data>
+  <data name="&gt;&gt;TextSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TextSearch.Parent" xml:space="preserve">
+    <value>pnlOperation</value>
+  </data>
+  <data name="&gt;&gt;TextSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -627,16 +639,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>HijackGen</value>
   </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
+  <data name="&gt;&gt;MenuAbout.Name" xml:space="preserve">
+    <value>MenuAbout</value>
   </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;MenuAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbStatus.Name" xml:space="preserve">
-    <value>lbStatus</value>
+  <data name="&gt;&gt;LbStatus.Name" xml:space="preserve">
+    <value>LbStatus</value>
   </data>
-  <data name="&gt;&gt;lbStatus.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbInfo.Name" xml:space="preserve">
@@ -644,36 +656,6 @@
   </data>
   <data name="&gt;&gt;lbInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmOrdinal.Name" xml:space="preserve">
-    <value>clmOrdinal</value>
-  </data>
-  <data name="&gt;&gt;clmOrdinal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmAddress.Name" xml:space="preserve">
-    <value>clmAddress</value>
-  </data>
-  <data name="&gt;&gt;clmAddress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmName.Name" xml:space="preserve">
-    <value>clmName</value>
-  </data>
-  <data name="&gt;&gt;clmName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmHasForward.Name" xml:space="preserve">
-    <value>clmHasForward</value>
-  </data>
-  <data name="&gt;&gt;clmHasForward.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmForwardName.Name" xml:space="preserve">
-    <value>clmForwardName</value>
-  </data>
-  <data name="&gt;&gt;clmForwardName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

@@ -1,6 +1,7 @@
 using HijackGen.Templates;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HijackGen
@@ -8,15 +9,15 @@ namespace HijackGen
     public abstract class Generator : IDisposable
     {
         protected string DllName;
-        protected List<DataItem> Items;
+        protected List<DllExportInfo> Infos;
 
-        public Generator(string dllName, List<DataItem> items)
+        protected Generator(string dllName, List<FunctionInfo> infos)
         {
             DllName = dllName;
-            Items = items.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));   // Filter out empty names
+            Infos = infos.FindAll(item => !string.IsNullOrWhiteSpace(item.Name)).OfType<DllExportInfo>().ToList();   // Filter out empty names
         }
 
-        public abstract Dictionary<FileProperty, string> Generate();
+        public abstract Dictionary<FileType, string> Generate();
 
         #region IDisposable
         protected bool disposed;
@@ -24,8 +25,8 @@ namespace HijackGen
         {
             if (!disposed)
             {
-                Items.Clear();
-                Items = null;
+                Infos.Clear();
+                Infos = null;
                 disposed = true;
             }
         }
@@ -40,17 +41,17 @@ namespace HijackGen
 
     public sealed class DefGenerator : Generator
     {
-        public DefGenerator(string dll, List<DataItem> items) : base(dll, items) { }
+        public DefGenerator(string dll, List<FunctionInfo> infos) : base(dll, infos) { }
 
-        public override Dictionary<FileProperty, string> Generate()
+        public override Dictionary<FileType, string> Generate()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("EXPORTS");
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendLine($"{item.Name}={DllName}.{item.Name} @{item.Ordinal}");
             }
-            return new Dictionary<FileProperty, string> { { FileProperty.Def, sb.ToString() } };
+            return new Dictionary<FileType, string> { { FileType.Def, sb.ToString() } };
         }
     }
 
@@ -60,9 +61,9 @@ namespace HijackGen
         private readonly bool IsX64;
         private readonly bool GenDefX64;
 
-        public HGenerator(string dll, List<DataItem> items, bool isSystemDll, bool isX64, bool genDefX64) : base(dll, items) { IsSystemDll = isSystemDll; IsX64 = isX64; GenDefX64 = genDefX64; }
+        public HGenerator(string dll, List<FunctionInfo> infos, bool isSystemDll, bool isX64, bool genDefX64) : base(dll, infos) { IsSystemDll = isSystemDll; IsX64 = isX64; GenDefX64 = genDefX64; }
 
-        public override Dictionary<FileProperty, string> Generate()
+        public override Dictionary<FileType, string> Generate()
         {
             if (IsSystemDll)
             {
@@ -81,18 +82,18 @@ namespace HijackGen
             }
         }
 
-        private Dictionary<FileProperty, string> GenerateX86()
+        private Dictionary<FileType, string> GenerateX86()
         {
             StringBuilder sb = new StringBuilder();
             // Header, includes, and linker comments
             sb.AppendLine(HeaderTemplates.BaseHeaders).AppendLine();
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, HeaderTemplates.Redirect, item.Name, item.Ordinal).AppendLine();
             }
             sb.AppendLine();
             // Real function & dll declarations
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.RealFuncX86, item.Name).AppendLine();
             }
@@ -104,26 +105,26 @@ namespace HijackGen
             sb.AppendLine(FunctionTemplates.Free);
             // Init funcion
             sb.AppendFormat(FunctionTemplates.Init, DllName);
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.Append(HeaderTemplates.Tab).AppendFormat(HeaderTemplates.InitRealFunc, item.Name).AppendLine();
             }
             sb.AppendLine("}").AppendLine();
             // Extern functions
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(FunctionTemplates.ExternX86, item.Name).AppendLine();
             }
-            return new Dictionary<FileProperty, string> { { FileProperty.Header, sb.ToString() } };
+            return new Dictionary<FileType, string> { { FileType.Header, sb.ToString() } };
         }
 
-        private Dictionary<FileProperty, string> GenerateX64()
+        private Dictionary<FileType, string> GenerateX64()
         {
-            Dictionary<FileProperty, string> files = new Dictionary<FileProperty, string>();
-            files[FileProperty.Header] = GenerateHX64();
+            Dictionary<FileType, string> files = new Dictionary<FileType, string>();
+            files[FileType.Header] = GenerateHX64();
             if (GenDefX64)
             {
-                files[FileProperty.Def] = GenerateDefX64();
+                files[FileType.Def] = GenerateDefX64();
             }
             return files;
         }
@@ -134,7 +135,7 @@ namespace HijackGen
             // Header and includes
             sb.AppendLine(HeaderTemplates.BaseHeaders).AppendLine();
             // Real function & dll declarations
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.RealFuncX64, item.Name).AppendLine();
             }
@@ -146,13 +147,13 @@ namespace HijackGen
             sb.AppendLine(FunctionTemplates.Free);
             // Init funcion
             sb.AppendFormat(FunctionTemplates.Init, DllName);
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.Append(HeaderTemplates.Tab).AppendFormat(HeaderTemplates.InitRealFunc, item.Name).AppendLine();
             }
             sb.AppendLine("}").AppendLine();
             // Extern functions
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(FunctionTemplates.ExternX64, item.Name).AppendLine();
             }
@@ -163,25 +164,25 @@ namespace HijackGen
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("LIBRARY").AppendLine("EXPORTS");
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendLine($"{item.Name}=Redirect_{item.Name} @{item.Ordinal}");
             }
             return sb.ToString();
         }
 
-        private Dictionary<FileProperty, string> GenerateCustom()
+        private Dictionary<FileType, string> GenerateCustom()
         {
             StringBuilder sb = new StringBuilder();
-            foreach (DataItem item in Items)
+            foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, DllName + ".", item.Name, item.Ordinal).AppendLine();
             }
-            return new Dictionary<FileProperty, string> { { FileProperty.Header, sb.ToString() } };
+            return new Dictionary<FileType, string> { { FileType.Header, sb.ToString() } };
         }
     }
 
-    public enum FileProperty
+    public enum FileType
     {
         Def,
         Header

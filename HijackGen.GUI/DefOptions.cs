@@ -41,15 +41,15 @@ namespace HijackGen.GUI
         {
             try
             {
-                using (DefGenerator gen = new DefGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Items))
+                using (DefGenerator gen = new DefGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Infos))
                 {
                     foreach (var content in gen.Generate())
                     {
                         switch (content.Key)
                         {
-                            case FileProperty.Header:
+                            case FileType.Header:
                                 throw new InvalidOperationException("Invalid .h file generated.");
-                            case FileProperty.Def:
+                            case FileType.Def:
                                 File.WriteAllText(SavePath, content.Value);
                                 break;
                         }

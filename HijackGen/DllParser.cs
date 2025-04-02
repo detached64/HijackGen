@@ -18,36 +18,58 @@ namespace HijackGen
                 throw new FileNotFoundException(string.Format(Message.msgNotFound, path));
             }
             Path = path;
-            Dll = new PeFile(path);
-            if (!Dll.IsDll)
+            Pe = new PeFile(path);
+            if (Type == PeType.Unknown)
             {
                 throw new ArgumentException(string.Format(Message.msgNotDll, path));
-            }
-            if (Dll.ExportedFunctions == null)
-            {
-                throw new ArgumentException(string.Format(Message.msgNoExport, path));
             }
         }
 
         private readonly string Path;
 
-        private PeFile Dll;
+        private PeFile Pe;
 
-        public string Architecture => Dll.Is64Bit ? "x64" : "x86";
+        public PeArchitecture Architecture => Pe.Is64Bit ? PeArchitecture.x64 : PeArchitecture.x86;
 
-        public List<DataItem> GetExportInfos()
+        public PeType Type => Pe.IsDll ? PeType.Dll : (Pe.IsExe ? PeType.Exe : PeType.Unknown);
+
+        public List<FunctionInfo> GetFuncInfos()
         {
-            List<DataItem> items = new List<DataItem>();
-            foreach (var export in Dll.ExportedFunctions)
+            List<FunctionInfo> items = new List<
+                FunctionInfo>();
+            switch (Type)
             {
-                items.Add(new DataItem
-                {
-                    Ordinal = export.Ordinal,
-                    Address = export.Address,
-                    Name = export.Name,
-                    HasForward = export.HasForward,
-                    ForwardName = export.ForwardName
-                });
+                case PeType.Dll:
+                    if (Pe.ExportedFunctions != null)
+                    {
+                        foreach (var export in Pe.ExportedFunctions)
+                        {
+                            items.Add(new DllExportInfo
+                            {
+                                Ordinal = export.Ordinal,
+                                Address = export.Address,
+                                Name = export.Name,
+                                HasForward = export.HasForward,
+                                ForwardName = export.ForwardName
+                            });
+                        }
+                    }
+                    break;
+                case PeType.Exe:
+                    if (Pe.ExportedFunctions != null)
+                    {
+                        foreach (var import in Pe.ImportedFunctions)
+                        {
+                            items.Add(new ExeImportInfo
+                            {
+                                IATOffset = import.IATOffset,
+                                Name = import.Name,
+                                DllName = import.DLL,
+                                Hint = import.Hint
+                            });
+                        }
+                    }
+                    break;
             }
             return items;
         }
@@ -63,7 +85,7 @@ namespace HijackGen
                 return;
             }
 
-            Dll = null;
+            Pe = null;
             disposed = true;
         }
 
@@ -73,5 +95,18 @@ namespace HijackGen
             GC.SuppressFinalize(this);
         }
         #endregion
+    }
+
+    public enum PeType
+    {
+        Unknown,
+        Dll,
+        Exe,
+    }
+
+    public enum PeArchitecture
+    {
+        x86,
+        x64,
     }
 }

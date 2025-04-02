@@ -107,7 +107,7 @@
     <value>File not found or access denied: {0}</value>
   </data>
   <data name="msgNotDll" xml:space="preserve">
-    <value>FIle is not a dll: {0}</value>
+    <value>Unknown PE type: {0}</value>
   </data>
   <data name="msgNoExport" xml:space="preserve">
     <value>No exported functions found.</value>
@@ -118,7 +118,7 @@
   <data name="msgEmpty" xml:space="preserve">
     <value>Path cannot be empty.</value>
   </data>
-  <data name="msgFound" xml:space="preserve">
+  <data name="msgExportFound" xml:space="preserve">
     <value>{0} exported functions found.</value>
   </data>
   <data name="msgSuccess" xml:space="preserve">
@@ -129,5 +129,32 @@
   </data>
   <data name="msgFailed" xml:space="preserve">
     <value>Failed to save.</value>
+  </data>
+  <data name="clmName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="clmOrdinal" xml:space="preserve">
+    <value>Ordinal</value>
+  </data>
+  <data name="clmAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="clmHasForward" xml:space="preserve">
+    <value>Has Forward</value>
+  </data>
+  <data name="clmForwardName" xml:space="preserve">
+    <value>Forward Name</value>
+  </data>
+  <data name="clmHint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="clmDllName" xml:space="preserve">
+    <value>Dll Name</value>
+  </data>
+  <data name="clmIATOffset" xml:space="preserve">
+    <value>IAT Offset</value>
+  </data>
+  <data name="msgImportFound" xml:space="preserve">
+    <value>{0} imported functions found.</value>
   </data>
 </root>

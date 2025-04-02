@@ -29,65 +29,61 @@ namespace HijackGen.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LbStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnl = new System.Windows.Forms.Panel();
             this.table = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.clmOrdinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHasForward = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmForwardName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbPath = new System.Windows.Forms.Label();
+            this.Data = new System.Windows.Forms.DataGridView();
+            this.LbPath = new System.Windows.Forms.Label();
             this.pnlPath = new System.Windows.Forms.Panel();
-            this.btSelect = new System.Windows.Forms.Button();
-            this.txtPath = new System.Windows.Forms.TextBox();
+            this.BtnSelect = new System.Windows.Forms.Button();
+            this.TextPath = new System.Windows.Forms.TextBox();
             this.pnlOperation = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btGenDef = new System.Windows.Forms.Button();
-            this.btGenH = new System.Windows.Forms.Button();
+            this.pnlGen = new System.Windows.Forms.Panel();
+            this.BtnGenDef = new System.Windows.Forms.Button();
+            this.BtnGenH = new System.Windows.Forms.Button();
+            this.TextSearch = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.pnl.SuspendLayout();
             this.table.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data)).BeginInit();
             this.pnlPath.SuspendLayout();
             this.pnlOperation.SuspendLayout();
+            this.pnlGen.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.MenuAbout});
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
-            // aboutToolStripMenuItem
+            // MenuAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.MenuAbout.Name = "MenuAbout";
+            resources.ApplyResources(this.MenuAbout, "MenuAbout");
+            this.MenuAbout.Click += new System.EventHandler(this.MenuABout_Click);
             // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbStatus,
+            this.LbStatus,
             this.lbInfo});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             // 
-            // lbStatus
+            // LbStatus
             // 
-            this.lbStatus.Name = "lbStatus";
-            resources.ApplyResources(this.lbStatus, "lbStatus");
+            this.LbStatus.Name = "LbStatus";
+            resources.ApplyResources(this.LbStatus, "LbStatus");
             // 
             // lbInfo
             // 
@@ -103,125 +99,89 @@ namespace HijackGen.GUI
             // table
             // 
             resources.ApplyResources(this.table, "table");
-            this.table.Controls.Add(this.dataGrid, 0, 2);
-            this.table.Controls.Add(this.lbPath, 0, 0);
+            this.table.Controls.Add(this.Data, 0, 2);
+            this.table.Controls.Add(this.LbPath, 0, 0);
             this.table.Controls.Add(this.pnlPath, 0, 1);
             this.table.Controls.Add(this.pnlOperation, 0, 3);
             this.table.Name = "table";
             // 
-            // dataGrid
+            // Data
             // 
-            this.dataGrid.AllowUserToAddRows = false;
-            this.dataGrid.AllowUserToDeleteRows = false;
-            this.dataGrid.AllowUserToResizeRows = false;
-            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGrid.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmOrdinal,
-            this.clmAddress,
-            this.clmName,
-            this.clmHasForward,
-            this.clmForwardName});
-            resources.ApplyResources(this.dataGrid, "dataGrid");
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.ReadOnly = true;
-            this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.RowTemplate.Height = 30;
-            this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Data.AllowUserToAddRows = false;
+            this.Data.AllowUserToDeleteRows = false;
+            this.Data.AllowUserToOrderColumns = true;
+            this.Data.AllowUserToResizeRows = false;
+            this.Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Data.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.Data.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.Data, "Data");
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            this.Data.RowHeadersVisible = false;
+            this.Data.RowTemplate.Height = 30;
+            this.Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             // 
-            // clmOrdinal
+            // LbPath
             // 
-            this.clmOrdinal.DataPropertyName = "Ordinal";
-            resources.ApplyResources(this.clmOrdinal, "clmOrdinal");
-            this.clmOrdinal.Name = "clmOrdinal";
-            this.clmOrdinal.ReadOnly = true;
-            // 
-            // clmAddress
-            // 
-            this.clmAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle1.Format = "X";
-            this.clmAddress.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.clmAddress, "clmAddress");
-            this.clmAddress.Name = "clmAddress";
-            this.clmAddress.ReadOnly = true;
-            // 
-            // clmName
-            // 
-            this.clmName.DataPropertyName = "Name";
-            resources.ApplyResources(this.clmName, "clmName");
-            this.clmName.Name = "clmName";
-            this.clmName.ReadOnly = true;
-            // 
-            // clmHasForward
-            // 
-            this.clmHasForward.DataPropertyName = "HasForward";
-            resources.ApplyResources(this.clmHasForward, "clmHasForward");
-            this.clmHasForward.Name = "clmHasForward";
-            this.clmHasForward.ReadOnly = true;
-            // 
-            // clmForwardName
-            // 
-            this.clmForwardName.DataPropertyName = "ForwardName";
-            resources.ApplyResources(this.clmForwardName, "clmForwardName");
-            this.clmForwardName.Name = "clmForwardName";
-            this.clmForwardName.ReadOnly = true;
-            // 
-            // lbPath
-            // 
-            resources.ApplyResources(this.lbPath, "lbPath");
-            this.lbPath.Name = "lbPath";
+            resources.ApplyResources(this.LbPath, "LbPath");
+            this.LbPath.Name = "LbPath";
             // 
             // pnlPath
             // 
-            this.pnlPath.Controls.Add(this.btSelect);
-            this.pnlPath.Controls.Add(this.txtPath);
+            this.pnlPath.Controls.Add(this.BtnSelect);
+            this.pnlPath.Controls.Add(this.TextPath);
             resources.ApplyResources(this.pnlPath, "pnlPath");
             this.pnlPath.Name = "pnlPath";
             // 
-            // btSelect
+            // BtnSelect
             // 
-            resources.ApplyResources(this.btSelect, "btSelect");
-            this.btSelect.Name = "btSelect";
-            this.btSelect.UseVisualStyleBackColor = true;
-            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
+            resources.ApplyResources(this.BtnSelect, "BtnSelect");
+            this.BtnSelect.Name = "BtnSelect";
+            this.BtnSelect.UseVisualStyleBackColor = true;
+            this.BtnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
-            // txtPath
+            // TextPath
             // 
-            resources.ApplyResources(this.txtPath, "txtPath");
-            this.txtPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-            this.txtPath.Name = "txtPath";
-            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
+            resources.ApplyResources(this.TextPath, "TextPath");
+            this.TextPath.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TextPath.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
+            this.TextPath.Name = "TextPath";
+            this.TextPath.TextChanged += new System.EventHandler(this.TextPath_TextChanged);
             // 
             // pnlOperation
             // 
-            this.pnlOperation.Controls.Add(this.txtSearch);
-            this.pnlOperation.Controls.Add(this.btGenDef);
-            this.pnlOperation.Controls.Add(this.btGenH);
+            this.pnlOperation.Controls.Add(this.pnlGen);
+            this.pnlOperation.Controls.Add(this.TextSearch);
             resources.ApplyResources(this.pnlOperation, "pnlOperation");
             this.pnlOperation.Name = "pnlOperation";
             // 
-            // txtSearch
+            // pnlGen
             // 
-            resources.ApplyResources(this.txtSearch, "txtSearch");
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            resources.ApplyResources(this.pnlGen, "pnlGen");
+            this.pnlGen.Controls.Add(this.BtnGenDef);
+            this.pnlGen.Controls.Add(this.BtnGenH);
+            this.pnlGen.Name = "pnlGen";
             // 
-            // btGenDef
+            // BtnGenDef
             // 
-            resources.ApplyResources(this.btGenDef, "btGenDef");
-            this.btGenDef.Name = "btGenDef";
-            this.btGenDef.UseVisualStyleBackColor = true;
-            this.btGenDef.Click += new System.EventHandler(this.btGenDef_Click);
+            resources.ApplyResources(this.BtnGenDef, "BtnGenDef");
+            this.BtnGenDef.Name = "BtnGenDef";
+            this.BtnGenDef.UseVisualStyleBackColor = true;
+            this.BtnGenDef.Click += new System.EventHandler(this.BtnGenDef_Click);
             // 
-            // btGenH
+            // BtnGenH
             // 
-            resources.ApplyResources(this.btGenH, "btGenH");
-            this.btGenH.Name = "btGenH";
-            this.btGenH.UseVisualStyleBackColor = true;
-            this.btGenH.Click += new System.EventHandler(this.btGenH_Click);
+            resources.ApplyResources(this.BtnGenH, "BtnGenH");
+            this.BtnGenH.Name = "BtnGenH";
+            this.BtnGenH.UseVisualStyleBackColor = true;
+            this.BtnGenH.Click += new System.EventHandler(this.BtnGenH_Click);
+            // 
+            // TextSearch
+            // 
+            resources.ApplyResources(this.TextSearch, "TextSearch");
+            this.TextSearch.Name = "TextSearch";
+            this.TextSearch.TextChanged += new System.EventHandler(this.TextSearch_TextChanged);
             // 
             // MainForm
             // 
@@ -242,11 +202,13 @@ namespace HijackGen.GUI
             this.statusStrip.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.table.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data)).EndInit();
             this.pnlPath.ResumeLayout(false);
             this.pnlPath.PerformLayout();
             this.pnlOperation.ResumeLayout(false);
             this.pnlOperation.PerformLayout();
+            this.pnlGen.ResumeLayout(false);
+            this.pnlGen.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,22 +220,18 @@ namespace HijackGen.GUI
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.TableLayoutPanel table;
-        private System.Windows.Forms.Label lbPath;
+        private System.Windows.Forms.Label LbPath;
         private System.Windows.Forms.Panel pnlPath;
-        private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Button btSelect;
-        private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmOrdinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHasForward;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmForwardName;
+        private System.Windows.Forms.TextBox TextPath;
+        private System.Windows.Forms.Button BtnSelect;
+        private System.Windows.Forms.DataGridView Data;
         private System.Windows.Forms.Panel pnlOperation;
-        private System.Windows.Forms.Button btGenDef;
-        private System.Windows.Forms.Button btGenH;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripStatusLabel lbStatus;
+        private System.Windows.Forms.Button BtnGenDef;
+        private System.Windows.Forms.Button BtnGenH;
+        private System.Windows.Forms.ToolStripMenuItem MenuAbout;
+        private System.Windows.Forms.ToolStripStatusLabel LbStatus;
         private System.Windows.Forms.ToolStripStatusLabel lbInfo;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox TextSearch;
+        private System.Windows.Forms.Panel pnlGen;
     }
 }

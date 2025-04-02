@@ -46,16 +46,16 @@ namespace HijackGen.GUI
         {
             try
             {
-                using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Items, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
+                using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Infos, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
                 {
                     foreach (var content in gen.Generate())
                     {
                         switch (content.Key)
                         {
-                            case FileProperty.Header:
+                            case FileType.Header:
                                 File.WriteAllText(SavePath, content.Value);
                                 break;
-                            case FileProperty.Def:
+                            case FileType.Def:
                                 File.WriteAllText(Path.ChangeExtension(SavePath, "def"), content.Value);
                                 break;
                         }
