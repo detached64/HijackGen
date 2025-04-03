@@ -142,6 +142,15 @@ namespace HijackGen {
         }
         
         /// <summary>
+        ///   查找类似 Some exported function names contain invalid characters, which may cause the generated .h file to be invalid. Do you want to continue? 的本地化字符串。
+        /// </summary>
+        public static string msgContainsInvalidChars {
+            get {
+                return ResourceManager.GetString("msgContainsInvalidChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Path cannot be empty. 的本地化字符串。
         /// </summary>
         public static string msgEmpty {
@@ -228,6 +237,15 @@ namespace HijackGen {
         public static string msgSuccess {
             get {
                 return ResourceManager.GetString("msgSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Warning 的本地化字符串。
+        /// </summary>
+        public static string msgWarning {
+            get {
+                return ResourceManager.GetString("msgWarning", resourceCulture);
             }
         }
         

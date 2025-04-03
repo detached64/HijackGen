@@ -48,6 +48,14 @@ namespace HijackGen.GUI
             {
                 using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Infos, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
                 {
+                    if (Settings.IsSystemDll && MainForm.ContainsSpecialChars)
+                    {
+                        if (MessageBox.Show(Message.msgContainsInvalidChars, Message.msgWarning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                        {
+                            Result = OperationResult.Canceled;
+                            return;
+                        }
+                    }
                     foreach (var content in gen.Generate())
                     {
                         switch (content.Key)

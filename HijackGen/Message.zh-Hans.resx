@@ -177,4 +177,10 @@
   <data name="clmHint" xml:space="preserve">
     <value>序号</value>
   </data>
+  <data name="msgContainsInvalidChars" xml:space="preserve">
+    <value>某些导出函数的名称含有非法字符，可能导致生成的 .h 文件无效。是否继续？</value>
+  </data>
+  <data name="msgWarning" xml:space="preserve">
+    <value>警告</value>
+  </data>
 </root>

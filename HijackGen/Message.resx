@@ -157,4 +157,10 @@
   <data name="msgImportFound" xml:space="preserve">
     <value>{0} imported functions found.</value>
   </data>
+  <data name="msgContainsInvalidChars" xml:space="preserve">
+    <value>Some exported function names contain invalid characters, which may cause the generated .h file to be invalid. Do you want to continue?</value>
+  </data>
+  <data name="msgWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
 </root>

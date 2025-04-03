@@ -10,9 +10,12 @@ namespace HijackGen.GUI
     public partial class MainForm : Form
     {
         private DllParser Parser;
-        internal static List<FunctionInfo> Infos;
-        private List<DllExportInfo> DllInfos => Infos.OfType<DllExportInfo>().ToList();
-        private List<ExeImportInfo> ExeInfos => Infos.OfType<ExeImportInfo>().ToList();
+        internal static readonly char[] InvalidChars = new char[] { '?', '@', '$' };
+
+        internal static List<FunctionInfo> Infos = new List<FunctionInfo>();
+        private static List<DllExportInfo> DllInfos => Infos.OfType<DllExportInfo>().ToList();
+        private static List<ExeImportInfo> ExeInfos => Infos.OfType<ExeImportInfo>().ToList();
+        internal static bool ContainsSpecialChars => !DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars) < 0);
 
         public MainForm()
         {
