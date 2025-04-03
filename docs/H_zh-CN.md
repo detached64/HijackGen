@@ -2,9 +2,11 @@
 
 ## 环境
 
-* Visual Studio 2022
+- Visual Studio 2022
 
 ## 劫持系统 dll
+
+注：此方法不适用于导出含 `?`,`@` 等特殊字符的函数。
 
 ### 劫持 32 位 dll
 
@@ -32,7 +34,7 @@
 
 1. 新建一个空 dll 项目。
 2. 重命名要劫持的 dll ，例如：
-   * `C:\Users\user\Desktop\test\my.dll` 重命名为 `my_org.dll`
+   - `C:\Users\user\Desktop\test\my.dll` 重命名为 `my_org.dll`
 3. 下载本项目，选择**重命名后**的 dll，点击 `生成 h 文件` 按钮，选择 `自定义dll`，生成 h 文件到项目目录下。
 4. 在 `dllmain.cpp` 中 `include` 生成的 h 文件。
 5. 编译项目，生成 dll 文件，重命名为 `my.dll`，复制到目标目录下。
