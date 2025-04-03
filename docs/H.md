@@ -2,9 +2,13 @@
 
 ## Environment
 
-* Visual Studio 2022
+- Visual Studio 2022
 
-## Hijack 32-bit dll
+## Hijack system dll
+
+Note: This method does not apply to functions exported with special characters such as `?`, `@`, `$`. Please use other methods.
+
+### Hijack 32-bit dll
 
 1. Create an empty dll project, for example `version`.
 2. Download this project and select the dll to hijack, for example `C:\Windows\SysWOW64\version.dll`.
@@ -13,7 +17,7 @@
 5. Call the `InitHijack` and `FreeHijack` functions to implement the hijacking.
 6. Compile the project, generate the dll file, and copy it to the target directory.
 
-## Hijack 64-bit dll
+### Hijack 64-bit dll
 
 1. Create an empty dll project, for example `version`.
 2. Download this project and select the dll to hijack, for example `C:\Windows\System32\version.dll`.
@@ -30,7 +34,7 @@ This method is also known as `dll proxy`, suitable for hijacking any dll, especi
 
 1. Create an empty dll project.
 2. Rename the dll to be hijacked, for example:
-   * Rename `C:\Users\user\Desktop\test\my.dll` to `my_org.dll`
+   - Rename `C:\Users\user\Desktop\test\my.dll` to `my_org.dll`
 3. Download this project, select the **renamed** dll, click the `Generate .h` button, select `Custom dll`, and generate the h file to the project directory.
 4. Include the generated h file in `dllmain.cpp`.
 5. Compile the project, generate the dll file, rename it to `my.dll`, and copy it to the target directory.
