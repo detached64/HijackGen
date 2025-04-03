@@ -56,7 +56,7 @@ namespace HijackGen
                     }
                     break;
                 case PeType.Exe:
-                    if (Pe.ExportedFunctions != null)
+                    if (Pe.ImportedFunctions != null)
                     {
                         foreach (var import in Pe.ImportedFunctions)
                         {
