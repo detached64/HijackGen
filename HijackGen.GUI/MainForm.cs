@@ -14,6 +14,7 @@ namespace HijackGen.GUI
         private static List<DllExportInfo> DllInfos => Infos.OfType<DllExportInfo>().ToList();
         private static List<ExeImportInfo> ExeInfos => Infos.OfType<ExeImportInfo>().ToList();
         internal static bool ContainsSpecialChars => !DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) < 0);
+        private readonly string CmdArg;
 
         public MainForm()
         {
@@ -30,13 +31,25 @@ namespace HijackGen.GUI
             #endregion
         }
 
+        public MainForm(string[] args) : this()
+        {
+            if (args.Length > 0)
+            {
+                CmdArg = args[0];
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.pnlGen.Enabled = false;
             this.Data.AutoGenerateColumns = false;
             this.LbStatus.Text = Message.msgReady;
             this.lbInfo.Alignment = ToolStripItemAlignment.Right;
-            if (!string.IsNullOrWhiteSpace(Settings.DllPath))
+            if (!string.IsNullOrWhiteSpace(CmdArg) && File.Exists(CmdArg))
+            {
+                this.TextPath.Text = CmdArg;
+            }
+            else if (!string.IsNullOrWhiteSpace(Settings.DllPath))
             {
                 this.TextPath.Text = Settings.DllPath;
             }
