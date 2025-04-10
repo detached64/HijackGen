@@ -7,7 +7,7 @@ namespace HijackGen
 {
     public static class InvalidChars
     {
-        private readonly static string FilePath = "filter.txt";
+        private readonly static string FilePath = "InvalidChars.txt";
         private readonly static char[] DefaultInvalidCharList = new char[] { '?', '@', '$' };
         private static bool UseDefaultThisTime = false;
 
