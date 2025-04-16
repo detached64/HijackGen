@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     public partial class HOptions : OptionsTemplate
     {
@@ -46,7 +46,7 @@ namespace HijackGen.GUI
         {
             try
             {
-                using (HGenerator gen = new HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Infos, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
+                using (HijackGen.Legacy.HGenerator gen = new HijackGen.Legacy.HGenerator(Path.GetFileNameWithoutExtension(Settings.DllPath), MainForm.Infos, Settings.IsSystemDll, Settings.IsX64, Settings.GenDefX64))
                 {
                     if (Settings.IsSystemDll && MainForm.ContainsSpecialChars)
                     {
@@ -60,10 +60,10 @@ namespace HijackGen.GUI
                     {
                         switch (content.Key)
                         {
-                            case FileType.Header:
+                            case HijackGen.Legacy.FileType.Header:
                                 File.WriteAllText(SavePath, content.Value);
                                 break;
-                            case FileType.Def:
+                            case HijackGen.Legacy.FileType.Def:
                                 File.WriteAllText(Path.ChangeExtension(SavePath, "def"), content.Value);
                                 break;
                         }

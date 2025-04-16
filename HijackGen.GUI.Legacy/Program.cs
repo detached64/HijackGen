@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     internal static class Program
     {

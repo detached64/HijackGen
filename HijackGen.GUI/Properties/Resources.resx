@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,7 +60,6 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -69,10 +68,9 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -87,10 +85,9 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -112,87 +109,9 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="msgWorking" xml:space="preserve">
-    <value>执行操作中…</value>
-  </data>
-  <data name="msgReady" xml:space="preserve">
-    <value>就绪</value>
-  </data>
-  <data name="msgNotFound" xml:space="preserve">
-    <value>文件不存在或权限不足：{0}</value>
-  </data>
-  <data name="msgNotDll" xml:space="preserve">
-    <value>未知的PE文件格式：{0}</value>
-  </data>
-  <data name="msgNoExport" xml:space="preserve">
-    <value>未找到任何导出函数。</value>
-  </data>
-  <data name="msgCanceled" xml:space="preserve">
-    <value>操作被取消。</value>
-  </data>
-  <data name="msgEmpty" xml:space="preserve">
-    <value>路径不能为空。</value>
-  </data>
-  <data name="msgExportFound" xml:space="preserve">
-    <value>共找到{0}个导出函数。</value>
-  </data>
-  <data name="msgSuccess" xml:space="preserve">
-    <value>保存成功。</value>
-  </data>
-  <data name="msgFailedWithMsg" xml:space="preserve">
-    <value>保存失败：{0}</value>
-  </data>
-  <data name="msgFailed" xml:space="preserve">
-    <value>保存失败。</value>
-  </data>
-  <data name="clmName" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="clmOrdinal" xml:space="preserve">
-    <value>序号</value>
-  </data>
-  <data name="clmAddress" xml:space="preserve">
-    <value>地址</value>
-  </data>
-  <data name="clmHasForward" xml:space="preserve">
-    <value>是否有转发函数</value>
-  </data>
-  <data name="clmForwardName" xml:space="preserve">
-    <value>转发名称</value>
-  </data>
-  <data name="msgImportFound" xml:space="preserve">
-    <value>共找到{0}个导入函数。</value>
-  </data>
-  <data name="clmDllName" xml:space="preserve">
-    <value>Dll 名称</value>
-  </data>
-  <data name="clmIATOffset" xml:space="preserve">
-    <value>IAT 偏移</value>
-  </data>
-  <data name="clmHint" xml:space="preserve">
-    <value>序号</value>
-  </data>
-  <data name="msgContainsInvalidChars" xml:space="preserve">
-    <value>某些导出函数的名称含有非法字符，可能导致生成的 .h 文件无效。是否继续？</value>
-  </data>
-  <data name="msgWarning" xml:space="preserve">
-    <value>警告</value>
-  </data>
-  <data name="msgPEFilter" xml:space="preserve">
-    <value>Dll/Exe文件</value>
-  </data>
-  <data name="msgHFilter" xml:space="preserve">
-    <value>头文件</value>
-  </data>
-  <data name="msgDefFilter" xml:space="preserve">
-    <value>模块定义文件</value>
-  </data>
-  <data name="msgAllFilesFilter" xml:space="preserve">
-    <value>所有文件</value>
-  </data>
 </root>

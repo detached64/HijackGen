@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     internal class Settings : ApplicationSettingsBase
     {
@@ -32,10 +32,28 @@ namespace HijackGen.GUI
         [UserScopedSetting]
         [DebuggerNonUserCode]
         [DefaultSettingValue("true")]
-        public bool GenerateHeaderInternal
+        public bool IsSystemDllInternal
         {
-            get => (bool)this[nameof(GenerateHeaderInternal)];
-            set => this[nameof(GenerateHeaderInternal)] = value;
+            get => (bool)this[nameof(IsSystemDllInternal)];
+            set => this[nameof(IsSystemDllInternal)] = value;
+        }
+
+        [UserScopedSetting]
+        [DebuggerNonUserCode]
+        [DefaultSettingValue("false")]
+        public bool IsX64Internal
+        {
+            get => (bool)this[nameof(IsX64Internal)];
+            set => this[nameof(IsX64Internal)] = value;
+        }
+
+        [UserScopedSetting]
+        [DebuggerNonUserCode]
+        [DefaultSettingValue("true")]
+        public bool GenDefX64Internal
+        {
+            get => (bool)this[nameof(GenDefX64Internal)];
+            set => this[nameof(GenDefX64Internal)] = value;
         }
 
         public static string DllPath
@@ -73,15 +91,41 @@ namespace HijackGen.GUI
             }
         }
 
-        public static bool GenerateHeader
+        public static bool IsSystemDll
         {
             get
             {
-                return Default.GenerateHeaderInternal;
+                return Default.IsSystemDllInternal;
             }
             set
             {
-                Default.GenerateHeaderInternal = value;
+                Default.IsSystemDllInternal = value;
+                Default.Save();
+            }
+        }
+
+        public static bool IsX64
+        {
+            get
+            {
+                return Default.IsX64Internal;
+            }
+            set
+            {
+                Default.IsX64Internal = value;
+                Default.Save();
+            }
+        }
+
+        public static bool GenDefX64
+        {
+            get
+            {
+                return Default.GenDefX64Internal;
+            }
+            set
+            {
+                Default.GenDefX64Internal = value;
                 Default.Save();
             }
         }

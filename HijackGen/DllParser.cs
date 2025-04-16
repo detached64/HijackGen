@@ -7,6 +7,9 @@ namespace HijackGen
 {
     public sealed class DllParser : IDisposable
     {
+        private readonly string SystemDir32 = "C:\\Windows\\SysWOW64\\";
+        private readonly string SystemDir64 = "C:\\Windows\\System32\\";
+
         public DllParser(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
@@ -17,32 +20,37 @@ namespace HijackGen
             {
                 throw new FileNotFoundException(string.Format(Message.msgNotFound, path));
             }
-            Path = path;
-            Pe = new PeFile(path);
+            PEPath = path;
+            PE = new PeFile(path);
             if (Type == PeType.Unknown)
             {
                 throw new ArgumentException(string.Format(Message.msgNotDll, path));
             }
         }
 
-        private readonly string Path;
+        private readonly string PEPath;
 
-        private PeFile Pe;
+        private PeFile PE;
 
-        public PeArchitecture Architecture => Pe.Is64Bit ? PeArchitecture.x64 : PeArchitecture.x86;
+        public bool IsX64 => PE.Is64Bit;
 
-        public PeType Type => Pe.IsDll ? PeType.Dll : (Pe.IsExe ? PeType.Exe : PeType.Unknown);
+        public bool IsX86 => PE.Is32Bit;
+
+        public bool IsSystemDll => IsSystem();
+
+        public PeArchitecture Architecture => PE.Is64Bit ? PeArchitecture.x64 : PeArchitecture.x86;
+
+        public PeType Type => PE.IsDll ? PeType.Dll : (PE.IsExe ? PeType.Exe : PeType.Unknown);
 
         public List<FunctionInfo> GetFuncInfos()
         {
-            List<FunctionInfo> items = new List<
-                FunctionInfo>();
+            List<FunctionInfo> items = new List<FunctionInfo>();
             switch (Type)
             {
                 case PeType.Dll:
-                    if (Pe.ExportedFunctions != null)
+                    if (PE.ExportedFunctions != null)
                     {
-                        foreach (var export in Pe.ExportedFunctions)
+                        foreach (var export in PE.ExportedFunctions)
                         {
                             items.Add(new DllExportInfo
                             {
@@ -56,9 +64,9 @@ namespace HijackGen
                     }
                     break;
                 case PeType.Exe:
-                    if (Pe.ImportedFunctions != null)
+                    if (PE.ImportedFunctions != null)
                     {
-                        foreach (var import in Pe.ImportedFunctions)
+                        foreach (var import in PE.ImportedFunctions)
                         {
                             items.Add(new ExeImportInfo
                             {
@@ -74,6 +82,12 @@ namespace HijackGen
             return items;
         }
 
+        private bool IsSystem()
+        {
+            return PEPath.StartsWith(SystemDir32, StringComparison.OrdinalIgnoreCase) ||
+                PEPath.StartsWith(SystemDir64, StringComparison.OrdinalIgnoreCase);
+        }
+
         #region IDisposable
 
         private bool disposed = false;
@@ -85,7 +99,7 @@ namespace HijackGen
                 return;
             }
 
-            Pe = null;
+            PE = null;
             disposed = true;
         }
 

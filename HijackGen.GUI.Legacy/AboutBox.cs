@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     public partial class AboutBox : Form
     {

@@ -133,6 +133,15 @@ namespace HijackGen {
         }
         
         /// <summary>
+        ///   查找类似 All Files 的本地化字符串。
+        /// </summary>
+        public static string msgAllFilesFilter {
+            get {
+                return ResourceManager.GetString("msgAllFilesFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Operation canceled. 的本地化字符串。
         /// </summary>
         public static string msgCanceled {
@@ -147,6 +156,15 @@ namespace HijackGen {
         public static string msgContainsInvalidChars {
             get {
                 return ResourceManager.GetString("msgContainsInvalidChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Module Definition File 的本地化字符串。
+        /// </summary>
+        public static string msgDefFilter {
+            get {
+                return ResourceManager.GetString("msgDefFilter", resourceCulture);
             }
         }
         
@@ -187,6 +205,15 @@ namespace HijackGen {
         }
         
         /// <summary>
+        ///   查找类似 Header File 的本地化字符串。
+        /// </summary>
+        public static string msgHFilter {
+            get {
+                return ResourceManager.GetString("msgHFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 {0} imported functions found. 的本地化字符串。
         /// </summary>
         public static string msgImportFound {
@@ -219,6 +246,15 @@ namespace HijackGen {
         public static string msgNotFound {
             get {
                 return ResourceManager.GetString("msgNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DLL/EXE files 的本地化字符串。
+        /// </summary>
+        public static string msgPEFilter {
+            get {
+                return ResourceManager.GetString("msgPEFilter", resourceCulture);
             }
         }
         

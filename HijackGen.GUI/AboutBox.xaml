@@ -1,0 +1,29 @@
+<Window x:Class="HijackGen.GUI.AboutBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:HijackGen.GUI"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="clr-namespace:HijackGen.GUI.Strings"
+        Title="About"
+        Width="250"
+        Height="220"
+        Background="#FFF0F0F0"
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+    <StackPanel Margin="20">
+        <TextBlock x:Name="TxtName" Margin="10" />
+        <TextBlock x:Name="TxtLicense"
+                   Margin="10"
+                   Text="MIT License" />
+        <TextBlock x:Name="TxtCopyright" Margin="10" />
+        <TextBlock x:Name="TxtLink" Margin="10">
+            <Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/detached64/HijackGen">
+                <TextBlock Text="{x:Static s:GUIStrings.TxtDevSite}" />
+            </Hyperlink>
+        </TextBlock>
+    </StackPanel>
+</Window>

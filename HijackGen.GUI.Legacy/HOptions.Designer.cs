@@ -1,4 +1,4 @@
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     partial class HOptions
     {

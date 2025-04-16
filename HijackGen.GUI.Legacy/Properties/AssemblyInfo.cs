@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("HijackGen")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("HijackGen.GUI")]
+[assembly: AssemblyDescription("GUI of HijackGen.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("detached64")]
 [assembly: AssemblyProduct("HijackGen")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("f8751794-4716-480a-9890-0a89a8167f5c")]
+[assembly: Guid("bcaa9dad-67d3-4935-9fa1-7a6303d1f776")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      生成号
 //      修订号
 //
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("1.2.2.0")]
+[assembly: AssemblyFileVersion("1.2.2.0")]

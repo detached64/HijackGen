@@ -5,15 +5,15 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     public partial class MainForm : Form
     {
-        private DllParser Parser;
-        internal static List<FunctionInfo> Infos = new List<FunctionInfo>();
-        private static List<DllExportInfo> DllInfos => Infos.OfType<DllExportInfo>().ToList();
-        private static List<ExeImportInfo> ExeInfos => Infos.OfType<ExeImportInfo>().ToList();
-        internal static bool ContainsSpecialChars => !DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) < 0);
+        private HijackGen.Legacy.DllParser Parser;
+        internal static List<HijackGen.Legacy.FunctionInfo> Infos = new List<HijackGen.Legacy.FunctionInfo>();
+        private static List<HijackGen.Legacy.DllExportInfo> DllInfos => Infos.OfType<HijackGen.Legacy.DllExportInfo>().ToList();
+        private static List<HijackGen.Legacy.ExeImportInfo> ExeInfos => Infos.OfType<HijackGen.Legacy.ExeImportInfo>().ToList();
+        internal static bool ContainsSpecialChars => !DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(HijackGen.Legacy.InvalidChars.InvalidCharList) < 0);
         private readonly string CmdArg;
 
         public MainForm()
@@ -81,7 +81,7 @@ namespace HijackGen.GUI
             {
                 switch (Parser.Type)
                 {
-                    case PeType.Dll:
+                    case HijackGen.Legacy.PeType.Dll:
                         this.Data.DataSource = DllInfos;
                         this.Data.Columns.AddRange(new DataGridViewColumn[]
                         {
@@ -114,7 +114,7 @@ namespace HijackGen.GUI
                         });
                         this.pnlGen.Enabled = true;
                         break;
-                    case PeType.Exe:
+                    case HijackGen.Legacy.PeType.Exe:
                         this.Data.DataSource = ExeInfos;
                         this.Data.Columns.AddRange(new DataGridViewColumn[]
                         {
@@ -153,10 +153,10 @@ namespace HijackGen.GUI
             {
                 switch (Parser.Type)
                 {
-                    case PeType.Dll:
+                    case HijackGen.Legacy.PeType.Dll:
                         this.LbStatus.Text = string.Format(Message.msgExportFound, DllInfos.Count);
                         break;
-                    case PeType.Exe:
+                    case HijackGen.Legacy.PeType.Exe:
                         this.LbStatus.Text = string.Format(Message.msgImportFound, ExeInfos.Count);
                         break;
                 }
@@ -171,7 +171,7 @@ namespace HijackGen.GUI
             }
             else
             {
-                this.lbInfo.Text = Parser.Type == PeType.Unknown ? $"{Parser.Type}" : $"{Parser.Architecture} {Parser.Type}";
+                this.lbInfo.Text = Parser.Type == HijackGen.Legacy.PeType.Unknown ? $"{Parser.Type}" : $"{Parser.Architecture} {Parser.Type}";
             }
         }
 
@@ -186,7 +186,7 @@ namespace HijackGen.GUI
 
             try
             {
-                Parser = new DllParser(this.TextPath.Text);
+                Parser = new HijackGen.Legacy.DllParser(this.TextPath.Text);
                 Infos = Parser.GetFuncInfos();
             }
             catch (Exception ex)
@@ -248,13 +248,13 @@ namespace HijackGen.GUI
             {
                 switch (Parser.Type)
                 {
-                    case PeType.Dll:
+                    case HijackGen.Legacy.PeType.Dll:
                         this.Data.DataSource = DllInfos.FindAll(x => x.Ordinal.ToString().IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                         !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                         x.HasForward.ToString().IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                         x.HasForward && x.ForwardName.IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0);
                         break;
-                    case PeType.Exe:
+                    case HijackGen.Legacy.PeType.Exe:
                         this.Data.DataSource = ExeInfos.FindAll(x => !string.IsNullOrWhiteSpace(x.DllName) && x.DllName.IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0 ||
                         !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOf(TextSearch.Text, StringComparison.OrdinalIgnoreCase) >= 0);
                         break;
@@ -264,10 +264,10 @@ namespace HijackGen.GUI
             {
                 switch (Parser.Type)
                 {
-                    case PeType.Dll:
+                    case HijackGen.Legacy.PeType.Dll:
                         this.Data.DataSource = DllInfos;
                         break;
-                    case PeType.Exe:
+                    case HijackGen.Legacy.PeType.Exe:
                         this.Data.DataSource = ExeInfos;
                         break;
                 }

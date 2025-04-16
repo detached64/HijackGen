@@ -1,7 +1,6 @@
 using HijackGen.Templates;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace HijackGen
@@ -11,10 +10,10 @@ namespace HijackGen
         protected string DllName;
         protected List<DllExportInfo> Infos;
 
-        protected Generator(string dllName, List<FunctionInfo> infos)
+        protected Generator(string dllName, List<DllExportInfo> infos)
         {
             DllName = dllName;
-            Infos = infos.FindAll(item => !string.IsNullOrWhiteSpace(item.Name)).OfType<DllExportInfo>().ToList();   // Filter out empty names
+            Infos = infos.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));   // Filter out empty names
         }
 
         public abstract Dictionary<FileType, string> Generate();
@@ -41,7 +40,7 @@ namespace HijackGen
 
     public sealed class DefGenerator : Generator
     {
-        public DefGenerator(string dll, List<FunctionInfo> infos) : base(dll, infos) { }
+        public DefGenerator(string dll, List<DllExportInfo> infos) : base(dll, infos) { }
 
         public override Dictionary<FileType, string> Generate()
         {
@@ -59,9 +58,8 @@ namespace HijackGen
     {
         private readonly bool IsSystemDll;
         private readonly bool IsX64;
-        private readonly bool GenDefX64;
 
-        public HGenerator(string dll, List<FunctionInfo> infos, bool isSystemDll, bool isX64, bool genDefX64) : base(dll, infos) { IsSystemDll = isSystemDll; IsX64 = isX64; GenDefX64 = genDefX64; }
+        public HGenerator(string dll, List<DllExportInfo> infos, bool isSystemDll, bool isX64) : base(dll, infos) { IsSystemDll = isSystemDll; IsX64 = isX64; }
 
         public override Dictionary<FileType, string> Generate()
         {
@@ -102,7 +100,7 @@ namespace HijackGen
             // GetAddress function
             sb.AppendFormat(FunctionTemplates.GetAddress, DllName).AppendLine();
             // Free function
-            sb.AppendLine(FunctionTemplates.Free);
+            sb.AppendFormat(FunctionTemplates.Free).AppendLine();
             // Init funcion
             sb.AppendFormat(FunctionTemplates.Init, DllName);
             foreach (DllExportInfo item in Infos)
@@ -122,10 +120,7 @@ namespace HijackGen
         {
             Dictionary<FileType, string> files = new Dictionary<FileType, string>();
             files[FileType.Header] = GenerateHX64();
-            if (GenDefX64)
-            {
-                files[FileType.Def] = GenerateDefX64();
-            }
+            files[FileType.Def] = GenerateDefX64();
             return files;
         }
 

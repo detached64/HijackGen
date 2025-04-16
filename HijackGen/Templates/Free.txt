@@ -1,6 +1,6 @@
 VOID WINAPI FreeHijack()
-{
+{{
     if (Real_Module != NULL)
         FreeLibrary(Real_Module);
     return;
-}
+}}

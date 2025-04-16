@@ -163,4 +163,16 @@
   <data name="msgWarning" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="msgPEFilter" xml:space="preserve">
+    <value>DLL/EXE files</value>
+  </data>
+  <data name="msgHFilter" xml:space="preserve">
+    <value>Header File</value>
+  </data>
+  <data name="msgDefFilter" xml:space="preserve">
+    <value>Module Definition File</value>
+  </data>
+  <data name="msgAllFilesFilter" xml:space="preserve">
+    <value>All Files</value>
+  </data>
 </root>

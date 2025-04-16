@@ -1,8 +1,9 @@
+using HijackGen.Legacy;
 using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace HijackGen.GUI
+namespace HijackGen.GUI.Legacy
 {
     public partial class DefOptions : OptionsTemplate
     {
