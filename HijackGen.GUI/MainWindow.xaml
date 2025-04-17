@@ -61,8 +61,8 @@
                 <TextBox x:Name="TbSearch"
                          Grid.Column="0"
                          HorizontalAlignment="Stretch"
-                         TextChanged="TbSearch_TextChanged"
-                         VerticalContentAlignment="Center" />
+                         VerticalContentAlignment="Center"
+                         TextChanged="TbSearch_TextChanged" />
                 <DockPanel x:Name="PnlGenerate"
                            Grid.Column="1"
                            LastChildFill="False">
@@ -90,33 +90,33 @@
                     <x:Array x:Key="ColumnsDll" Type="{x:Type DataGridColumn}">
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding Ordinal}"
-                                            Header="Ordinal" />
+                                            Header="{x:Static s:GUIStrings.ClmOrdinal}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding Address, StringFormat=X}"
-                                            Header="Address" />
+                                            Header="{x:Static s:GUIStrings.ClmAddress}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding Name}"
-                                            Header="Name" />
+                                            Header="{x:Static s:GUIStrings.ClmName}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding HasForward}"
-                                            Header="Has Forward" />
+                                            Header="{x:Static s:GUIStrings.ClmHasForward}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding ForwardName}"
-                                            Header="Forward Name" />
+                                            Header="{x:Static s:GUIStrings.ClmForwardName}" />
                     </x:Array>
                     <x:Array x:Key="ColumnsExe" Type="{x:Type DataGridColumn}">
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding DllName}"
-                                            Header="DLL Name" />
+                                            Header="{x:Static s:GUIStrings.ClmDllName}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding Name}"
-                                            Header="Name" />
+                                            Header="{x:Static s:GUIStrings.ClmName}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding Hint, StringFormat=X}"
-                                            Header="Hint" />
+                                            Header="{x:Static s:GUIStrings.ClmHint}" />
                         <DataGridTextColumn Width="*"
                                             Binding="{Binding IATOffset, StringFormat=X}"
-                                            Header="IAT Offset" />
+                                            Header="{x:Static s:GUIStrings.ClmIATOffset}" />
                     </x:Array>
                 </DataGrid.Resources>
                 <DataGrid.HorizontalGridLinesBrush>

@@ -150,4 +150,28 @@
   <data name="TxtCustomDll" xml:space="preserve">
     <value>Custom Dll</value>
   </data>
+  <data name="ClmName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ClmForwardName" xml:space="preserve">
+    <value>Forward Name</value>
+  </data>
+  <data name="ClmHasForward" xml:space="preserve">
+    <value>Has Forward</value>
+  </data>
+  <data name="ClmOrdinal" xml:space="preserve">
+    <value>Ordinal</value>
+  </data>
+  <data name="ClmAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ClmIATOffset" xml:space="preserve">
+    <value>IAT Offset</value>
+  </data>
+  <data name="ClmDllName" xml:space="preserve">
+    <value>Dll Name</value>
+  </data>
+  <data name="ClmHint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
 </root>

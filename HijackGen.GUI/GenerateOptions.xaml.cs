@@ -12,7 +12,7 @@ namespace HijackGen.GUI
         private readonly DllParser Parser;
         private readonly List<DllExportInfo> DllInfos;
         private string Extension => Settings.GenerateHeader ? ".h" : ".def";
-        private bool ContainsSpecialChars => !DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) < 0);
+        private bool ContainsSpecialChars => DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
 
         public Exception Exception { get; private set; }
         public OperationResult Result { get; private set; }

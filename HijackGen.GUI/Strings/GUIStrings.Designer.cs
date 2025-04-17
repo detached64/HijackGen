@@ -79,6 +79,78 @@ namespace HijackGen.GUI.Strings {
         }
         
         /// <summary>
+        ///   查找类似 Address 的本地化字符串。
+        /// </summary>
+        public static string ClmAddress {
+            get {
+                return ResourceManager.GetString("ClmAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dll Name 的本地化字符串。
+        /// </summary>
+        public static string ClmDllName {
+            get {
+                return ResourceManager.GetString("ClmDllName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Forward Name 的本地化字符串。
+        /// </summary>
+        public static string ClmForwardName {
+            get {
+                return ResourceManager.GetString("ClmForwardName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Has Forward 的本地化字符串。
+        /// </summary>
+        public static string ClmHasForward {
+            get {
+                return ResourceManager.GetString("ClmHasForward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hint 的本地化字符串。
+        /// </summary>
+        public static string ClmHint {
+            get {
+                return ResourceManager.GetString("ClmHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IAT Offset 的本地化字符串。
+        /// </summary>
+        public static string ClmIATOffset {
+            get {
+                return ResourceManager.GetString("ClmIATOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Name 的本地化字符串。
+        /// </summary>
+        public static string ClmName {
+            get {
+                return ResourceManager.GetString("ClmName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ordinal 的本地化字符串。
+        /// </summary>
+        public static string ClmOrdinal {
+            get {
+                return ResourceManager.GetString("ClmOrdinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
         public static string MnAbout {

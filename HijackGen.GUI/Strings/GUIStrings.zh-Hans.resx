@@ -150,4 +150,28 @@
   <data name="TxtCustomDll" xml:space="preserve">
     <value>自定义 Dll</value>
   </data>
+  <data name="ClmName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="ClmForwardName" xml:space="preserve">
+    <value>转发名称</value>
+  </data>
+  <data name="ClmHasForward" xml:space="preserve">
+    <value>是否有转发名称</value>
+  </data>
+  <data name="ClmOrdinal" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="ClmAddress" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="ClmIATOffset" xml:space="preserve">
+    <value>IAT 偏移</value>
+  </data>
+  <data name="ClmDllName" xml:space="preserve">
+    <value>Dll 名称</value>
+  </data>
+  <data name="ClmHint" xml:space="preserve">
+    <value>序号</value>
+  </data>
 </root>
