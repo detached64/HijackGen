@@ -38,9 +38,9 @@ namespace HijackGen.GUI
             {
                 this.TbPath.Text = CmdArg;
             }
-            else if (!string.IsNullOrWhiteSpace(Settings.DllPath))
+            else if (!string.IsNullOrWhiteSpace(Settings.Default.DllPath))
             {
-                this.TbPath.Text = Settings.DllPath;
+                this.TbPath.Text = Settings.Default.DllPath;
             }
         }
 
@@ -87,7 +87,7 @@ namespace HijackGen.GUI
 
         private void TbPath_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Settings.DllPath = this.TbPath.Text;
+            Settings.Default.DllPath = this.TbPath.Text;
             Parser = null;
             Infos = null;
 
@@ -229,6 +229,10 @@ namespace HijackGen.GUI
             }
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Settings.Default.Save();
+        }
     }
 
     public enum OperationResult

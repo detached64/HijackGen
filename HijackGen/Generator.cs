@@ -7,16 +7,38 @@ namespace HijackGen
 {
     public abstract class Generator : IDisposable
     {
-        protected string DllName;
-        protected List<DllExportInfo> Infos;
+        protected static string DllName;
+        protected static List<DllExportInfo> Infos;
+        protected static bool IsSystemDll;
+        protected static bool IsX64;
 
-        protected Generator(string dllName, List<DllExportInfo> infos)
+        protected string HName => $"{DllName}.h";
+        protected string DefName => $"{DllName}.def";
+        protected string CName => $"{DllName}.c";
+        protected string CppName => $"{DllName}.cpp";
+
+        public static Generator Create(string dllName, List<DllExportInfo> infos, bool isSystem, bool isX64, string format)
         {
             DllName = dllName;
-            Infos = infos.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));   // Filter out empty names
+            Infos = infos.FindAll(item => !string.IsNullOrWhiteSpace(item.Name));
+            IsSystemDll = isSystem;
+            IsX64 = isX64;
+            switch (format)
+            {
+                case "h":
+                    return new HGenerator();
+                case "def":
+                    return new DefGenerator();
+                case "c":
+                    return new CGenerator();
+                case "cpp":
+                    return new CppGenerator();
+                default:
+                    throw new NotSupportedException(format);
+            }
         }
 
-        public abstract Dictionary<FileType, string> Generate();
+        public abstract Dictionary<string, string> Generate();
 
         #region IDisposable
         protected bool disposed;
@@ -40,9 +62,7 @@ namespace HijackGen
 
     public sealed class DefGenerator : Generator
     {
-        public DefGenerator(string dll, List<DllExportInfo> infos) : base(dll, infos) { }
-
-        public override Dictionary<FileType, string> Generate()
+        public override Dictionary<string, string> Generate()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("EXPORTS");
@@ -50,18 +70,13 @@ namespace HijackGen
             {
                 sb.AppendLine($"{item.Name}={DllName}.{item.Name} @{item.Ordinal}");
             }
-            return new Dictionary<FileType, string> { { FileType.Def, sb.ToString() } };
+            return new Dictionary<string, string> { { DefName, sb.ToString() } };
         }
     }
 
-    public sealed class HGenerator : Generator
+    public class HGenerator : Generator
     {
-        private readonly bool IsSystemDll;
-        private readonly bool IsX64;
-
-        public HGenerator(string dll, List<DllExportInfo> infos, bool isSystemDll, bool isX64) : base(dll, infos) { IsSystemDll = isSystemDll; IsX64 = isX64; }
-
-        public override Dictionary<FileType, string> Generate()
+        public override Dictionary<string, string> Generate()
         {
             if (IsSystemDll)
             {
@@ -80,7 +95,7 @@ namespace HijackGen
             }
         }
 
-        private Dictionary<FileType, string> GenerateX86()
+        private Dictionary<string, string> GenerateX86()
         {
             StringBuilder sb = new StringBuilder();
             // Header, includes, and linker comments
@@ -113,14 +128,14 @@ namespace HijackGen
             {
                 sb.AppendFormat(FunctionTemplates.ExternX86, item.Name).AppendLine();
             }
-            return new Dictionary<FileType, string> { { FileType.Header, sb.ToString() } };
+            return new Dictionary<string, string> { { HName, sb.ToString() } };
         }
 
-        private Dictionary<FileType, string> GenerateX64()
+        private Dictionary<string, string> GenerateX64()
         {
-            Dictionary<FileType, string> files = new Dictionary<FileType, string>();
-            files[FileType.Header] = GenerateHX64();
-            files[FileType.Def] = GenerateDefX64();
+            Dictionary<string, string> files = new Dictionary<string, string>();
+            files[HName] = GenerateHX64();
+            files[DefName] = GenerateDefX64();
             return files;
         }
 
@@ -139,7 +154,7 @@ namespace HijackGen
             // GetAddress function
             sb.AppendFormat(FunctionTemplates.GetAddress, DllName).AppendLine();
             // Free function
-            sb.AppendLine(FunctionTemplates.Free);
+            sb.AppendFormat(FunctionTemplates.Free).AppendLine();
             // Init funcion
             sb.AppendFormat(FunctionTemplates.Init, DllName);
             foreach (DllExportInfo item in Infos)
@@ -166,20 +181,50 @@ namespace HijackGen
             return sb.ToString();
         }
 
-        private Dictionary<FileType, string> GenerateCustom()
+        private Dictionary<string, string> GenerateCustom()
         {
             StringBuilder sb = new StringBuilder();
             foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, DllName + ".", item.Name, item.Ordinal).AppendLine();
             }
-            return new Dictionary<FileType, string> { { FileType.Header, sb.ToString() } };
+            return new Dictionary<string, string> { { HName, sb.ToString() } };
         }
     }
 
-    public enum FileType
+    public class CppGenerator : HGenerator
     {
-        Def,
-        Header
+        public override Dictionary<string, string> Generate()
+        {
+            Dictionary<string, string> files = base.Generate();
+            if (files.ContainsKey(HName))
+            {
+                files[CppName] = GenerateCpp(files[HName]);
+                files.Remove(HName);
+            }
+            return files;
+        }
+
+        private string GenerateCpp(string h_str)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(h_str);
+            sb.AppendLine(FunctionTemplates.DllMain);
+            return sb.ToString();
+        }
+    }
+
+    public sealed class CGenerator : CppGenerator
+    {
+        public override Dictionary<string, string> Generate()
+        {
+            Dictionary<string, string> files = base.Generate();
+            if (files.ContainsKey(CppName))
+            {
+                files[CName] = files[CppName];
+                files.Remove(CppName);
+            }
+            return files;
+        }
     }
 }

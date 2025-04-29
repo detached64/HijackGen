@@ -14,10 +14,10 @@ namespace HijackGen.GUI
         [UserScopedSetting]
         [DebuggerNonUserCode]
         [DefaultSettingValue("")]
-        public string DllPathInternal
+        public string DllPath
         {
-            get => (string)this[nameof(DllPathInternal)];
-            set => this[nameof(DllPathInternal)] = value;
+            get => (string)this[nameof(DllPath)];
+            set => this[nameof(DllPath)] = value;
         }
 
         [UserScopedSetting]
@@ -29,61 +29,27 @@ namespace HijackGen.GUI
             set => this[nameof(SaveDirInternal)] = value;
         }
 
+        public string SaveDir
+        {
+            get
+            {
+                string dir = SaveDirInternal;
+                if (string.IsNullOrWhiteSpace(dir))
+                {
+                    dir = Path.Combine(Path.GetDirectoryName(DllPath) ?? DefaultDir);
+                }
+                return dir;
+            }
+            set => SaveDirInternal = value;
+        }
+
         [UserScopedSetting]
         [DebuggerNonUserCode]
-        [DefaultSettingValue("true")]
-        public bool GenerateHeaderInternal
+        [DefaultSettingValue("")]
+        public string SelectedButtonName
         {
-            get => (bool)this[nameof(GenerateHeaderInternal)];
-            set => this[nameof(GenerateHeaderInternal)] = value;
-        }
-
-        public static string DllPath
-        {
-            get
-            {
-                return Default.DllPathInternal;
-            }
-            set
-            {
-                Default.DllPathInternal = value;
-                Default.Save();
-            }
-        }
-
-        public static string SaveDir
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(Default.SaveDirInternal))
-                {
-                    Default.SaveDirInternal = Path.GetDirectoryName(DllPath);
-                    Default.Save();
-                    return Path.GetDirectoryName(DllPath);
-                }
-                else
-                {
-                    return Default.SaveDirInternal;
-                }
-            }
-            set
-            {
-                Default.SaveDirInternal = value;
-                Default.Save();
-            }
-        }
-
-        public static bool GenerateHeader
-        {
-            get
-            {
-                return Default.GenerateHeaderInternal;
-            }
-            set
-            {
-                Default.GenerateHeaderInternal = value;
-                Default.Save();
-            }
+            get => (string)this[nameof(SelectedButtonName)];
+            set => this[nameof(SelectedButtonName)] = value;
         }
     }
 }

@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:HijackGen.GUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <local:FormatConverter x:Key="FormatConverter" />
     </Application.Resources>
 </Application>

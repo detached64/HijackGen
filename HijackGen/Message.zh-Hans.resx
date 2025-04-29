@@ -195,4 +195,10 @@
   <data name="msgAllFilesFilter" xml:space="preserve">
     <value>所有文件</value>
   </data>
+  <data name="msgSpecifyFormat" xml:space="preserve">
+    <value>请指定输出格式。</value>
+  </data>
+  <data name="msgSpecifyPath" xml:space="preserve">
+    <value>请指定保存路径</value>
+  </data>
 </root>

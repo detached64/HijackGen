@@ -33,8 +33,8 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PeNet, Version=4.1.2.0, Culture=neutral, PublicKeyToken=6cf2bfba59bcfb3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\PeNet.4.1.2\lib\net48\PeNet.dll</HintPath>
+    <Reference Include="PeNet, Version=5.1.0.0, Culture=neutral, PublicKeyToken=6cf2bfba59bcfb3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\PeNet.5.1.0\lib\net48\PeNet.dll</HintPath>
     </Reference>
     <Reference Include="PeNet.Asn1, Version=2.0.1.0, Culture=neutral, PublicKeyToken=1e2e3568f0050bf5, processorArchitecture=MSIL">
       <HintPath>..\packages\PeNet.Asn1.2.0.1\lib\net48\PeNet.Asn1.dll</HintPath>
@@ -80,9 +80,6 @@
     <Compile Include="Templates\Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Message.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Message.Designer.cs</LastGenOutput>
@@ -108,6 +105,10 @@
     <Content Include="InvalidChars.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Templates\DllMain.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

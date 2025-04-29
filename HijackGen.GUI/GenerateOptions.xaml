@@ -10,6 +10,7 @@
         Height="450"
         MinWidth="300"
         Background="#FFF0F0F0"
+        Closing="Window_Closing"
         Loaded="Window_Loaded"
         ResizeMode="NoResize"
         SizeToContent="Height"
@@ -86,19 +87,41 @@
         <GroupBox Margin="0,5,0,5"
                   DockPanel.Dock="Top"
                   Header="{x:Static s:GUIStrings.TxtOutputFormat}">
-            <UniformGrid Margin="0,5,0,5" Columns="2">
+            <UniformGrid x:Name="GridFormat"
+                         Margin="0,5,0,5"
+                         Columns="2">
                 <RadioButton x:Name="RbH"
+                             Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
-                             Checked="RbH_Checked"
+                             Checked="RbFormat_Checked"
                              Content=".h"
-                             GroupName="GrpFormat" />
+                             GroupName="GrpFormat"
+                             Tag="h" />
                 <RadioButton x:Name="RbDef"
+                             Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
-                             Checked="RbDef_Checked"
+                             Checked="RbFormat_Checked"
                              Content=".def"
-                             GroupName="GrpFormat" />
+                             GroupName="GrpFormat"
+                             Tag="def" />
+                <RadioButton x:Name="RbC"
+                             Margin="0,5,0,5"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Checked="RbFormat_Checked"
+                             Content=".c"
+                             GroupName="GrpFormat"
+                             Tag="c" />
+                <RadioButton x:Name="RbCpp"
+                             Margin="0,5,0,5"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Checked="RbFormat_Checked"
+                             Content=".cpp"
+                             GroupName="GrpFormat"
+                             Tag="cpp" />
             </UniformGrid>
         </GroupBox>
         <TextBlock Margin="0,5,0,5" DockPanel.Dock="Top">

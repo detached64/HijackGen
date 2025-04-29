@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace HijackGen.Templates
 {
-    public class Templates
+    public abstract class Templates
     {
         protected static string GetTemplate(string name)
         {
@@ -52,5 +52,6 @@ namespace HijackGen.Templates
         public static string Init = GetTemplate("Init");
         public static string ExternX86 = GetTemplate("ExternX86");
         public static string ExternX64 = GetTemplate("ExternX64");
+        public static string DllMain = GetTemplate("DllMain");
     }
 }

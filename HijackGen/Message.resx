@@ -175,4 +175,10 @@
   <data name="msgAllFilesFilter" xml:space="preserve">
     <value>All Files</value>
   </data>
+  <data name="msgSpecifyFormat" xml:space="preserve">
+    <value>Please specify output format.</value>
+  </data>
+  <data name="msgSpecifyPath" xml:space="preserve">
+    <value>Please specify save directory</value>
+  </data>
 </root>
