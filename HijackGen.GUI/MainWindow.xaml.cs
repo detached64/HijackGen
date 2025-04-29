@@ -142,6 +142,7 @@ namespace HijackGen.GUI
 
         private void BtGenerate_Click(object sender, RoutedEventArgs e)
         {
+            this.TxtStatus.Text = Message.msgWorking;
             GenerateOptions options = new GenerateOptions(Parser, DllInfos);
             options.Owner = this;
             options.ShowDialog();

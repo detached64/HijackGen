@@ -48,7 +48,7 @@ namespace HijackGen.GUI
         {
             using (System.Windows.Forms.FolderBrowserDialog fbd = new System.Windows.Forms.FolderBrowserDialog())
             {
-                fbd.Description = Message.msgSpecifyDir;
+                fbd.Description = Message.msgSpecifyPath;
                 fbd.ShowNewFolderButton = true;
                 if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {

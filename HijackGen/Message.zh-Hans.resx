@@ -129,9 +129,6 @@
   <data name="msgNotDll" xml:space="preserve">
     <value>未知的PE文件格式：{0}</value>
   </data>
-  <data name="msgNoExport" xml:space="preserve">
-    <value>未找到任何导出函数。</value>
-  </data>
   <data name="msgCanceled" xml:space="preserve">
     <value>操作被取消。</value>
   </data>
@@ -150,32 +147,8 @@
   <data name="msgFailed" xml:space="preserve">
     <value>保存失败。</value>
   </data>
-  <data name="clmName" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="clmOrdinal" xml:space="preserve">
-    <value>序号</value>
-  </data>
-  <data name="clmAddress" xml:space="preserve">
-    <value>地址</value>
-  </data>
-  <data name="clmHasForward" xml:space="preserve">
-    <value>是否有转发函数</value>
-  </data>
-  <data name="clmForwardName" xml:space="preserve">
-    <value>转发名称</value>
-  </data>
   <data name="msgImportFound" xml:space="preserve">
     <value>共找到{0}个导入函数。</value>
-  </data>
-  <data name="clmDllName" xml:space="preserve">
-    <value>Dll 名称</value>
-  </data>
-  <data name="clmIATOffset" xml:space="preserve">
-    <value>IAT 偏移</value>
-  </data>
-  <data name="clmHint" xml:space="preserve">
-    <value>序号</value>
   </data>
   <data name="msgContainsInvalidChars" xml:space="preserve">
     <value>某些导出函数的名称含有非法字符，可能导致生成的 .h 文件无效。是否继续？</value>
@@ -185,12 +158,6 @@
   </data>
   <data name="msgPEFilter" xml:space="preserve">
     <value>Dll/Exe文件</value>
-  </data>
-  <data name="msgHFilter" xml:space="preserve">
-    <value>头文件</value>
-  </data>
-  <data name="msgDefFilter" xml:space="preserve">
-    <value>模块定义文件</value>
   </data>
   <data name="msgAllFilesFilter" xml:space="preserve">
     <value>所有文件</value>

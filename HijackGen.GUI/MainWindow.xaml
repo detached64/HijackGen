@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:HijackGen.GUI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:s="clr-namespace:HijackGen.GUI.Strings"
-        Title="MainWindow"
+        Title="HijackGen"
         Width="900"
         Height="600"
         AllowDrop="True"
