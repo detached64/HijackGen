@@ -1,4 +1,5 @@
 using PeNet;
+using PeNet.Header.Pe;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -50,7 +51,7 @@ namespace HijackGen
                 case PeType.Dll:
                     if (PE.ExportedFunctions != null)
                     {
-                        foreach (var export in PE.ExportedFunctions)
+                        foreach (ExportFunction export in PE.ExportedFunctions)
                         {
                             items.Add(new DllExportInfo
                             {
@@ -66,7 +67,7 @@ namespace HijackGen
                 case PeType.Exe:
                     if (PE.ImportedFunctions != null)
                     {
-                        foreach (var import in PE.ImportedFunctions)
+                        foreach (ImportFunction import in PE.ImportedFunctions)
                         {
                             items.Add(new ExeImportInfo
                             {

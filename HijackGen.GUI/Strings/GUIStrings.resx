@@ -174,4 +174,10 @@
   <data name="ClmHint" xml:space="preserve">
     <value>Hint</value>
   </data>
+  <data name="MnTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="MnCheckKnownDlls" xml:space="preserve">
+    <value>Check KnownDlls</value>
+  </data>
 </root>

@@ -18,6 +18,9 @@
         mc:Ignorable="d">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{x:Static s:GUIStrings.MnTools}">
+                <MenuItem Click="CheckKnownDlls_Click" Header="{x:Static s:GUIStrings.MnCheckKnownDlls}" />
+            </MenuItem>
             <MenuItem Click="About_Click" Header="{x:Static s:GUIStrings.MnAbout}" />
         </Menu>
         <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">

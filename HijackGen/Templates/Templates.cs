@@ -8,13 +8,13 @@ namespace HijackGen.Templates
     {
         protected static string GetTemplate(string name)
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"HijackGen.Templates.{name}.txt"))
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"HijackGen.Templates.{name}.txt"))
             {
                 if (stream == null)
                 {
                     throw new InvalidOperationException($"Template {name} not found.");
                 }
-                using (var reader = new StreamReader(stream))
+                using (StreamReader reader = new StreamReader(stream))
                 {
                     return reader.ReadToEnd();
                 }

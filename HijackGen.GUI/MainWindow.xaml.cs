@@ -1,3 +1,4 @@
+using HijackGen.Tools;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -232,6 +233,12 @@ namespace HijackGen.GUI
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Settings.Default.Save();
+        }
+
+        private void CheckKnownDlls_Click(object sender, RoutedEventArgs e)
+        {
+            KnownDllsChecker checker = new KnownDllsChecker();
+            checker.Check();
         }
     }
 

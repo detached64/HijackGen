@@ -160,6 +160,24 @@ namespace HijackGen.GUI.Strings {
         }
         
         /// <summary>
+        ///   查找类似 Check KnownDlls 的本地化字符串。
+        /// </summary>
+        public static string MnCheckKnownDlls {
+            get {
+                return ResourceManager.GetString("MnCheckKnownDlls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tools 的本地化字符串。
+        /// </summary>
+        public static string MnTools {
+            get {
+                return ResourceManager.GetString("MnTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Architecture 的本地化字符串。
         /// </summary>
         public static string TxtArchitecture {

@@ -174,4 +174,10 @@
   <data name="ClmHint" xml:space="preserve">
     <value>序号</value>
   </data>
+  <data name="MnTools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="MnCheckKnownDlls" xml:space="preserve">
+    <value>查看 KnownDlls</value>
+  </data>
 </root>
