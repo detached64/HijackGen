@@ -77,7 +77,7 @@ namespace HijackGen.GUI
                         return;
                     }
                 }
-                foreach (var content in gen.Generate())
+                foreach (KeyValuePair<string, string> content in gen.Generate())
                 {
                     string path = Path.Combine(Settings.Default.SaveDir, content.Key);
                     Directory.CreateDirectory(Path.GetDirectoryName(path));

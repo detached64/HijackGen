@@ -2,6 +2,7 @@ using HijackGen.Tools;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -170,7 +171,7 @@ namespace HijackGen.GUI
                         this.PnlGenerate.IsEnabled = false;
                         return;
                 }
-                foreach (var column in columns)
+                foreach (DataGridColumn column in columns)
                 {
                     this.Data.Columns.Add(column);
                 }
@@ -231,7 +232,7 @@ namespace HijackGen.GUI
             }
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
             Settings.Default.Save();
         }
