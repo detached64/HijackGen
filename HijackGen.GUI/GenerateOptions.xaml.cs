@@ -79,7 +79,9 @@ namespace HijackGen.GUI
                 }
                 foreach (var content in gen.Generate())
                 {
-                    File.WriteAllText(Path.Combine(Settings.Default.SaveDir, content.Key), content.Value);
+                    string path = Path.Combine(Settings.Default.SaveDir, content.Key);
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    File.WriteAllText(path, content.Value);
                 }
                 Result = OperationResult.Success;
             }

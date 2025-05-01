@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace HijackGen.Tools
 {
-    public class KnownDllsChecker
+    public sealed class KnownDllsChecker
     {
         private const string LastKeyDir = @"Software\Microsoft\Windows\CurrentVersion\Applets\Regedit";
 

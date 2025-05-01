@@ -87,9 +87,16 @@
         <GroupBox Margin="0,5,0,5"
                   DockPanel.Dock="Top"
                   Header="{x:Static s:GUIStrings.TxtOutputFormat}">
-            <UniformGrid x:Name="GridFormat"
-                         Margin="0,5,0,5"
-                         Columns="2">
+            <Grid x:Name="GridFormat" Margin="0,5,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <RadioButton x:Name="RbH"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
@@ -99,6 +106,7 @@
                              GroupName="GrpFormat"
                              Tag="h" />
                 <RadioButton x:Name="RbDef"
+                             Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
@@ -107,6 +115,7 @@
                              GroupName="GrpFormat"
                              Tag="def" />
                 <RadioButton x:Name="RbC"
+                             Grid.Row="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
@@ -115,6 +124,8 @@
                              GroupName="GrpFormat"
                              Tag="c" />
                 <RadioButton x:Name="RbCpp"
+                             Grid.Row="1"
+                             Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
@@ -122,7 +133,17 @@
                              Content=".cpp"
                              GroupName="GrpFormat"
                              Tag="cpp" />
-            </UniformGrid>
+                <RadioButton x:Name="RbSln"
+                             Grid.Row="2"
+                             Grid.ColumnSpan="2"
+                             Margin="0,5,0,5"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Checked="RbFormat_Checked"
+                             Content="{x:Static s:GUIStrings.BtVSSolution}"
+                             GroupName="GrpFormat"
+                             Tag="sln" />
+            </Grid>
         </GroupBox>
         <TextBlock Margin="0,5,0,5" DockPanel.Dock="Top">
             <TextBlock.Style>

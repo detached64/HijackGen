@@ -180,4 +180,7 @@
   <data name="MnCheckKnownDlls" xml:space="preserve">
     <value>查看 KnownDlls</value>
   </data>
+  <data name="BtVSSolution" xml:space="preserve">
+    <value>VS 解决方案</value>
+  </data>
 </root>

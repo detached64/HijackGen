@@ -180,4 +180,7 @@
   <data name="MnCheckKnownDlls" xml:space="preserve">
     <value>Check KnownDlls</value>
   </data>
+  <data name="BtVSSolution" xml:space="preserve">
+    <value>VS Solution</value>
+  </data>
 </root>

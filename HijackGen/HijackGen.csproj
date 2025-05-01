@@ -39,6 +39,7 @@
     <Reference Include="PeNet.Asn1, Version=2.0.1.0, Culture=neutral, PublicKeyToken=1e2e3568f0050bf5, processorArchitecture=MSIL">
       <HintPath>..\packages\PeNet.Asn1.2.0.1\lib\net48\PeNet.Asn1.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -77,6 +78,7 @@
       <DependentUpon>Message.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Templates\Sln.txt" />
     <Compile Include="Templates\Templates.cs" />
     <Compile Include="Tools\KnownDllsChecker.cs" />
   </ItemGroup>
@@ -107,6 +109,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Templates\DllMain.txt" />
+    <EmbeddedResource Include="Templates\ProjWithDef.txt" />
+    <EmbeddedResource Include="Templates\Proj.txt" />
+    <EmbeddedResource Include="Templates\DllMainWithHijack.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,6 +1,7 @@
 using HijackGen.Templates;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HijackGen
@@ -14,8 +15,10 @@ namespace HijackGen
 
         protected string HName => $"{DllName}.h";
         protected string DefName => $"{DllName}.def";
-        protected string CName => $"{DllName}.c";
-        protected string CppName => $"{DllName}.cpp";
+        protected string CName => "dllmain.c";
+        protected string CppName => "dllmain.cpp";
+        protected string SlnName => "Hijack.sln";
+        protected string ProjectName => $"{DllName}.vcxproj";
 
         public static Generator Create(string dllName, List<DllExportInfo> infos, bool isSystem, bool isX64, string format)
         {
@@ -33,6 +36,8 @@ namespace HijackGen
                     return new CGenerator();
                 case "cpp":
                     return new CppGenerator();
+                case "sln":
+                    return new SlnGenerator();
                 default:
                     throw new NotSupportedException(format);
             }
@@ -184,6 +189,7 @@ namespace HijackGen
         private Dictionary<string, string> GenerateCustom()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine(HeaderTemplates.BaseHeaders);
             foreach (DllExportInfo item in Infos)
             {
                 sb.AppendFormat(HeaderTemplates.LinkerComment, item.Name, DllName + ".", item.Name, item.Ordinal).AppendLine();
@@ -209,7 +215,7 @@ namespace HijackGen
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(h_str);
-            sb.AppendLine(FunctionTemplates.DllMain);
+            sb.AppendLine(IsSystemDll ? FunctionTemplates.DllMainWithHijack : FunctionTemplates.DllMain);
             return sb.ToString();
         }
     }
@@ -225,6 +231,44 @@ namespace HijackGen
                 files.Remove(CppName);
             }
             return files;
+        }
+    }
+
+    public sealed class SlnGenerator : CppGenerator
+    {
+        private const string CppProjectGUID = "{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}";
+        private string ProjectGUID;
+        private string SolutionGUID;
+
+        public override Dictionary<string, string> Generate()
+        {
+            Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"Hijack\\{DllName}\\{kvp.Key}", kvp => kvp.Value);
+            files[$"Hijack\\{SlnName}"] = GenerateSln();
+            files[$"Hijack\\{DllName}\\{ProjectName}"] = GenerateProj();
+            return files;
+        }
+
+        private string GenerateSln()
+        {
+            StringBuilder sb = new StringBuilder();
+            ProjectGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
+            SolutionGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
+            sb.AppendFormat(FileTemplates.Sln, CppProjectGUID, DllName, ProjectGUID, SolutionGUID);
+            return sb.ToString();
+        }
+
+        private string GenerateProj()
+        {
+            StringBuilder sb = new StringBuilder();
+            if (IsX64 && IsSystemDll)
+            {
+                sb.AppendFormat(FileTemplates.ProjWithDef, ProjectGUID, DllName, DefName);
+            }
+            else
+            {
+                sb.AppendFormat(FileTemplates.Proj, ProjectGUID, DllName);
+            }
+            return sb.ToString();
         }
     }
 }

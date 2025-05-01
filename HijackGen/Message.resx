@@ -148,4 +148,7 @@
   <data name="msgSpecifyPath" xml:space="preserve">
     <value>Please specify save directory</value>
   </data>
+  <data name="ToolKnownDlls" xml:space="preserve">
+    <value>Check KnownDlls</value>
+  </data>
 </root>

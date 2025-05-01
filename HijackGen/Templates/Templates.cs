@@ -52,6 +52,14 @@ namespace HijackGen.Templates
         public static string Init = GetTemplate("Init");
         public static string ExternX86 = GetTemplate("ExternX86");
         public static string ExternX64 = GetTemplate("ExternX64");
+        public static string DllMainWithHijack = GetTemplate("DllMainWithHijack");
         public static string DllMain = GetTemplate("DllMain");
+    }
+
+    public sealed class FileTemplates : Templates
+    {
+        public static string Sln = GetTemplate("Sln");
+        public static string Proj = GetTemplate("Proj");
+        public static string ProjWithDef = GetTemplate("ProjWithDef");
     }
 }

@@ -212,5 +212,14 @@ namespace HijackGen {
                 return ResourceManager.GetString("msgWorking", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 Check KnownDlls 的本地化字符串。
+        /// </summary>
+        public static string ToolKnownDlls {
+            get {
+                return ResourceManager.GetString("ToolKnownDlls", resourceCulture);
+            }
+        }
     }
 }

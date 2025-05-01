@@ -168,4 +168,7 @@
   <data name="msgSpecifyPath" xml:space="preserve">
     <value>请指定保存路径</value>
   </data>
+  <data name="ToolKnownDlls" xml:space="preserve">
+    <value>查看 KnownDlls</value>
+  </data>
 </root>

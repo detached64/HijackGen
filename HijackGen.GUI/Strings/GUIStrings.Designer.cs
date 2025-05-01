@@ -79,6 +79,15 @@ namespace HijackGen.GUI.Strings {
         }
         
         /// <summary>
+        ///   查找类似 VS Solution 的本地化字符串。
+        /// </summary>
+        public static string BtVSSolution {
+            get {
+                return ResourceManager.GetString("BtVSSolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Address 的本地化字符串。
         /// </summary>
         public static string ClmAddress {
