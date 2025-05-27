@@ -234,7 +234,7 @@ namespace HijackGen
         }
     }
 
-    public sealed class SlnGenerator : CppGenerator
+    public sealed class SlnGenerator : HGenerator
     {
         private const string CppProjectGUID = "{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}";
         private string ProjectGUID;
@@ -245,6 +245,7 @@ namespace HijackGen
             Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"Hijack\\{DllName}\\{kvp.Key}", kvp => kvp.Value);
             files[$"Hijack\\{SlnName}"] = GenerateSln();
             files[$"Hijack\\{DllName}\\{ProjectName}"] = GenerateProj();
+            files[$"Hijack\\{DllName}\\{CppName}"] = GenerateCpp();
             return files;
         }
 
@@ -268,6 +269,15 @@ namespace HijackGen
             {
                 sb.AppendFormat(FileTemplates.Proj, ProjectGUID, DllName);
             }
+            return sb.ToString();
+        }
+
+        private string GenerateCpp()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(HeaderTemplates.BaseHeaders);
+            sb.AppendFormat(HeaderTemplates.CustomHeaders, DllName).AppendLine().AppendLine();
+            sb.AppendLine(IsSystemDll ? FunctionTemplates.DllMainWithHijack : FunctionTemplates.DllMain);
             return sb.ToString();
         }
     }

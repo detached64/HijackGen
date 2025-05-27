@@ -43,6 +43,8 @@ namespace HijackGen.Templates
             @"Real_Module = LoadLibrary(""{0}"");";
         public static string InitRealFunc =
             @"Real_{0} = GetAddress(""{0}"");";
+        public static string CustomHeaders =
+            @"#include ""{0}.h""";
     }
 
     public sealed class FunctionTemplates : Templates
