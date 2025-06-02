@@ -104,7 +104,7 @@ namespace HijackGen.ViewModels
 
         private void AddPluginsToMenu(IEnumerable<Plugin> plugins, PluginType type)
         {
-            foreach (var plugin in plugins)
+            foreach (Plugin plugin in plugins)
             {
                 MenuItems.Add(new MenuItemViewModel
                 {
