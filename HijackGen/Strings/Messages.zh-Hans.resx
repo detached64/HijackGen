@@ -126,9 +126,6 @@
   <data name="msgNotDll" xml:space="preserve">
     <value>非法的 Dll 文件：{0}</value>
   </data>
-  <data name="msgEmpty" xml:space="preserve">
-    <value>路径不能为空。</value>
-  </data>
   <data name="msgExportFound" xml:space="preserve">
     <value>共找到{0}个导出函数。</value>
   </data>
@@ -161,5 +158,8 @@
   </data>
   <data name="msgPluginError" xml:space="preserve">
     <value>插件运行失败：{0}</value>
+  </data>
+  <data name="msgPleaseInputPath" xml:space="preserve">
+    <value>请输入 Dll 文件路径。</value>
   </data>
 </root>

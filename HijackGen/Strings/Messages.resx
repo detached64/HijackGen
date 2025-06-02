@@ -126,9 +126,6 @@
   <data name="msgNotDll" xml:space="preserve">
     <value>Invalid dll: {0}</value>
   </data>
-  <data name="msgEmpty" xml:space="preserve">
-    <value>Path cannot be empty.</value>
-  </data>
   <data name="msgExportFound" xml:space="preserve">
     <value>{0} exported functions found.</value>
   </data>
@@ -161,5 +158,8 @@
   </data>
   <data name="msgPluginError" xml:space="preserve">
     <value>Plugin execution failed: {0}</value>
+  </data>
+  <data name="msgPleaseInputPath" xml:space="preserve">
+    <value>Please input dll path.</value>
   </data>
 </root>

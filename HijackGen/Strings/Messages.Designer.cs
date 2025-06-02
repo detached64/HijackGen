@@ -97,15 +97,6 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 Path cannot be empty. 的本地化字符串。
-        /// </summary>
-        public static string msgEmpty {
-            get {
-                return ResourceManager.GetString("msgEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 {0} exported functions found. 的本地化字符串。
         /// </summary>
         public static string msgExportFound {
@@ -156,6 +147,15 @@ namespace HijackGen.Strings {
         public static string msgNotFound {
             get {
                 return ResourceManager.GetString("msgNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please input dll path. 的本地化字符串。
+        /// </summary>
+        public static string msgPleaseInputPath {
+            get {
+                return ResourceManager.GetString("msgPleaseInputPath", resourceCulture);
             }
         }
         

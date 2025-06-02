@@ -19,7 +19,7 @@ namespace HijackGen.Models
         {
             if (string.IsNullOrWhiteSpace(path))
             {
-                throw new ArgumentException(Messages.msgEmpty);
+                throw new ArgumentException(Messages.msgPleaseInputPath);
             }
             if (!File.Exists(path))
             {
@@ -94,7 +94,7 @@ namespace HijackGen.Models
         {
             if (string.IsNullOrWhiteSpace(path))
             {
-                throw new ArgumentException(Messages.msgEmpty);
+                throw new ArgumentException(Messages.msgPleaseInputPath);
             }
             if (!File.Exists(path))
             {
