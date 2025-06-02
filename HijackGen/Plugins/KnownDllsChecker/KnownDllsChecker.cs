@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace HijackGen.Plugins.KnownDllsChecker
 {
-    public sealed class KnownDllsChecker : Plugin
+    internal sealed class KnownDllsChecker : Plugin
     {
         public override string Name => GUIStrings.PluginNameKnownDllsChecker;
         public override string Description => GUIStrings.PluginDescKnownDllsChecker;
