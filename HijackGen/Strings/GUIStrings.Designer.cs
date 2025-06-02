@@ -178,7 +178,7 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 Demonstrate the import table of a PE file. 的本地化字符串。
+        ///   查找类似 Demonstrate the import table of a PE file 的本地化字符串。
         /// </summary>
         public static string PluginDescImportChecker {
             get {
@@ -187,7 +187,7 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 Open regedit to check KnownDlls. 的本地化字符串。
+        ///   查找类似 Open regedit to check KnownDlls 的本地化字符串。
         /// </summary>
         public static string PluginDescKnownDllsChecker {
             get {

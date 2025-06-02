@@ -184,7 +184,7 @@
     <value>VS Solution</value>
   </data>
   <data name="PluginDescKnownDllsChecker" xml:space="preserve">
-    <value>Open regedit to check KnownDlls.</value>
+    <value>Open regedit to check KnownDlls</value>
   </data>
   <data name="TxtPEPath" xml:space="preserve">
     <value>PE Path</value>
@@ -193,6 +193,6 @@
     <value>Check Import</value>
   </data>
   <data name="PluginDescImportChecker" xml:space="preserve">
-    <value>Demonstrate the import table of a PE file.</value>
+    <value>Demonstrate the import table of a PE file</value>
   </data>
 </root>

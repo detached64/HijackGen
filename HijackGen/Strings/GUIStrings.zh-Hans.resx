@@ -184,7 +184,7 @@
     <value>VS 解决方案</value>
   </data>
   <data name="PluginDescKnownDllsChecker" xml:space="preserve">
-    <value>打开 regedit 查看 KnownDlls。</value>
+    <value>打开 regedit 查看 KnownDlls</value>
   </data>
   <data name="TxtPEPath" xml:space="preserve">
     <value>PE 文件路径</value>
@@ -193,6 +193,6 @@
     <value>查看导入表</value>
   </data>
   <data name="PluginDescImportChecker" xml:space="preserve">
-    <value>展示 PE 文件的导入表。</value>
+    <value>展示 PE 文件的导入表</value>
   </data>
 </root>
