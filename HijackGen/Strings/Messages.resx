@@ -135,9 +135,6 @@
   <data name="msgFailedWithMsg" xml:space="preserve">
     <value>Failed to save: {0}</value>
   </data>
-  <data name="msgImportFound" xml:space="preserve">
-    <value>{0} imported functions found.</value>
-  </data>
   <data name="msgContainsInvalidChars" xml:space="preserve">
     <value>Attention: Some exported function names contain invalid characters, which may cause the generated .h file to be invalid.</value>
   </data>
@@ -150,9 +147,6 @@
   <data name="msgSpecifyPath" xml:space="preserve">
     <value>Please specify save directory</value>
   </data>
-  <data name="msgNotExe" xml:space="preserve">
-    <value>Invalid exe: {0}</value>
-  </data>
   <data name="FilterExe" xml:space="preserve">
     <value>Exe files</value>
   </data>
@@ -161,5 +155,8 @@
   </data>
   <data name="msgPleaseInputPath" xml:space="preserve">
     <value>Please input dll path.</value>
+  </data>
+  <data name="msgInvalidPE" xml:space="preserve">
+    <value>Invalid PE file.</value>
   </data>
 </root>

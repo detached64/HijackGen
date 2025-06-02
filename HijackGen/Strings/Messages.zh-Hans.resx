@@ -135,9 +135,6 @@
   <data name="msgFailedWithMsg" xml:space="preserve">
     <value>保存失败：{0}</value>
   </data>
-  <data name="msgImportFound" xml:space="preserve">
-    <value>共找到{0}个导入函数。</value>
-  </data>
   <data name="msgContainsInvalidChars" xml:space="preserve">
     <value>注意：某些导出函数的名称含有非法字符，可能导致生成的 .h 文件无效。</value>
   </data>
@@ -150,9 +147,6 @@
   <data name="msgSpecifyPath" xml:space="preserve">
     <value>请指定保存路径</value>
   </data>
-  <data name="msgNotExe" xml:space="preserve">
-    <value>非法的 Exe 文件：{0}</value>
-  </data>
   <data name="FilterExe" xml:space="preserve">
     <value>Exe 文件</value>
   </data>
@@ -161,5 +155,8 @@
   </data>
   <data name="msgPleaseInputPath" xml:space="preserve">
     <value>请输入 Dll 文件路径。</value>
+  </data>
+  <data name="msgInvalidPE" xml:space="preserve">
+    <value>非法的 PE 文件。</value>
   </data>
 </root>

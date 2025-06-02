@@ -26,7 +26,7 @@ namespace HijackGen.Views
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             if (files.Length > 0)
             {
-                this.PEPathText.Text = files[0];
+                this.TxtDllPath.Text = files[0];
             }
         }
     }

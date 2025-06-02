@@ -20,7 +20,7 @@ namespace HijackGen.ViewModels
         private readonly MainViewModel _parentVM;
         private readonly IDialogService _dialogService;
 
-        private readonly DllParser Parser;
+        private readonly ExportParser Parser;
         private readonly List<DllExportInfo> DllInfos;
         private bool ContainsSpecialChars => DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
 

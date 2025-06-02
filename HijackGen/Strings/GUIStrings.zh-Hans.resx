@@ -120,8 +120,8 @@
   <data name="BtGenerate" xml:space="preserve">
     <value>生成</value>
   </data>
-  <data name="TxtPEPath" xml:space="preserve">
-    <value>PE 文件路径</value>
+  <data name="TxtDllPath" xml:space="preserve">
+    <value>Dll 文件路径</value>
   </data>
   <data name="MnAbout" xml:space="preserve">
     <value>关于</value>
@@ -185,5 +185,14 @@
   </data>
   <data name="PluginDescKnownDllsChecker" xml:space="preserve">
     <value>打开 regedit 查看 KnownDlls。</value>
+  </data>
+  <data name="TxtPEPath" xml:space="preserve">
+    <value>PE 文件路径</value>
+  </data>
+  <data name="PluginNameImportChecker" xml:space="preserve">
+    <value>查看导入表</value>
+  </data>
+  <data name="PluginDescImportChecker" xml:space="preserve">
+    <value>展示 PE 文件的导入表。</value>
   </data>
 </root>

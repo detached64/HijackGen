@@ -115,11 +115,11 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 {0} imported functions found. 的本地化字符串。
+        ///   查找类似 Invalid PE file. 的本地化字符串。
         /// </summary>
-        public static string msgImportFound {
+        public static string msgInvalidPE {
             get {
-                return ResourceManager.GetString("msgImportFound", resourceCulture);
+                return ResourceManager.GetString("msgInvalidPE", resourceCulture);
             }
         }
         
@@ -129,15 +129,6 @@ namespace HijackGen.Strings {
         public static string msgNotDll {
             get {
                 return ResourceManager.GetString("msgNotDll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Invalid exe: {0} 的本地化字符串。
-        /// </summary>
-        public static string msgNotExe {
-            get {
-                return ResourceManager.GetString("msgNotExe", resourceCulture);
             }
         }
         

@@ -120,8 +120,8 @@
   <data name="BtGenerate" xml:space="preserve">
     <value>Generate</value>
   </data>
-  <data name="TxtPEPath" xml:space="preserve">
-    <value>PE Path</value>
+  <data name="TxtDllPath" xml:space="preserve">
+    <value>Dll Path</value>
   </data>
   <data name="MnAbout" xml:space="preserve">
     <value>About</value>
@@ -185,5 +185,14 @@
   </data>
   <data name="PluginDescKnownDllsChecker" xml:space="preserve">
     <value>Open regedit to check KnownDlls.</value>
+  </data>
+  <data name="TxtPEPath" xml:space="preserve">
+    <value>PE Path</value>
+  </data>
+  <data name="PluginNameImportChecker" xml:space="preserve">
+    <value>Check Import</value>
+  </data>
+  <data name="PluginDescImportChecker" xml:space="preserve">
+    <value>Demonstrate the import table of a PE file.</value>
   </data>
 </root>

@@ -10,12 +10,12 @@ namespace HijackGen.Models
 {
     public abstract class PEParser;
 
-    public sealed class DllParser : PEParser, IDisposable
+    public sealed class ExportParser : PEParser, IDisposable
     {
         private readonly string SystemDir32 = "C:\\Windows\\SysWOW64\\";
         private readonly string SystemDir64 = "C:\\Windows\\System32\\";
 
-        public DllParser(string path)
+        public ExportParser(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -85,12 +85,12 @@ namespace HijackGen.Models
         #endregion
     }
 
-    public sealed class ExeParser : PEParser, IDisposable
+    public sealed class ImportParser : PEParser, IDisposable
     {
         private readonly string PEPath;
         private PeFile PE;
 
-        public ExeParser(string path)
+        public ImportParser(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -102,14 +102,13 @@ namespace HijackGen.Models
             }
             PEPath = path;
             PE = new PeFile(path);
-            if (Type == PeType.Unknown)
+            if (!PE.IsExe && !PE.IsDll)
             {
-                throw new ArgumentException(string.Format(Messages.msgNotExe, path));
+                throw new ArgumentException(Messages.msgInvalidPE);
             }
         }
 
-        public PeType Type => PE.IsExe ? PeType.Exe : PeType.Unknown;
-        public List<ExeImportInfo> GetFuncInfos()
+        public List<ExeImportInfo> GetInfos()
         {
             List<ExeImportInfo> items = [];
             if (PE.ImportedFunctions != null)

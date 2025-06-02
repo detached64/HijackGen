@@ -19,7 +19,7 @@ namespace HijackGen.ViewModels
     {
         private readonly IDialogService _dialogService;
         private readonly PluginManager _pluginManager;
-        internal DllParser Parser;
+        internal ExportParser Parser;
         internal List<DllExportInfo> Infos;
 
         public MainViewModel(IDialogService dialogService)
@@ -137,7 +137,7 @@ namespace HijackGen.ViewModels
             InfoText = string.Empty;
             try
             {
-                Parser = new(dllPath);
+                Parser = new(DllPath);
                 Infos = Parser.GetInfos();
                 SearchedInfos = new ObservableCollection<DllExportInfo>(Infos);
             }
