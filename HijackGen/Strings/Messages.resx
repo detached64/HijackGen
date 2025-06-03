@@ -138,17 +138,8 @@
   <data name="msgContainsInvalidChars" xml:space="preserve">
     <value>Attention: Some exported function names contain invalid characters, which may cause the generated .h file to be invalid.</value>
   </data>
-  <data name="FilterDll" xml:space="preserve">
-    <value>Dll files</value>
-  </data>
-  <data name="FilterAllFiles" xml:space="preserve">
-    <value>All Files</value>
-  </data>
   <data name="msgSpecifyPath" xml:space="preserve">
     <value>Please specify save directory</value>
-  </data>
-  <data name="FilterExe" xml:space="preserve">
-    <value>Exe files</value>
   </data>
   <data name="msgPluginError" xml:space="preserve">
     <value>Plugin execution failed: {0}</value>

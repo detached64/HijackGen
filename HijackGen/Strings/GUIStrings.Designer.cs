@@ -160,6 +160,24 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
+        ///   查找类似 All Files 的本地化字符串。
+        /// </summary>
+        public static string FilterAllFiles {
+            get {
+                return ResourceManager.GetString("FilterAllFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dll files 的本地化字符串。
+        /// </summary>
+        public static string FilterDll {
+            get {
+                return ResourceManager.GetString("FilterDll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 About 的本地化字符串。
         /// </summary>
         public static string MnAbout {

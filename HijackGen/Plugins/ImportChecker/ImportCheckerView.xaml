@@ -23,7 +23,7 @@
                      Margin="0,0,5,0"
                      VerticalContentAlignment="Center"
                      DockPanel.Dock="Left"
-                     Text="{Binding ExePath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     Text="{Binding PePath, UpdateSourceTrigger=PropertyChanged}"
                      TextWrapping="Wrap" />
             <Button Grid.Column="1"
                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"

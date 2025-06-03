@@ -61,33 +61,6 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 All Files 的本地化字符串。
-        /// </summary>
-        public static string FilterAllFiles {
-            get {
-                return ResourceManager.GetString("FilterAllFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Dll files 的本地化字符串。
-        /// </summary>
-        public static string FilterDll {
-            get {
-                return ResourceManager.GetString("FilterDll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Exe files 的本地化字符串。
-        /// </summary>
-        public static string FilterExe {
-            get {
-                return ResourceManager.GetString("FilterExe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Attention: Some exported function names contain invalid characters, which may cause the generated .h file to be invalid. 的本地化字符串。
         /// </summary>
         public static string msgContainsInvalidChars {

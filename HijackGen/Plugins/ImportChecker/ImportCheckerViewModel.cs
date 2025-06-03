@@ -2,7 +2,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using HijackGen.Models;
 using HijackGen.Services;
-using HijackGen.Strings;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -30,7 +29,6 @@ namespace HijackGen.Plugins.ImportChecker
         {
             OpenFileDialog ofd = new()
             {
-                Filter = $"{Messages.FilterExe} (*.exe)|*.exe|{Messages.FilterAllFiles} (*.*)|*.*",
                 InitialDirectory = string.IsNullOrWhiteSpace(PePath) ? Settings.DefaultDir : Path.GetDirectoryName(PePath),
             };
             if (ofd.ShowDialog() == true)

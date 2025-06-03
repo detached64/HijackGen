@@ -195,4 +195,10 @@
   <data name="PluginDescImportChecker" xml:space="preserve">
     <value>展示 PE 文件的导入表</value>
   </data>
+  <data name="FilterAllFiles" xml:space="preserve">
+    <value>所有文件</value>
+  </data>
+  <data name="FilterDll" xml:space="preserve">
+    <value>Dll 文件</value>
+  </data>
 </root>

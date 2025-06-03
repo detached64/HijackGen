@@ -51,7 +51,7 @@
                          Margin="0,0,5,0"
                          VerticalContentAlignment="Center"
                          DockPanel.Dock="Left"
-                         Text="{Binding DllPath, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                         Text="{Binding DllPath, UpdateSourceTrigger=PropertyChanged}"
                          TextWrapping="Wrap" />
                 <Button Grid.Column="1"
                         Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"

@@ -76,7 +76,7 @@ namespace HijackGen.ViewModels
         {
             OpenFileDialog ofd = new()
             {
-                Filter = $"{Messages.FilterDll} (*.dll)|*.dll|{Messages.FilterAllFiles} (*.*)|*.*",
+                Filter = $"{GUIStrings.FilterDll} (*.dll)|*.dll|{GUIStrings.FilterAllFiles} (*.*)|*.*",
                 InitialDirectory = string.IsNullOrWhiteSpace(DllPath) ? Settings.DefaultDir : Path.GetDirectoryName(DllPath),
             };
             if (ofd.ShowDialog() == true)

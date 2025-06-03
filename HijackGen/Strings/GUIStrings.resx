@@ -195,4 +195,10 @@
   <data name="PluginDescImportChecker" xml:space="preserve">
     <value>Demonstrate the import table of a PE file</value>
   </data>
+  <data name="FilterAllFiles" xml:space="preserve">
+    <value>All Files</value>
+  </data>
+  <data name="FilterDll" xml:space="preserve">
+    <value>Dll files</value>
+  </data>
 </root>
