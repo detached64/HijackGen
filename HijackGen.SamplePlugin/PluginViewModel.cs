@@ -1,7 +1,11 @@
+using HijackGen.ViewModels;
+
 namespace HijackGen.SamplePlugin
 {
-    internal class PluginViewModel
+    internal class PluginViewModel(MainViewModel parentVM)
     {
-        public string Message => "Hello from SamplePlugin!";
+        private readonly MainViewModel _parentVM = parentVM ?? throw new ArgumentNullException(nameof(parentVM));
+
+        public string Message => $"Currently selected DLL: {_parentVM.DllPath}";
     }
 }

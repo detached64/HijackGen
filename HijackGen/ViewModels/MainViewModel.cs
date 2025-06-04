@@ -15,7 +15,7 @@ using System.IO;
 
 namespace HijackGen.ViewModels
 {
-    internal partial class MainViewModel : ObservableObject, IRecipient<StatusBarMessage>
+    public partial class MainViewModel : ObservableObject, IRecipient<StatusBarMessage>
     {
         private readonly IDialogService _dialogService;
         private readonly PluginManager _pluginManager;
@@ -98,11 +98,11 @@ namespace HijackGen.ViewModels
         {
             _pluginManager.LoadBuiltInPlugins();
             _pluginManager.LoadThirdPartyPlugins();
-            AddPluginsToMenu(_pluginManager.BuiltInPlugins, PluginType.BuiltIn);
-            AddPluginsToMenu(_pluginManager.ThirdPartyPlugins, PluginType.ThirdParty);
+            AddPluginsToMenu(_pluginManager.BuiltInPlugins, Messages.msgBuiltIn);
+            AddPluginsToMenu(_pluginManager.ThirdPartyPlugins, Messages.msgThirdParty);
         }
 
-        private void AddPluginsToMenu(IEnumerable<Plugin> plugins, PluginType type)
+        private void AddPluginsToMenu(IEnumerable<Plugin> plugins, string type)
         {
             foreach (Plugin plugin in plugins)
             {
@@ -115,7 +115,7 @@ namespace HijackGen.ViewModels
                     {
                         try
                         {
-                            plugin.Initialize(_dialogService);
+                            plugin.Initialize(this, _dialogService);
                             plugin.Execute();
                         }
                         catch (Exception ex)

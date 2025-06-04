@@ -61,6 +61,15 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
+        ///   查找类似 BuiltIn 的本地化字符串。
+        /// </summary>
+        public static string msgBuiltIn {
+            get {
+                return ResourceManager.GetString("msgBuiltIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Attention: Some exported function names contain invalid characters, which may cause the generated .h file to be invalid. 的本地化字符串。
         /// </summary>
         public static string msgContainsInvalidChars {
@@ -156,6 +165,15 @@ namespace HijackGen.Strings {
         public static string msgSuccess {
             get {
                 return ResourceManager.GetString("msgSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ThirdParty 的本地化字符串。
+        /// </summary>
+        public static string msgThirdParty {
+            get {
+                return ResourceManager.GetString("msgThirdParty", resourceCulture);
             }
         }
     }

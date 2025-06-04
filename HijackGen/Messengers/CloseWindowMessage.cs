@@ -1,4 +1,4 @@
 namespace HijackGen.Messengers
 {
-    internal sealed class CloseWindowMessage;
+    public sealed class CloseWindowMessage;
 }

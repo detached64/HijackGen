@@ -1,5 +1,6 @@
 using HijackGen.Services;
 using HijackGen.Strings;
+using HijackGen.ViewModels;
 using System;
 
 namespace HijackGen.Plugins.ImportChecker
@@ -12,7 +13,7 @@ namespace HijackGen.Plugins.ImportChecker
 
         public override string Description => GUIStrings.PluginDescImportChecker;
 
-        public override void Initialize(IDialogService dialogService)
+        public override void Initialize(MainViewModel vm, IDialogService dialogService)
         {
             _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
         }

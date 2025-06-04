@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace HijackGen.ViewModels
 {
-    internal class MenuItemViewModel : INotifyPropertyChanged
+    public class MenuItemViewModel : INotifyPropertyChanged
     {
         public string Header { get; set; }
         public string Description { get; set; }

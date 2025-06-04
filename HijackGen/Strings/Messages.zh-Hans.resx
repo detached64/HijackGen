@@ -150,4 +150,10 @@
   <data name="msgInvalidPE" xml:space="preserve">
     <value>非法的 PE 文件。</value>
   </data>
+  <data name="msgBuiltIn" xml:space="preserve">
+    <value>内置</value>
+  </data>
+  <data name="msgThirdParty" xml:space="preserve">
+    <value>第三方</value>
+  </data>
 </root>

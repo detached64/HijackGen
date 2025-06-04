@@ -150,4 +150,10 @@
   <data name="msgInvalidPE" xml:space="preserve">
     <value>Invalid PE file.</value>
   </data>
+  <data name="msgBuiltIn" xml:space="preserve">
+    <value>BuiltIn</value>
+  </data>
+  <data name="msgThirdParty" xml:space="preserve">
+    <value>ThirdParty</value>
+  </data>
 </root>

@@ -10,6 +10,6 @@
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
     <Grid>
-        <TextBlock Text="{Binding Message}" />
+        <TextBlock FontSize="20" Text="{Binding Message}" />
     </Grid>
 </Window>
