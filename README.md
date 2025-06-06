@@ -12,15 +12,15 @@ A simple tool to generate dll source code for dll hijacking.
 * Support invalid characters detection in function names.
 * Support custom invalid characters by editing `InvalidChars.txt`.
 
-## Usage
-
-[English](./docs/Usage.md) | [中文](./docs/Usage_zh-CN.md)
-
-## Release
+## Download
 
 You can download the latest release from the [Releases](https://github.com/detached64/HijackGen/releases/latest) page.
 
 If you do not have the .NET 9 runtime installed, you can download it from the [.NET download page](https://dotnet.microsoft.com/download/dotnet/9.0) or just download the self-contained version.
+
+## Usage
+
+[English](./docs/Usage.md) | [中文](./docs/Usage_zh-CN.md)
 
 ## Build
 
