@@ -11,6 +11,7 @@
         Background="#FFF0F0F0"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
+        SizeToContent="Height"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
 

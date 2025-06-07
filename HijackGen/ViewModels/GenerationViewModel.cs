@@ -65,8 +65,8 @@ namespace HijackGen.ViewModels
                 Generator gen = Generator.Create(
                     Path.GetFileNameWithoutExtension(Settings.Default.DllPath),
                     DllInfos,
-                    Parser.GenerationType,
-                    Parser.Architecture,
+                    SelectedType,
+                    SelectedArchitecture,
                     SelectedFormat);
 
                 foreach (KeyValuePair<string, string> content in gen.Generate())
