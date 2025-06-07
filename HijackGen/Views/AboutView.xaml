@@ -20,16 +20,10 @@
     </Window.DataContext>
 
     <StackPanel Margin="20">
-        <TextBlock x:Name="TxtName"
-                   Margin="10"
-                   Text="{Binding Name}" />
-        <TextBlock x:Name="TxtLicense"
-                   Margin="10"
-                   Text="MIT License" />
-        <TextBlock x:Name="TxtCopyright"
-                   Margin="10"
-                   Text="{Binding Copyright}" />
-        <TextBlock x:Name="TxtLink" Margin="10">
+        <TextBlock Margin="10" Text="{Binding Name}" />
+        <TextBlock Margin="10" Text="MIT License" />
+        <TextBlock Margin="10" Text="{Binding Copyright}" />
+        <TextBlock Margin="10">
             <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://github.com/detached64/HijackGen">
                 <TextBlock Text="{x:Static s:GUIStrings.TxtDevSite}" />
             </Hyperlink>

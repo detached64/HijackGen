@@ -36,8 +36,7 @@
                      DockPanel.Dock="Left"
                      Text="{Binding SavePath}"
                      TextWrapping="Wrap" />
-            <Button x:Name="BtSelectPath"
-                    Grid.Column="1"
+            <Button Grid.Column="1"
                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                     VerticalAlignment="Center"
                     Command="{Binding BrowseFolderCommand}"
@@ -52,15 +51,13 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <RadioButton x:Name="RbSystemDll"
-                             Grid.Column="0"
+                <RadioButton Grid.Column="0"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="{x:Static s:GUIStrings.TxtSystemDll}"
                              GroupName="GrpDllType"
                              IsChecked="{Binding SelectedType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationType.System}}" />
-                <RadioButton x:Name="RbCustomDll"
-                             Grid.Column="1"
+                <RadioButton Grid.Column="1"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="{x:Static s:GUIStrings.TxtCustomDll}"
@@ -76,15 +73,13 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <RadioButton x:Name="RbX86"
-                             Grid.Column="0"
+                <RadioButton Grid.Column="0"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="x86"
                              GroupName="GrpArchitecture"
                              IsChecked="{Binding SelectedArchitecture, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:PeArchitecture.x86}}" />
-                <RadioButton x:Name="RbX64"
-                             Grid.Column="1"
+                <RadioButton Grid.Column="1"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="x64"
@@ -95,7 +90,7 @@
         <GroupBox Margin="0,5,0,5"
                   DockPanel.Dock="Top"
                   Header="{x:Static s:GUIStrings.TxtOutputFormat}">
-            <Grid x:Name="GridFormat" Margin="0,5,0,5">
+            <Grid Margin="0,5,0,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -160,15 +155,13 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button x:Name="BtGenerate"
-                    Grid.Column="0"
+            <Button Grid.Column="0"
                     Margin="0,5,5,0"
                     HorizontalAlignment="Stretch"
                     VerticalContentAlignment="Center"
                     Command="{Binding GenerateCommand}"
                     Content="{x:Static s:GUIStrings.BtGenerate}" />
-            <Button x:Name="BtCancel"
-                    Grid.Column="1"
+            <Button Grid.Column="1"
                     Margin="5,5,0,0"
                     HorizontalAlignment="Stretch"
                     VerticalContentAlignment="Center"
