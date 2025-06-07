@@ -22,6 +22,8 @@ namespace HijackGen.ViewModels
 
         private readonly ExportParser Parser;
         private readonly List<DllExportInfo> DllInfos;
+
+        private const string FolderName = "Hijack";
         private bool ContainsSpecialChars => DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
 
         public GenerationViewModel(MainViewModel parentVM, IDialogService dialogService)
@@ -71,7 +73,7 @@ namespace HijackGen.ViewModels
 
                 foreach (KeyValuePair<string, string> content in gen.Generate())
                 {
-                    string path = Path.Combine(SavePath, content.Key);
+                    string path = Path.Combine(SavePath, FolderName, content.Key);
                     Directory.CreateDirectory(Path.GetDirectoryName(path));
                     File.WriteAllText(path, content.Value);
                 }

@@ -34,11 +34,26 @@ namespace HijackGen.Models
                 GenerationFormat.C => new CGenerator(),
                 GenerationFormat.Cpp => new CppGenerator(),
                 GenerationFormat.Sln => new SlnGenerator(),
+                GenerationFormat.CMake => new CMakeGenerator(),
                 _ => throw new NotSupportedException(format.ToString()),
             };
         }
 
         public abstract Dictionary<string, string> Generate();
+
+        protected string GenerateCpp()
+        {
+            StringBuilder sb = new();
+            sb.AppendLine(HeaderTemplates.BaseHeaders);
+            sb.AppendFormat(HeaderTemplates.CustomHeaders, DllName).AppendLine().AppendLine();
+            sb.AppendLine(Type switch
+            {
+                GenerationType.System => FunctionTemplates.DllMainWithHijack,
+                GenerationType.Custom => FunctionTemplates.DllMain,
+                _ => throw new NotSupportedException(Type.ToString())
+            });
+            return sb.ToString();
+        }
 
         #region IDisposable
         protected bool disposed;
@@ -211,7 +226,6 @@ namespace HijackGen.Models
         {
             StringBuilder sb = new();
             sb.AppendLine(h_str);
-            //sb.AppendLine(IsSystemDll ? FunctionTemplates.DllMainWithHijack : FunctionTemplates.DllMain);
             sb.AppendLine(Type switch
             {
                 GenerationType.System => FunctionTemplates.DllMainWithHijack,
@@ -236,7 +250,7 @@ namespace HijackGen.Models
         }
     }
 
-    public sealed class SlnGenerator : HGenerator
+    public class SlnGenerator : HGenerator
     {
         private const string CppProjectGUID = "{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}";
         private string ProjectGUID;
@@ -245,9 +259,9 @@ namespace HijackGen.Models
         public override Dictionary<string, string> Generate()
         {
             Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"Hijack\\{DllName}\\{kvp.Key}", kvp => kvp.Value);
-            files[$"Hijack\\{SlnName}"] = GenerateSln();
-            files[$"Hijack\\{DllName}\\{ProjectName}"] = GenerateProj();
-            files[$"Hijack\\{DllName}\\{CppName}"] = GenerateCpp();
+            files[$"{SlnName}"] = GenerateSln();
+            files[$"{DllName}\\{ProjectName}"] = GenerateProj();
+            files[$"{DllName}\\{CppName}"] = GenerateCpp();
             return files;
         }
 
@@ -273,18 +287,51 @@ namespace HijackGen.Models
             }
             return sb.ToString();
         }
+    }
 
-        private string GenerateCpp()
+    public sealed class CMakeGenerator : HGenerator
+    {
+        public override Dictionary<string, string> Generate()
+        {
+            Dictionary<string, string> files = base.Generate().ToDictionary(kvp =>
+            {
+                string key = kvp.Key;
+                if (key.EndsWith(".def", StringComparison.OrdinalIgnoreCase))
+                    return "src\\" + key;
+                else if (key.EndsWith(".h", StringComparison.OrdinalIgnoreCase))
+                    return "include\\" + key;
+                else
+                    throw new InvalidOperationException($"Unexpected file type: {key}");
+            }, kvp => kvp.Value);
+            files[$"src\\{CppName}"] = GenerateCpp();
+            files["CMakeLists.txt"] = GenerateCMakeLists();
+            return files;
+        }
+
+        private string GenerateCMakeLists()
         {
             StringBuilder sb = new();
-            sb.AppendLine(HeaderTemplates.BaseHeaders);
-            sb.AppendFormat(HeaderTemplates.CustomHeaders, DllName).AppendLine().AppendLine();
-            sb.AppendLine(Type switch
+            sb.AppendLine("cmake_minimum_required(VERSION 3.10)");
+            sb.AppendLine(Architecture switch
             {
-                GenerationType.System => FunctionTemplates.DllMainWithHijack,
-                GenerationType.Custom => FunctionTemplates.DllMain,
-                _ => throw new NotSupportedException(Type.ToString())
+                PeArchitecture.x64 => "set(CMAKE_GENERATOR_PLATFORM x64)",
+                PeArchitecture.x86 => "set(CMAKE_GENERATOR_PLATFORM win32)",
+                _ => throw new NotSupportedException(Architecture.ToString())
             });
+            sb.AppendLine($"project({DllName} CXX)");
+            sb.AppendLine("set(CMAKE_CXX_STANDARD 17)");
+            sb.AppendLine("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+            sb.AppendLine("set(CMAKE_CXX_EXTENSIONS OFF)");
+            if (Architecture == PeArchitecture.x64 && Type == GenerationType.System)
+            {
+                sb.AppendLine($"set(hijack_src src/{CppName} src/{DefName})");
+            }
+            else
+            {
+                sb.AppendLine($"set(hijack_src src/{CppName})");
+            }
+            sb.AppendLine($"add_library({DllName} SHARED ${{hijack_src}})");
+            sb.AppendLine($"target_include_directories({DllName} PUBLIC include)");
             return sb.ToString();
         }
     }

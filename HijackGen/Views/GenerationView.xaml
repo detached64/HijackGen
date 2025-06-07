@@ -105,52 +105,49 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <RadioButton x:Name="RbH"
-                             Margin="0,5,0,5"
+                <RadioButton Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".h"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.H}}"
-                             Tag="h" />
-                <RadioButton x:Name="RbDef"
-                             Grid.Column="1"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.H}}" />
+                <RadioButton Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".def"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Def}}"
-                             Tag="def" />
-                <RadioButton x:Name="RbC"
-                             Grid.Row="1"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Def}}" />
+                <RadioButton Grid.Row="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".c"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.C}}"
-                             Tag="c" />
-                <RadioButton x:Name="RbCpp"
-                             Grid.Row="1"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.C}}" />
+                <RadioButton Grid.Row="1"
                              Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".cpp"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Cpp}}"
-                             Tag="cpp" />
-                <RadioButton x:Name="RbSln"
-                             Grid.Row="2"
-                             Grid.ColumnSpan="2"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Cpp}}" />
+                <RadioButton Grid.Row="2"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="{x:Static s:GUIStrings.BtVSSolution}"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}"
-                             Tag="sln" />
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}" />
+                <RadioButton Grid.Row="2"
+                             Grid.Column="1"
+                             Margin="0,5,0,5"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Content="CMake"
+                             GroupName="GrpFormat"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.CMake}}" />
             </Grid>
         </GroupBox>
         <TextBlock Margin="0,5,0,5"
