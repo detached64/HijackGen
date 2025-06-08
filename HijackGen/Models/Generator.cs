@@ -258,7 +258,7 @@ namespace HijackGen.Models
 
         public override Dictionary<string, string> Generate()
         {
-            Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"Hijack\\{DllName}\\{kvp.Key}", kvp => kvp.Value);
+            Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"{DllName}\\{kvp.Key}", kvp => kvp.Value);
             files[$"{SlnName}"] = GenerateSln();
             files[$"{DllName}\\{ProjectName}"] = GenerateProj();
             files[$"{DllName}\\{CppName}"] = GenerateCpp();
