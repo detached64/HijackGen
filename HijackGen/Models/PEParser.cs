@@ -42,7 +42,7 @@ namespace HijackGen.Models
         public List<DllExportInfo> GetInfos()
         {
             List<DllExportInfo> items = [];
-            if (PE.ExportedFunctions != null)
+            if (PE.ExportedFunctions is not null)
             {
                 foreach (ExportFunction export in PE.ExportedFunctions)
                 {
@@ -111,7 +111,7 @@ namespace HijackGen.Models
         public List<ExeImportInfo> GetInfos()
         {
             List<ExeImportInfo> items = [];
-            if (PE.ImportedFunctions != null)
+            if (PE.ImportedFunctions is not null)
             {
                 foreach (ImportFunction import in PE.ImportedFunctions)
                 {

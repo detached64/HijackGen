@@ -31,7 +31,7 @@ namespace HijackGen.Plugins.ImportChecker
             {
                 InitialDirectory = string.IsNullOrWhiteSpace(PePath) ? Settings.DefaultDir : Path.GetDirectoryName(PePath),
             };
-            if (ofd.ShowDialog() == true)
+            if (ofd.ShowDialog() is true)
             {
                 PePath = ofd.FileName;
             }

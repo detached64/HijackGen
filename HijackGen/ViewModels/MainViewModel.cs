@@ -79,7 +79,7 @@ namespace HijackGen.ViewModels
                 Filter = $"{GUIStrings.FilterDll} (*.dll)|*.dll|{GUIStrings.FilterAllFiles} (*.*)|*.*",
                 InitialDirectory = string.IsNullOrWhiteSpace(DllPath) ? Settings.DefaultDir : Path.GetDirectoryName(DllPath),
             };
-            if (ofd.ShowDialog() == true)
+            if (ofd.ShowDialog() is true)
             {
                 DllPath = ofd.FileName;
             }
@@ -87,7 +87,7 @@ namespace HijackGen.ViewModels
 
         public void Receive(StatusBarMessage message)
         {
-            if (message == null)
+            if (message is null)
             {
                 return;
             }

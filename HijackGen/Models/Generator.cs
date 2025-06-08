@@ -277,7 +277,7 @@ namespace HijackGen.Models
         private string GenerateProj()
         {
             StringBuilder sb = new();
-            if (Architecture == PeArchitecture.x64 && Type == GenerationType.System)
+            if (Architecture is PeArchitecture.x64 && Type is GenerationType.System)
             {
                 sb.AppendFormat(FileTemplates.ProjWithDef, ProjectGUID, DllName, DefName);
             }

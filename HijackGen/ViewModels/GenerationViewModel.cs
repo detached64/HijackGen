@@ -51,7 +51,7 @@ namespace HijackGen.ViewModels
         {
             get
             {
-                if (SelectedType == GenerationType.System && SelectedFormat != GenerationFormat.Def && ContainsSpecialChars)
+                if (SelectedType is GenerationType.System && SelectedFormat is not GenerationFormat.Def && ContainsSpecialChars)
                 {
                     return Visibility.Visible;
                 }
@@ -97,7 +97,7 @@ namespace HijackGen.ViewModels
                 Title = Messages.msgSpecifyPath,
                 Multiselect = false
             };
-            if (ofd.ShowDialog() == true)
+            if (ofd.ShowDialog() is true)
             {
                 SavePath = ofd.FolderName ?? string.Empty;
             }
