@@ -9,7 +9,7 @@
         Height="600"
         AllowDrop="True"
         Background="#FFF0F0F0"
-        DragEnter="Window_DragEnter"
+        DragEnter="Window_DragOver"
         Drop="Window_Drop"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
@@ -50,7 +50,11 @@
                          Grid.Column="0"
                          Margin="0,0,5,0"
                          VerticalContentAlignment="Center"
+                         AllowDrop="True"
                          DockPanel.Dock="Left"
+                         PreviewDragEnter="Window_DragOver"
+                         PreviewDragOver="Window_DragOver"
+                         PreviewDrop="Window_Drop"
                          Text="{Binding DllPath, UpdateSourceTrigger=PropertyChanged}"
                          TextWrapping="Wrap" />
                 <Button Grid.Column="1"

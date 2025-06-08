@@ -9,22 +9,17 @@ namespace HijackGen.Views
             InitializeComponent();
         }
 
-        private void Window_DragEnter(object sender, DragEventArgs e)
+        private void Window_DragOver(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                e.Effects = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effects = DragDropEffects.None;
-            }
+            e.Effects = e.Data.GetDataPresent(DataFormats.FileDrop)
+                ? DragDropEffects.Copy
+                : DragDropEffects.None;
+            e.Handled = true;
         }
 
         private void Window_Drop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            if (files.Length > 0)
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] files && files.Length > 0)
             {
                 this.TxtDllPath.Text = files[0];
             }
