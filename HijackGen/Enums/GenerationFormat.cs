@@ -1,4 +1,4 @@
-namespace HijackGen.Models.Enums
+namespace HijackGen.Enums
 {
     public enum GenerationFormat
     {

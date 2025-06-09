@@ -1,4 +1,4 @@
-using HijackGen.Models.Enums;
+using HijackGen.Enums;
 using HijackGen.Strings;
 using PeNet;
 using PeNet.Header.Pe;

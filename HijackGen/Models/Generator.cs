@@ -1,4 +1,4 @@
-using HijackGen.Models.Enums;
+using HijackGen.Enums;
 using HijackGen.Models.Templates;
 using System;
 using System.Collections.Generic;

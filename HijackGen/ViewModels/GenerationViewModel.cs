@@ -1,9 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using HijackGen.Enums;
 using HijackGen.Messengers;
 using HijackGen.Models;
-using HijackGen.Models.Enums;
 using HijackGen.Services;
 using HijackGen.Strings;
 using Microsoft.Win32;
