@@ -35,6 +35,7 @@ namespace HijackGen.Models
                 GenerationFormat.Cpp => new CppGenerator(),
                 GenerationFormat.Sln => new SlnGenerator(),
                 GenerationFormat.CMake => new CMakeGenerator(),
+                GenerationFormat.Xmake => new XmakeGenerator(),
                 _ => throw new NotSupportedException(format.ToString()),
             };
         }
@@ -75,7 +76,7 @@ namespace HijackGen.Models
         #endregion
     }
 
-    public sealed class DefGenerator : Generator
+    public class DefGenerator : Generator
     {
         public override Dictionary<string, string> Generate()
         {
@@ -236,7 +237,7 @@ namespace HijackGen.Models
         }
     }
 
-    public sealed class CGenerator : CppGenerator
+    public class CGenerator : CppGenerator
     {
         public override Dictionary<string, string> Generate()
         {
@@ -289,7 +290,7 @@ namespace HijackGen.Models
         }
     }
 
-    public sealed class CMakeGenerator : HGenerator
+    public class CMakeGenerator : HGenerator
     {
         public override Dictionary<string, string> Generate()
         {
@@ -332,6 +333,52 @@ namespace HijackGen.Models
             }
             sb.AppendLine($"add_library({DllName} SHARED ${{hijack_src}})");
             sb.AppendLine($"target_include_directories({DllName} PUBLIC include)");
+            return sb.ToString();
+        }
+    }
+
+    public class XmakeGenerator : HGenerator
+    {
+        public override Dictionary<string, string> Generate()
+        {
+            Dictionary<string, string> files = base.Generate().ToDictionary(kvp =>
+            {
+                string key = kvp.Key;
+                if (key.EndsWith(".def", StringComparison.OrdinalIgnoreCase))
+                    return "src\\" + key;
+                else if (key.EndsWith(".h", StringComparison.OrdinalIgnoreCase))
+                    return "include\\" + key;
+                else
+                    throw new InvalidOperationException($"Unexpected file type: {key}");
+            }, kvp => kvp.Value);
+            files[$"src\\{CppName}"] = GenerateCpp();
+            files["xmake.lua"] = GenerateXmakeLua();
+            return files;
+        }
+
+        private string GenerateXmakeLua()
+        {
+            StringBuilder sb = new();
+            sb.AppendLine($"set_project(\"{DllName}\")");
+            sb.AppendLine("set_languages(\"c++17\")");
+            sb.AppendLine("add_rules(\"mode.debug\", \"mode.release\")");
+            sb.AppendLine(Architecture switch
+            {
+                PeArchitecture.x64 => "set_arch(\"x64\")",
+                PeArchitecture.x86 => "set_arch(\"x86\")",
+                _ => throw new NotSupportedException(Architecture.ToString())
+            });
+            sb.AppendLine("set_toolchains(\"msvc\")");
+            sb.AppendLine($"target(\"{DllName}\")");
+            sb.AppendLine("\tset_kind(\"shared\")");
+            sb.AppendLine($"\tadd_files(\"src/{CppName}\")");
+            if (Architecture == PeArchitecture.x64 && Type == GenerationType.System)
+            {
+                sb.AppendLine($"\tadd_files(\"src/{DefName}\")");
+            }
+            sb.AppendLine("\tadd_includedirs(\"include\")");
+            sb.AppendLine("\tadd_links(\"user32\")");
+            sb.AppendLine("\tadd_syslinks(\"user32\")");
             return sb.ToString();
         }
     }

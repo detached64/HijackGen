@@ -99,6 +99,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <RadioButton Margin="0,5,0,5"
                              HorizontalAlignment="Center"
@@ -129,20 +130,28 @@
                              GroupName="GrpFormat"
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Cpp}}" />
                 <RadioButton Grid.Row="2"
+                             Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
-                             Content="{x:Static s:GUIStrings.BtVSSolution}"
+                             Content="Xmake"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}" />
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Xmake}}" />
                 <RadioButton Grid.Row="2"
-                             Grid.Column="1"
                              Margin="0,5,0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="CMake"
                              GroupName="GrpFormat"
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.CMake}}" />
+                <RadioButton Grid.Row="3"
+                             Grid.ColumnSpan="2"
+                             Margin="0,5,0,5"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Content="{x:Static s:GUIStrings.BtVSSolution}"
+                             GroupName="GrpFormat"
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}" />
             </Grid>
         </GroupBox>
         <TextBlock Margin="0,5,0,5"

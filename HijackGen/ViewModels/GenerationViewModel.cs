@@ -64,7 +64,7 @@ namespace HijackGen.ViewModels
         {
             try
             {
-                Generator gen = Generator.Create(
+                using Generator gen = Generator.Create(
                     Path.GetFileNameWithoutExtension(Settings.Default.DllPath),
                     DllInfos,
                     SelectedType,

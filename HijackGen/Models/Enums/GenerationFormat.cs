@@ -6,7 +6,8 @@ namespace HijackGen.Models.Enums
         Def,
         C,
         Cpp,
-        Sln,
-        CMake
+        CMake,
+        Xmake,
+        Sln
     }
 }
