@@ -146,7 +146,7 @@
         <ClCompile Include="dllmain.cpp" />
     </ItemGroup>
     <ItemGroup>
-        <ClCompile Include="{1}.h" />
+        <ClInclude Include="{1}.h" />
     </ItemGroup>
     <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
     <ImportGroup Label="ExtensionTargets">
