@@ -22,12 +22,6 @@ If you do not have the .NET 9 runtime installed, you can download it from the [.
 
 [English](./docs/Usage.md) | [中文](./docs/Usage_zh-CN.md)
 
-## Build
-
-```bash
-dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained false
-```
-
 ## Reference
 
 * [PeNet](https://github.com/secana/PeNet)
