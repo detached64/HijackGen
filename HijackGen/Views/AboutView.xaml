@@ -7,7 +7,6 @@
         xmlns:vm="clr-namespace:HijackGen.ViewModels"
         Title="About"
         Width="250"
-        Height="220"
         Background="#FFF0F0F0"
         ResizeMode="NoResize"
         ShowInTaskbar="False"

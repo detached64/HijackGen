@@ -60,18 +60,6 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Models\Templates\DllMain.txt" />
-    <EmbeddedResource Include="Models\Templates\DllMainWithHijack.txt" />
-    <EmbeddedResource Include="Models\Templates\ExternX64.txt" />
-    <EmbeddedResource Include="Models\Templates\ExternX86.txt" />
-    <EmbeddedResource Include="Models\Templates\Free.txt" />
-    <EmbeddedResource Include="Models\Templates\GetAddress.txt" />
-    <EmbeddedResource Include="Models\Templates\Init.txt" />
-    <EmbeddedResource Include="Models\Templates\Proj.txt" />
-    <EmbeddedResource Include="Models\Templates\ProjWithDef.txt" />
-    <EmbeddedResource Include="Models\Templates\Sln.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Strings\GUIStrings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -98,6 +86,9 @@
       <FilesToDelete Include="$(TargetDir)*.xml" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" ContinueOnError="true" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(TargetDir)\Templates&quot; mkdir &quot;$(TargetDir)\Templates&quot;&#xD;&#xA;xcopy /E /I /Y /D &quot;$(ProjectDir)\Models\Templates&quot; &quot;$(TargetDir)\Templates&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>

@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace HijackGen.Models.Templates
 {
@@ -8,9 +7,17 @@ namespace HijackGen.Models.Templates
     {
         protected static string GetTemplate(string name)
         {
-            using Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"HijackGen.Models.Templates.{name}.txt") ?? throw new InvalidOperationException($"Template {name} not found.");
-            using StreamReader reader = new(stream);
-            return reader.ReadToEnd();
+            string path = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Templates",
+                $"{name}.txt");
+            if (File.Exists(path))
+            {
+                using FileStream stream = File.OpenRead(path);
+                using StreamReader reader = new(stream);
+                return reader.ReadToEnd();
+            }
+            throw new FileNotFoundException($"Template file '{name}.txt' not found in Templates directory.", path);
         }
     }
 
