@@ -3,30 +3,29 @@ using CommunityToolkit.Mvvm.Input;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace HijackGen.ViewModels
+namespace HijackGen.ViewModels;
+
+internal partial class AboutViewModel : ViewModelBase
 {
-    internal partial class AboutViewModel : ObservableObject
+    [ObservableProperty]
+    public string name;
+
+    [ObservableProperty]
+    public string copyright;
+
+    public AboutViewModel()
     {
-        [ObservableProperty]
-        public string name;
+        Name = $"{Assembly.GetExecutingAssembly().GetName().Name} {Assembly.GetExecutingAssembly().GetName().Version}";
+        Copyright = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
+    }
 
-        [ObservableProperty]
-        public string copyright;
-
-        public AboutViewModel()
+    [RelayCommand]
+    private static void OpenLink(string url)
+    {
+        Process.Start(new ProcessStartInfo
         {
-            Name = $"{Assembly.GetExecutingAssembly().GetName().Name} {Assembly.GetExecutingAssembly().GetName().Version}";
-            Copyright = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>().Copyright;
-        }
-
-        [RelayCommand]
-        private void OpenLink(string url)
-        {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = url,
-                UseShellExecute = true
-            });
-        }
+            FileName = url,
+            UseShellExecute = true
+        });
     }
 }

@@ -1,12 +1,11 @@
 using System.Windows;
 
-namespace HijackGen.Views
+namespace HijackGen.Views;
+
+public partial class AboutView : Window
 {
-    public partial class AboutView : Window
+    public AboutView()
     {
-        public AboutView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

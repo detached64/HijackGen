@@ -1,13 +1,13 @@
-namespace HijackGen.Enums
+
+namespace HijackGen.Enums;
+
+public enum GenerationFormat
 {
-    public enum GenerationFormat
-    {
-        H,
-        Def,
-        C,
-        Cpp,
-        CMake,
-        Xmake,
-        Sln
-    }
+    H,
+    Def,
+    C,
+    Cpp,
+    CMake,
+    Xmake,
+    Solution
 }

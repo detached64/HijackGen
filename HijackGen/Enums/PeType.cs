@@ -1,9 +1,8 @@
-namespace HijackGen.Enums
+
+namespace HijackGen.Enums;
+
+public enum PeType
 {
-    public enum PeType
-    {
-        Unknown,
-        Dll,
-        Exe
-    }
+    System,
+    Custom
 }

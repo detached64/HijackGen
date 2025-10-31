@@ -117,43 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="msgReady" xml:space="preserve">
-    <value>就绪</value>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="msgNotFound" xml:space="preserve">
-    <value>文件不存在或权限不足：{0}</value>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
   </data>
-  <data name="msgNotDll" xml:space="preserve">
-    <value>非法的 Dll 文件：{0}</value>
+  <data name="AllFilesFilter" xml:space="preserve">
+    <value>All Files</value>
   </data>
-  <data name="msgExportFound" xml:space="preserve">
-    <value>共找到{0}个导出函数。</value>
+  <data name="Architecture" xml:space="preserve">
+    <value>Architecture</value>
   </data>
-  <data name="msgSuccess" xml:space="preserve">
-    <value>保存成功。</value>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="msgFailedWithMsg" xml:space="preserve">
-    <value>保存失败：{0}</value>
+  <data name="CheckKnownDlls" xml:space="preserve">
+    <value>Check KnownDlls</value>
   </data>
-  <data name="msgContainsInvalidChars" xml:space="preserve">
-    <value>注意：某些导出函数的名称含有非法字符，可能导致生成的 .h 文件无效。</value>
+  <data name="CustomDll" xml:space="preserve">
+    <value>Custom Dll</value>
   </data>
-  <data name="msgSpecifyPath" xml:space="preserve">
-    <value>请指定保存路径</value>
+  <data name="DllName" xml:space="preserve">
+    <value>Dll Name</value>
   </data>
-  <data name="msgPluginError" xml:space="preserve">
-    <value>插件运行失败：{0}</value>
+  <data name="DllType" xml:space="preserve">
+    <value>Dll Type</value>
   </data>
-  <data name="msgPleaseInputPath" xml:space="preserve">
-    <value>请输入 Dll 文件路径。</value>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
   </data>
-  <data name="msgInvalidPE" xml:space="preserve">
-    <value>非法的 PE 文件。</value>
+  <data name="ExportCount" xml:space="preserve">
+    <value>Export Count</value>
   </data>
-  <data name="msgBuiltIn" xml:space="preserve">
-    <value>内置</value>
+  <data name="ExportInfos" xml:space="preserve">
+    <value>Export Info</value>
   </data>
-  <data name="msgThirdParty" xml:space="preserve">
-    <value>第三方</value>
+  <data name="ForwardName" xml:space="preserve">
+    <value>Forward Name</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="HasForward" xml:space="preserve">
+    <value>Has Forward</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="IATOffset" xml:space="preserve">
+    <value>IAT Offset</value>
+  </data>
+  <data name="ImportCount" xml:space="preserve">
+    <value>Import Count</value>
+  </data>
+  <data name="ImportInfos" xml:space="preserve">
+    <value>Import Info</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Ordinal" xml:space="preserve">
+    <value>Ordinal</value>
+  </data>
+  <data name="OutputFormat" xml:space="preserve">
+    <value>Output File Format</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="PeFilter" xml:space="preserve">
+    <value>PE Files</value>
+  </data>
+  <data name="PeInfo" xml:space="preserve">
+    <value>PE Info</value>
+  </data>
+  <data name="SavePath" xml:space="preserve">
+    <value>Save Path</value>
+  </data>
+  <data name="SourceUrl" xml:space="preserve">
+    <value>Source URL</value>
+  </data>
+  <data name="SystemDll" xml:space="preserve">
+    <value>System Dll</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="VSSolution" xml:space="preserve">
+    <value>Visual Studio Solution</value>
   </data>
 </root>

@@ -1,9 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
-using HijackGen.Messengers;
 using HijackGen.Models;
-using HijackGen.Plugins;
 using HijackGen.Services;
 using HijackGen.Strings;
 using HijackGen.Views;
@@ -11,154 +8,147 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
+using System.Windows;
 
-namespace HijackGen.ViewModels
+namespace HijackGen.ViewModels;
+
+internal partial class MainViewModel : ViewModelBase
 {
-    public partial class MainViewModel : ObservableObject, IRecipient<StatusBarMessage>
+    private readonly IShowDialogService _dialogService;
+    private readonly ISettingsService _settingsService;
+
+    public MainViewModel(IShowDialogService dialogService, ISettingsService settingsService)
     {
-        private readonly IDialogService _dialogService;
-        private readonly PluginManager _pluginManager;
-        internal ExportParser Parser;
-        internal List<DllExportInfo> Infos;
+        _dialogService = dialogService;
+        _settingsService = settingsService;
 
-        public MainViewModel(IDialogService dialogService)
+        FilePath = settingsService.Settings.FilePath;
+    }
+
+    [ObservableProperty]
+    private string filePath;
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(GenerateCommand))]
+    private PeParser parser;
+    [ObservableProperty]
+    private List<ImportInfo> importInfos;
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(GenerateCommand))]
+    private List<ExportInfo> exportInfos;
+    [ObservableProperty]
+    private ObservableCollection<ImportInfo> importSearchedInfos;
+    [ObservableProperty]
+    private string importSearchText;
+    [ObservableProperty]
+    private ObservableCollection<ExportInfo> exportSearchedInfos;
+    [ObservableProperty]
+    private string exportSearchText;
+    [ObservableProperty]
+    private string peInfo;
+
+    [RelayCommand(CanExecute = nameof(CanGenerate))]
+    private void Generate(Window window)
+    {
+        _dialogService.ShowDialog<GenerationView, GenerationViewModel>(window);
+    }
+
+    [RelayCommand]
+    private void ShowAbout(Window window)
+    {
+        _dialogService.ShowDialog<AboutView, AboutViewModel>(window);
+    }
+
+    [RelayCommand]
+    private void OpenFile()
+    {
+        OpenFileDialog ofd = new()
         {
-            _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
-            _pluginManager = new PluginManager();
-            MenuItems = [];
-            LoadPlugins();
-            WeakReferenceMessenger.Default.Register(this);
-
-            DllPath = Settings.Default.DllPath;
-        }
-
-        [ObservableProperty]
-        private string dllPath;
-
-        [ObservableProperty]
-        private ObservableCollection<DllExportInfo> searchedInfos;
-
-        [ObservableProperty]
-        private string searchText = string.Empty;
-
-        [ObservableProperty]
-        private string statusText = Messages.msgReady;
-
-        [ObservableProperty]
-        private string infoText;
-
-        [ObservableProperty]
-        private bool canGenerate;
-
-        [ObservableProperty]
-        private ObservableCollection<MenuItemViewModel> menuItems;
-
-        [RelayCommand]
-        public void ShowOptions()
+            Filter = $"{GuiStrings.PeFilter} (*.dll;*.exe)|*.dll;*.exe|{GuiStrings.AllFilesFilter} (*.*)|*.*",
+            InitialDirectory = string.IsNullOrWhiteSpace(FilePath) ? Environment.GetFolderPath(Environment.SpecialFolder.System) : Path.GetDirectoryName(FilePath),
+        };
+        if (ofd.ShowDialog() == true)
         {
-            if (CanGenerate)
-            {
-                GenerationViewModel childVM = new(this, _dialogService);
-                _dialogService.ShowDialog(typeof(GenerationView), childVM);
-            }
-        }
-
-        [RelayCommand]
-        public void ShowAbout()
-        {
-            AboutViewModel childVM = new();
-            _dialogService.ShowDialog(typeof(AboutView), childVM);
-        }
-
-        [RelayCommand]
-        public void OpenFile()
-        {
-            OpenFileDialog ofd = new()
-            {
-                Filter = $"{GUIStrings.FilterDll} (*.dll)|*.dll|{GUIStrings.FilterAllFiles} (*.*)|*.*",
-                InitialDirectory = string.IsNullOrWhiteSpace(DllPath) ? Settings.DefaultDir : Path.GetDirectoryName(DllPath),
-            };
-            if (ofd.ShowDialog() is true)
-            {
-                DllPath = ofd.FileName;
-            }
-        }
-
-        public void Receive(StatusBarMessage message)
-        {
-            if (message is null)
-            {
-                return;
-            }
-            StatusText = message.Content;
-        }
-
-        private void LoadPlugins()
-        {
-            _pluginManager.LoadBuiltInPlugins();
-            _pluginManager.LoadThirdPartyPlugins();
-            AddPluginsToMenu(_pluginManager.BuiltInPlugins, Messages.msgBuiltIn);
-            AddPluginsToMenu(_pluginManager.ThirdPartyPlugins, Messages.msgThirdParty);
-        }
-
-        private void AddPluginsToMenu(IEnumerable<Plugin> plugins, string type)
-        {
-            foreach (Plugin plugin in plugins)
-            {
-                MenuItems.Add(new MenuItemViewModel
-                {
-                    Header = plugin.Name,
-                    Description = $"[{type}] {plugin.Description}",
-                    Icon = plugin.Icon,
-                    Command = new RelayCommand(() =>
-                    {
-                        try
-                        {
-                            plugin.Initialize(this, _dialogService);
-                            plugin.Execute();
-                        }
-                        catch (Exception ex)
-                        {
-                            StatusText = string.Format(Messages.msgPluginError, ex.Message);
-                        }
-                    })
-                });
-            }
-        }
-
-        partial void OnDllPathChanged(string value)
-        {
-            Settings.Default.DllPath = value;
-            Settings.Default.Save();
-            Parser = null;
-            Infos = [];
-            SearchedInfos = null;
-            InfoText = string.Empty;
-            try
-            {
-                Parser = new(DllPath);
-                Infos = Parser.GetInfos();
-                SearchedInfos = new ObservableCollection<DllExportInfo>(Infos);
-            }
-            catch (Exception ex)
-            {
-                StatusText = ex.Message;
-                CanGenerate = false;
-                return;
-            }
-            CanGenerate = SearchedInfos.Count > 0;
-            StatusText = string.Format(Messages.msgExportFound, SearchedInfos.Count);
-            InfoText = $"{Parser.Architecture}";
-        }
-
-        partial void OnSearchTextChanged(string value)
-        {
-            SearchedInfos = new ObservableCollection<DllExportInfo>(string.IsNullOrWhiteSpace(value) ?
-                Infos : Infos.FindAll(x => x.Ordinal.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase) ||
-                        !string.IsNullOrWhiteSpace(x.Name) && x.Name.Contains(SearchText, StringComparison.OrdinalIgnoreCase) ||
-                        x.HasForward.ToString().Contains(SearchText, StringComparison.OrdinalIgnoreCase) ||
-                        x.HasForward && !string.IsNullOrWhiteSpace(x.ForwardName) && x.ForwardName.Contains(SearchText, StringComparison.OrdinalIgnoreCase)));
+            FilePath = ofd.FileName;
         }
     }
+
+    [RelayCommand]
+    private static void OpenRegistryKnownDlls()
+    {
+        using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Applets\Regedit"))
+        {
+            key.SetValue("LastKey", @"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDlls", RegistryValueKind.String);
+        }
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = "regedit.exe",
+            UseShellExecute = true
+        });
+    }
+
+    partial void OnFilePathChanged(string value)
+    {
+        _settingsService.Settings.FilePath = value;
+
+        Parser = null;
+        ImportInfos = [];
+        ExportInfos = [];
+        ImportSearchedInfos = [];
+        ExportSearchedInfos = [];
+        PeInfo = string.Empty;
+
+        try
+        {
+            Parser = new(FilePath);
+            ImportInfos = Parser.GetImportInfos();
+            ExportInfos = Parser.GetExportInfos();
+            ImportSearchedInfos = new ObservableCollection<ImportInfo>(ImportInfos);
+            ExportSearchedInfos = new ObservableCollection<ExportInfo>(ExportInfos);
+            PeInfo = $@"{GuiStrings.Architecture}: {Parser.Architecture}{Environment.NewLine}{GuiStrings.ExportCount}: {ImportInfos.Count}{Environment.NewLine}{GuiStrings.ImportCount}: {ExportInfos.Count}";
+        }
+        catch (Exception ex)
+        {
+            ImportInfos = [];
+            ExportInfos = [];
+            ImportSearchedInfos = [];
+            ExportSearchedInfos = [];
+            PeInfo = ex.Message;
+            return;
+        }
+
+        ImportSearchText = string.Empty;
+        ExportSearchText = string.Empty;
+    }
+
+    partial void OnExportInfosChanged(List<ExportInfo> value)
+    {
+        _settingsService.Settings.ExportInfos = value;
+    }
+
+    partial void OnParserChanged(PeParser value)
+    {
+        if (value is null)
+            return;
+        _settingsService.Settings.SelectedArchitecture = value.Architecture;
+        _settingsService.Settings.SelectedType = value.GenerationType;
+    }
+
+    partial void OnImportSearchTextChanged(string value)
+    {
+        ImportSearchedInfos = new ObservableCollection<ImportInfo>(string.IsNullOrWhiteSpace(value) ?
+            ImportInfos : ImportInfos.FindAll(x => !string.IsNullOrWhiteSpace(x.DllName) && x.DllName.Contains(importSearchText, StringComparison.OrdinalIgnoreCase) ||
+                    !string.IsNullOrWhiteSpace(x.Name) && x.Name.Contains(importSearchText, StringComparison.OrdinalIgnoreCase)));
+    }
+
+    partial void OnExportSearchTextChanged(string value)
+    {
+        ExportSearchedInfos = new ObservableCollection<ExportInfo>(string.IsNullOrWhiteSpace(value) ?
+            ExportInfos : ExportInfos.FindAll(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.Contains(ExportSearchText, StringComparison.OrdinalIgnoreCase) ||
+                    x.HasForward.ToString().Contains(ExportSearchText, StringComparison.OrdinalIgnoreCase) ||
+                    x.HasForward && !string.IsNullOrWhiteSpace(x.ForwardName) && x.ForwardName.Contains(ExportSearchText, StringComparison.OrdinalIgnoreCase)));
+    }
+
+    private bool CanGenerate => Parser?.IsDll == true && ExportInfos?.Count > 0;
 }

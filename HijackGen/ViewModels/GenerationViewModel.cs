@@ -1,9 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using HijackGen.Enums;
-using HijackGen.Messengers;
 using HijackGen.Models;
+using HijackGen.Models.Generators;
 using HijackGen.Services;
 using HijackGen.Strings;
 using Microsoft.Win32;
@@ -13,123 +12,107 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 
-namespace HijackGen.ViewModels
+namespace HijackGen.ViewModels;
+
+internal partial class GenerationViewModel : ViewModelBase
 {
-    internal partial class GenerationViewModel : ObservableObject
+    private readonly ISettingsService _settingsService;
+    private const string FolderName = "Hijack";
+
+    public GenerationViewModel(ISettingsService settingsService)
     {
-        private readonly MainViewModel _parentVM;
-        private readonly IDialogService _dialogService;
+        _settingsService = settingsService;
 
-        private readonly ExportParser Parser;
-        private readonly List<DllExportInfo> DllInfos;
+        SaveDir = string.IsNullOrWhiteSpace(settingsService.Settings.SaveDirectory)
+            ? Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            : settingsService.Settings.SaveDirectory;
+        SelectedArchitecture = settingsService.Settings.SelectedArchitecture;
+        SelectedType = settingsService.Settings.SelectedType;
+        SelectedFormat = settingsService.Settings.SelectedFormat;
+    }
 
-        private const string FolderName = "Hijack";
-        private bool ContainsSpecialChars => DllInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
+    [ObservableProperty]
+    private string saveDir;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(TextVisibility))]
+    private PeArchitecture selectedArchitecture;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(TextVisibility))]
+    private PeType selectedType;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(TextVisibility))]
+    private GenerationFormat selectedFormat;
 
-        public GenerationViewModel(MainViewModel parentVM, IDialogService dialogService)
+    private bool ContainsSpecialChars => _settingsService.Settings.ExportInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
+    public Visibility TextVisibility => SelectedType is PeType.System && SelectedFormat is not GenerationFormat.Def && ContainsSpecialChars
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+
+    [RelayCommand]
+    private void Generate(Window window)
+    {
+        try
         {
-            _parentVM = parentVM ?? throw new ArgumentNullException(nameof(parentVM));
-            _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
-            Parser = parentVM.Parser;
-            DllInfos = parentVM.Infos;
-            SavePath = Settings.Default.SaveDir;
-            SelectedType = Parser.GenerationType;
-            SelectedArchitecture = Parser.Architecture;
-            SelectedFormat = Enum.TryParse(Settings.Default.SelectedFormatName, out GenerationFormat format) ? format : GenerationFormat.Sln;
-        }
+            using Generator gen = Generator.Create(
+                Path.GetFileNameWithoutExtension(_settingsService.Settings.FilePath),
+                _settingsService.Settings.ExportInfos,
+                SelectedType,
+                SelectedArchitecture,
+                SelectedFormat);
 
-        [ObservableProperty]
-        public string savePath;
-        [ObservableProperty]
-        public GenerationType selectedType;
-        [ObservableProperty]
-        public PeArchitecture selectedArchitecture;
-        [ObservableProperty]
-        public GenerationFormat selectedFormat;
-
-        public Visibility TextVisibility
-        {
-            get
+            foreach (KeyValuePair<string, string> content in gen.Generate())
             {
-                if (SelectedType is GenerationType.System && SelectedFormat is not GenerationFormat.Def && ContainsSpecialChars)
-                {
-                    return Visibility.Visible;
-                }
-                return Visibility.Collapsed;
+                string path = Path.Combine(SaveDir, FolderName, content.Key);
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
+                File.WriteAllText(path, content.Value);
             }
         }
-
-        [RelayCommand]
-        public void Generate()
+        catch (Exception ex)
         {
-            try
-            {
-                using Generator gen = Generator.Create(
-                    Path.GetFileNameWithoutExtension(Settings.Default.DllPath),
-                    DllInfos,
-                    SelectedType,
-                    SelectedArchitecture,
-                    SelectedFormat);
-
-                foreach (KeyValuePair<string, string> content in gen.Generate())
-                {
-                    string path = Path.Combine(SavePath, FolderName, content.Key);
-                    Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    File.WriteAllText(path, content.Value);
-                }
-                WeakReferenceMessenger.Default.Send(new StatusBarMessage(Messages.msgSuccess));
-            }
-            catch (Exception ex)
-            {
-                WeakReferenceMessenger.Default.Send(new StatusBarMessage(string.Format(Messages.msgFailedWithMsg, ex.Message)));
-            }
-            finally
-            {
-                WeakReferenceMessenger.Default.Send(new CloseWindowMessage());
-            }
+            MessageBox.Show(string.Format(MsgStrings.FailedWithMsg, ex.Message), GuiStrings.Error, MessageBoxButton.OK, MessageBoxImage.Error);
         }
-
-        [RelayCommand]
-        public void BrowseFolder()
+        finally
         {
-            OpenFolderDialog ofd = new()
-            {
-                Title = Messages.msgSpecifyPath,
-                Multiselect = false
-            };
-            if (ofd.ShowDialog() is true)
-            {
-                SavePath = ofd.FolderName ?? string.Empty;
-            }
+            window?.Close();
         }
+    }
 
-        [RelayCommand]
-        public void Close()
+    [RelayCommand]
+    private void BrowseFolder()
+    {
+        OpenFolderDialog ofd = new()
         {
-            WeakReferenceMessenger.Default.Send(new CloseWindowMessage());
+            Multiselect = false
+        };
+        if (ofd.ShowDialog() is true)
+        {
+            SaveDir = ofd.FolderName ?? string.Empty;
         }
+    }
 
-        partial void OnSavePathChanged(string value)
-        {
-            Settings.Default.SaveDir = value;
-            Settings.Default.Save();
-        }
+    [RelayCommand]
+    private static void Close(Window window)
+    {
+        window?.Close();
+    }
 
-        partial void OnSelectedTypeChanged(GenerationType value)
-        {
-            OnPropertyChanged(nameof(TextVisibility));
-        }
+    partial void OnSaveDirChanged(string value)
+    {
+        _settingsService.Settings.SaveDirectory = value;
+    }
 
-        partial void OnSelectedArchitectureChanged(PeArchitecture value)
-        {
-            OnPropertyChanged(nameof(TextVisibility));
-        }
+    partial void OnSelectedArchitectureChanged(PeArchitecture value)
+    {
+        _settingsService.Settings.SelectedArchitecture = value;
+    }
 
-        partial void OnSelectedFormatChanged(GenerationFormat value)
-        {
-            Settings.Default.SelectedFormatName = value.ToString();
-            Settings.Default.Save();
-            OnPropertyChanged(nameof(TextVisibility));
-        }
+    partial void OnSelectedTypeChanged(PeType value)
+    {
+        _settingsService.Settings.SelectedType = value;
+    }
+
+    partial void OnSelectedFormatChanged(GenerationFormat value)
+    {
+        _settingsService.Settings.SelectedFormat = value;
     }
 }

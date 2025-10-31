@@ -6,10 +6,12 @@
         xmlns:enum="clr-namespace:HijackGen.Enums"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:s="clr-namespace:HijackGen.Strings"
-        Title="Options"
+        xmlns:vm="clr-namespace:HijackGen.ViewModels"
+        Title="{x:Static s:GuiStrings.Options}"
         Width="300"
         Height="450"
         MinWidth="300"
+        d:DataContext="{d:DesignInstance Type=vm:GenerationViewModel}"
         Background="#FFF0F0F0"
         ResizeMode="NoResize"
         SizeToContent="Height"
@@ -20,55 +22,36 @@
         <cv:EnumToBoolConverter x:Key="EnumToBoolConverter" />
     </Window.Resources>
 
-    <DockPanel Margin="20,10,20,20" LastChildFill="False">
-        <TextBlock Margin="0,10,0,5"
-                   DockPanel.Dock="Top"
-                   Text="{x:Static s:GUIStrings.TxtSavePath}" />
-        <Grid Margin="0,5,0,5" DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <TextBox x:Name="TbPath"
-                     Grid.Column="0"
-                     Margin="0,0,5,0"
-                     VerticalContentAlignment="Center"
-                     DockPanel.Dock="Left"
-                     Text="{Binding SavePath}"
-                     TextWrapping="Wrap" />
-            <Button Grid.Column="1"
-                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
-                    VerticalAlignment="Center"
-                    Command="{Binding BrowseFolderCommand}"
-                    Content="…"
-                    DockPanel.Dock="Right" />
-        </Grid>
-        <GroupBox Margin="0,5,0,5"
+    <DockPanel Margin="15" LastChildFill="False">
+        <GroupBox Margin="0,0,0,5"
+                  Padding="5"
                   DockPanel.Dock="Top"
-                  Header="{x:Static s:GUIStrings.TxtDllType}">
-            <Grid Margin="0,5,0,5">
+                  Header="{x:Static s:GuiStrings.SavePath}">
+            <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <RadioButton Grid.Column="0"
-                             HorizontalAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Content="{x:Static s:GUIStrings.TxtSystemDll}"
-                             GroupName="GrpDllType"
-                             IsChecked="{Binding SelectedType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationType.System}}" />
-                <RadioButton Grid.Column="1"
-                             HorizontalAlignment="Center"
-                             VerticalContentAlignment="Center"
-                             Content="{x:Static s:GUIStrings.TxtCustomDll}"
-                             GroupName="GrpDllType"
-                             IsChecked="{Binding SelectedType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationType.Custom}}" />
+                <TextBox x:Name="TbPath"
+                         Grid.Column="0"
+                         Margin="0,0,5,0"
+                         VerticalContentAlignment="Center"
+                         DockPanel.Dock="Left"
+                         Text="{Binding SaveDir}"
+                         TextWrapping="Wrap" />
+                <Button Grid.Column="1"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                        VerticalAlignment="Center"
+                        Command="{Binding BrowseFolderCommand}"
+                        Content="…"
+                        DockPanel.Dock="Right" />
             </Grid>
         </GroupBox>
-        <GroupBox Margin="0,5,0,5"
+        <GroupBox Margin="0,5"
+                  Padding="5"
                   DockPanel.Dock="Top"
-                  Header="{x:Static s:GUIStrings.TxtArchitecture}">
-            <Grid Margin="0,5,0,5">
+                  Header="{x:Static s:GuiStrings.Architecture}">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -87,10 +70,33 @@
                              IsChecked="{Binding SelectedArchitecture, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:PeArchitecture.x64}}" />
             </Grid>
         </GroupBox>
-        <GroupBox Margin="0,5,0,5"
+        <GroupBox Margin="0,5"
+                  Padding="5"
                   DockPanel.Dock="Top"
-                  Header="{x:Static s:GUIStrings.TxtOutputFormat}">
-            <Grid Margin="0,5,0,5">
+                  Header="{x:Static s:GuiStrings.DllType}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton Grid.Column="0"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Content="{x:Static s:GuiStrings.SystemDll}"
+                             GroupName="GrpDllType"
+                             IsChecked="{Binding SelectedType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:PeType.System}}" />
+                <RadioButton Grid.Column="1"
+                             HorizontalAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Content="{x:Static s:GuiStrings.CustomDll}"
+                             GroupName="GrpDllType"
+                             IsChecked="{Binding SelectedType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:PeType.Custom}}" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Margin="0,5"
+                  DockPanel.Dock="Top"
+                  Header="{x:Static s:GuiStrings.OutputFormat}">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -101,21 +107,21 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <RadioButton Margin="0,5,0,5"
+                <RadioButton Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".h"
                              GroupName="GrpFormat"
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.H}}" />
                 <RadioButton Grid.Column="1"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".def"
                              GroupName="GrpFormat"
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Def}}" />
                 <RadioButton Grid.Row="1"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".c"
@@ -123,7 +129,7 @@
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.C}}" />
                 <RadioButton Grid.Row="1"
                              Grid.Column="1"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content=".cpp"
@@ -131,14 +137,14 @@
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Cpp}}" />
                 <RadioButton Grid.Row="2"
                              Grid.Column="1"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="Xmake"
                              GroupName="GrpFormat"
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Xmake}}" />
                 <RadioButton Grid.Row="2"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
                              Content="CMake"
@@ -146,36 +152,32 @@
                              IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.CMake}}" />
                 <RadioButton Grid.Row="3"
                              Grid.ColumnSpan="2"
-                             Margin="0,5,0,5"
+                             Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
-                             Content="{x:Static s:GUIStrings.BtVSSolution}"
+                             Content="{x:Static s:GuiStrings.VSSolution}"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}" />
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Solution}}" />
             </Grid>
         </GroupBox>
-        <TextBlock Margin="0,5,0,5"
+        <TextBlock Margin="0,5"
                    DockPanel.Dock="Top"
-                   Text="{x:Static s:Messages.msgContainsInvalidChars}"
+                   Text="{x:Static s:MsgStrings.ContainsInvalidChars}"
                    TextWrapping="Wrap"
                    Visibility="{Binding TextVisibility}" />
-        <Grid DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0"
-                    Margin="0,5,5,0"
-                    HorizontalAlignment="Stretch"
+        <UniformGrid Margin="0,5"
+                     Columns="2"
+                     DockPanel.Dock="Top">
+            <Button HorizontalAlignment="Stretch"
                     VerticalContentAlignment="Center"
                     Command="{Binding GenerateCommand}"
-                    Content="{x:Static s:GUIStrings.BtGenerate}" />
-            <Button Grid.Column="1"
-                    Margin="5,5,0,0"
-                    HorizontalAlignment="Stretch"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                    Content="{x:Static s:GuiStrings.Generate}" />
+            <Button HorizontalAlignment="Stretch"
                     VerticalContentAlignment="Center"
                     Command="{Binding CloseCommand}"
-                    Content="{x:Static s:GUIStrings.BtCancel}" />
-        </Grid>
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                    Content="{x:Static s:GuiStrings.Cancel}" />
+        </UniformGrid>
     </DockPanel>
 </Window>

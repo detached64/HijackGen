@@ -117,88 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtGenerate" xml:space="preserve">
-    <value>Generate</value>
+  <data name="ContainsInvalidChars" xml:space="preserve">
+    <value>Warning: Some exported function names contain invalid characters, which may cause the generated .h file to be invalid.</value>
   </data>
-  <data name="TxtDllPath" xml:space="preserve">
-    <value>Dll Path</value>
+  <data name="EmptyPath" xml:space="preserve">
+    <value>Empty path</value>
   </data>
-  <data name="MnAbout" xml:space="preserve">
-    <value>About</value>
+  <data name="FailedWithMsg" xml:space="preserve">
+    <value>Failed to save: {0}</value>
   </data>
-  <data name="TxtDevSite" xml:space="preserve">
-    <value>Development Site</value>
-  </data>
-  <data name="TxtSavePath" xml:space="preserve">
-    <value>Save Path</value>
-  </data>
-  <data name="TxtDllType" xml:space="preserve">
-    <value>Dll Type</value>
-  </data>
-  <data name="TxtArchitecture" xml:space="preserve">
-    <value>Architecture</value>
-  </data>
-  <data name="TxtOutputFormat" xml:space="preserve">
-    <value>Output File Format</value>
-  </data>
-  <data name="BtCancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="TxtSystemDll" xml:space="preserve">
-    <value>System Dll</value>
-  </data>
-  <data name="TxtCustomDll" xml:space="preserve">
-    <value>Custom Dll</value>
-  </data>
-  <data name="ClmName" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ClmForwardName" xml:space="preserve">
-    <value>Forward Name</value>
-  </data>
-  <data name="ClmHasForward" xml:space="preserve">
-    <value>Has Forward</value>
-  </data>
-  <data name="ClmOrdinal" xml:space="preserve">
-    <value>Ordinal</value>
-  </data>
-  <data name="ClmAddress" xml:space="preserve">
-    <value>Address</value>
-  </data>
-  <data name="ClmIATOffset" xml:space="preserve">
-    <value>IAT Offset</value>
-  </data>
-  <data name="ClmDllName" xml:space="preserve">
-    <value>Dll Name</value>
-  </data>
-  <data name="ClmHint" xml:space="preserve">
-    <value>Hint</value>
-  </data>
-  <data name="MnPlugins" xml:space="preserve">
-    <value>Plugins</value>
-  </data>
-  <data name="PluginNameKnownDllsChecker" xml:space="preserve">
-    <value>Check KnownDlls</value>
-  </data>
-  <data name="BtVSSolution" xml:space="preserve">
-    <value>VS Solution</value>
-  </data>
-  <data name="PluginDescKnownDllsChecker" xml:space="preserve">
-    <value>Open regedit to check KnownDlls</value>
-  </data>
-  <data name="TxtPEPath" xml:space="preserve">
-    <value>PE Path</value>
-  </data>
-  <data name="PluginNameImportChecker" xml:space="preserve">
-    <value>Check Import</value>
-  </data>
-  <data name="PluginDescImportChecker" xml:space="preserve">
-    <value>Demonstrate the import table of a PE file</value>
-  </data>
-  <data name="FilterAllFiles" xml:space="preserve">
-    <value>All Files</value>
-  </data>
-  <data name="FilterDll" xml:space="preserve">
-    <value>Dll files</value>
+  <data name="NotFound" xml:space="preserve">
+    <value>File not found or access denied: {0}</value>
   </data>
 </root>

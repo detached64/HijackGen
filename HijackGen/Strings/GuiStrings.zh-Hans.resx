@@ -117,88 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtGenerate" xml:space="preserve">
-    <value>生成</value>
-  </data>
-  <data name="TxtDllPath" xml:space="preserve">
-    <value>Dll 文件路径</value>
-  </data>
-  <data name="MnAbout" xml:space="preserve">
+  <data name="About" xml:space="preserve">
     <value>关于</value>
   </data>
-  <data name="TxtDevSite" xml:space="preserve">
-    <value>开源地址</value>
-  </data>
-  <data name="TxtSavePath" xml:space="preserve">
-    <value>保存路径</value>
-  </data>
-  <data name="TxtDllType" xml:space="preserve">
-    <value>Dll 类型</value>
-  </data>
-  <data name="TxtArchitecture" xml:space="preserve">
-    <value>架构</value>
-  </data>
-  <data name="TxtOutputFormat" xml:space="preserve">
-    <value>输出文件格式</value>
-  </data>
-  <data name="BtCancel" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="TxtSystemDll" xml:space="preserve">
-    <value>系统 Dll</value>
-  </data>
-  <data name="TxtCustomDll" xml:space="preserve">
-    <value>自定义 Dll</value>
-  </data>
-  <data name="ClmName" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="ClmForwardName" xml:space="preserve">
-    <value>转发名称</value>
-  </data>
-  <data name="ClmHasForward" xml:space="preserve">
-    <value>是否有转发名称</value>
-  </data>
-  <data name="ClmOrdinal" xml:space="preserve">
-    <value>序号</value>
-  </data>
-  <data name="ClmAddress" xml:space="preserve">
+  <data name="Address" xml:space="preserve">
     <value>地址</value>
   </data>
-  <data name="ClmIATOffset" xml:space="preserve">
-    <value>IAT 偏移</value>
-  </data>
-  <data name="ClmDllName" xml:space="preserve">
-    <value>Dll 名称</value>
-  </data>
-  <data name="ClmHint" xml:space="preserve">
-    <value>序号</value>
-  </data>
-  <data name="MnPlugins" xml:space="preserve">
-    <value>插件</value>
-  </data>
-  <data name="PluginNameKnownDllsChecker" xml:space="preserve">
-    <value>查看 KnownDlls</value>
-  </data>
-  <data name="BtVSSolution" xml:space="preserve">
-    <value>VS 解决方案</value>
-  </data>
-  <data name="PluginDescKnownDllsChecker" xml:space="preserve">
-    <value>打开 regedit 查看 KnownDlls</value>
-  </data>
-  <data name="TxtPEPath" xml:space="preserve">
-    <value>PE 文件路径</value>
-  </data>
-  <data name="PluginNameImportChecker" xml:space="preserve">
-    <value>查看导入表</value>
-  </data>
-  <data name="PluginDescImportChecker" xml:space="preserve">
-    <value>展示 PE 文件的导入表</value>
-  </data>
-  <data name="FilterAllFiles" xml:space="preserve">
+  <data name="AllFilesFilter" xml:space="preserve">
     <value>所有文件</value>
   </data>
-  <data name="FilterDll" xml:space="preserve">
-    <value>Dll 文件</value>
+  <data name="Architecture" xml:space="preserve">
+    <value>架构</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CheckKnownDlls" xml:space="preserve">
+    <value>查看 KnownDlls</value>
+  </data>
+  <data name="CustomDll" xml:space="preserve">
+    <value>自定义 Dll</value>
+  </data>
+  <data name="DllName" xml:space="preserve">
+    <value>Dll 名称</value>
+  </data>
+  <data name="DllType" xml:space="preserve">
+    <value>Dll 类型</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ExportCount" xml:space="preserve">
+    <value>导出函数数量</value>
+  </data>
+  <data name="ExportInfos" xml:space="preserve">
+    <value>导出信息</value>
+  </data>
+  <data name="ForwardName" xml:space="preserve">
+    <value>转发名称</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="HasForward" xml:space="preserve">
+    <value>是否有转发名称</value>
+  </data>
+  <data name="Hint" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="IATOffset" xml:space="preserve">
+    <value>IAT 偏移</value>
+  </data>
+  <data name="ImportCount" xml:space="preserve">
+    <value>导入函数数量</value>
+  </data>
+  <data name="ImportInfos" xml:space="preserve">
+    <value>导入信息</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="Ordinal" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="OutputFormat" xml:space="preserve">
+    <value>输出文件格式</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="PeFilter" xml:space="preserve">
+    <value>PE 文件</value>
+  </data>
+  <data name="PeInfo" xml:space="preserve">
+    <value>PE 文件信息</value>
+  </data>
+  <data name="SavePath" xml:space="preserve">
+    <value>保存路径</value>
+  </data>
+  <data name="SourceUrl" xml:space="preserve">
+    <value>开源网址</value>
+  </data>
+  <data name="SystemDll" xml:space="preserve">
+    <value>系统 Dll</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="VSSolution" xml:space="preserve">
+    <value>Visual Studio 解决方案</value>
   </data>
 </root>

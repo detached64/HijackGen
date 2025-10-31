@@ -1,15 +1,11 @@
-using CommunityToolkit.Mvvm.Messaging;
-using HijackGen.Messengers;
 using System.Windows;
 
-namespace HijackGen.Views
+namespace HijackGen.Views;
+
+public partial class GenerationView : Window
 {
-    public partial class GenerationView : Window
+    public GenerationView()
     {
-        public GenerationView()
-        {
-            InitializeComponent();
-            WeakReferenceMessenger.Default.Register<CloseWindowMessage>(this, (_, _) => Close());
-        }
+        InitializeComponent();
     }
 }

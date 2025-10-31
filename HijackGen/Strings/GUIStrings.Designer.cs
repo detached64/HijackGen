@@ -22,14 +22,14 @@ namespace HijackGen.Strings {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GUIStrings {
+    public class GuiStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GUIStrings() {
+        internal GuiStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace HijackGen.Strings {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HijackGen.Strings.GUIStrings", typeof(GUIStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HijackGen.Strings.GuiStrings", typeof(GuiStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,254 +61,281 @@ namespace HijackGen.Strings {
         }
         
         /// <summary>
-        ///   查找类似 Cancel 的本地化字符串。
+        ///   查找类似 About 的本地化字符串。
         /// </summary>
-        public static string BtCancel {
+        public static string About {
             get {
-                return ResourceManager.GetString("BtCancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Generate 的本地化字符串。
-        /// </summary>
-        public static string BtGenerate {
-            get {
-                return ResourceManager.GetString("BtGenerate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 VS Solution 的本地化字符串。
-        /// </summary>
-        public static string BtVSSolution {
-            get {
-                return ResourceManager.GetString("BtVSSolution", resourceCulture);
+                return ResourceManager.GetString("About", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Address 的本地化字符串。
         /// </summary>
-        public static string ClmAddress {
+        public static string Address {
             get {
-                return ResourceManager.GetString("ClmAddress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Dll Name 的本地化字符串。
-        /// </summary>
-        public static string ClmDllName {
-            get {
-                return ResourceManager.GetString("ClmDllName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Forward Name 的本地化字符串。
-        /// </summary>
-        public static string ClmForwardName {
-            get {
-                return ResourceManager.GetString("ClmForwardName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Has Forward 的本地化字符串。
-        /// </summary>
-        public static string ClmHasForward {
-            get {
-                return ResourceManager.GetString("ClmHasForward", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Hint 的本地化字符串。
-        /// </summary>
-        public static string ClmHint {
-            get {
-                return ResourceManager.GetString("ClmHint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 IAT Offset 的本地化字符串。
-        /// </summary>
-        public static string ClmIATOffset {
-            get {
-                return ResourceManager.GetString("ClmIATOffset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Name 的本地化字符串。
-        /// </summary>
-        public static string ClmName {
-            get {
-                return ResourceManager.GetString("ClmName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Ordinal 的本地化字符串。
-        /// </summary>
-        public static string ClmOrdinal {
-            get {
-                return ResourceManager.GetString("ClmOrdinal", resourceCulture);
+                return ResourceManager.GetString("Address", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 All Files 的本地化字符串。
         /// </summary>
-        public static string FilterAllFiles {
+        public static string AllFilesFilter {
             get {
-                return ResourceManager.GetString("FilterAllFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Dll files 的本地化字符串。
-        /// </summary>
-        public static string FilterDll {
-            get {
-                return ResourceManager.GetString("FilterDll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 About 的本地化字符串。
-        /// </summary>
-        public static string MnAbout {
-            get {
-                return ResourceManager.GetString("MnAbout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Plugins 的本地化字符串。
-        /// </summary>
-        public static string MnPlugins {
-            get {
-                return ResourceManager.GetString("MnPlugins", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Demonstrate the import table of a PE file 的本地化字符串。
-        /// </summary>
-        public static string PluginDescImportChecker {
-            get {
-                return ResourceManager.GetString("PluginDescImportChecker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Open regedit to check KnownDlls 的本地化字符串。
-        /// </summary>
-        public static string PluginDescKnownDllsChecker {
-            get {
-                return ResourceManager.GetString("PluginDescKnownDllsChecker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Check Import 的本地化字符串。
-        /// </summary>
-        public static string PluginNameImportChecker {
-            get {
-                return ResourceManager.GetString("PluginNameImportChecker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Check KnownDlls 的本地化字符串。
-        /// </summary>
-        public static string PluginNameKnownDllsChecker {
-            get {
-                return ResourceManager.GetString("PluginNameKnownDllsChecker", resourceCulture);
+                return ResourceManager.GetString("AllFilesFilter", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Architecture 的本地化字符串。
         /// </summary>
-        public static string TxtArchitecture {
+        public static string Architecture {
             get {
-                return ResourceManager.GetString("TxtArchitecture", resourceCulture);
+                return ResourceManager.GetString("Architecture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cancel 的本地化字符串。
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Check KnownDlls 的本地化字符串。
+        /// </summary>
+        public static string CheckKnownDlls {
+            get {
+                return ResourceManager.GetString("CheckKnownDlls", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Custom Dll 的本地化字符串。
         /// </summary>
-        public static string TxtCustomDll {
+        public static string CustomDll {
             get {
-                return ResourceManager.GetString("TxtCustomDll", resourceCulture);
+                return ResourceManager.GetString("CustomDll", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 Development Site 的本地化字符串。
+        ///   查找类似 Dll Name 的本地化字符串。
         /// </summary>
-        public static string TxtDevSite {
+        public static string DllName {
             get {
-                return ResourceManager.GetString("TxtDevSite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Dll Path 的本地化字符串。
-        /// </summary>
-        public static string TxtDllPath {
-            get {
-                return ResourceManager.GetString("TxtDllPath", resourceCulture);
+                return ResourceManager.GetString("DllName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Dll Type 的本地化字符串。
         /// </summary>
-        public static string TxtDllType {
+        public static string DllType {
             get {
-                return ResourceManager.GetString("TxtDllType", resourceCulture);
+                return ResourceManager.GetString("DllType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Error 的本地化字符串。
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Count 的本地化字符串。
+        /// </summary>
+        public static string ExportCount {
+            get {
+                return ResourceManager.GetString("ExportCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Export Info 的本地化字符串。
+        /// </summary>
+        public static string ExportInfos {
+            get {
+                return ResourceManager.GetString("ExportInfos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Forward Name 的本地化字符串。
+        /// </summary>
+        public static string ForwardName {
+            get {
+                return ResourceManager.GetString("ForwardName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Generate 的本地化字符串。
+        /// </summary>
+        public static string Generate {
+            get {
+                return ResourceManager.GetString("Generate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Has Forward 的本地化字符串。
+        /// </summary>
+        public static string HasForward {
+            get {
+                return ResourceManager.GetString("HasForward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hint 的本地化字符串。
+        /// </summary>
+        public static string Hint {
+            get {
+                return ResourceManager.GetString("Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IAT Offset 的本地化字符串。
+        /// </summary>
+        public static string IATOffset {
+            get {
+                return ResourceManager.GetString("IATOffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Import Count 的本地化字符串。
+        /// </summary>
+        public static string ImportCount {
+            get {
+                return ResourceManager.GetString("ImportCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Import Info 的本地化字符串。
+        /// </summary>
+        public static string ImportInfos {
+            get {
+                return ResourceManager.GetString("ImportInfos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Name 的本地化字符串。
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Options 的本地化字符串。
+        /// </summary>
+        public static string Options {
+            get {
+                return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ordinal 的本地化字符串。
+        /// </summary>
+        public static string Ordinal {
+            get {
+                return ResourceManager.GetString("Ordinal", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Output File Format 的本地化字符串。
         /// </summary>
-        public static string TxtOutputFormat {
+        public static string OutputFormat {
             get {
-                return ResourceManager.GetString("TxtOutputFormat", resourceCulture);
+                return ResourceManager.GetString("OutputFormat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 PE Path 的本地化字符串。
+        ///   查找类似 Path 的本地化字符串。
         /// </summary>
-        public static string TxtPEPath {
+        public static string Path {
             get {
-                return ResourceManager.GetString("TxtPEPath", resourceCulture);
+                return ResourceManager.GetString("Path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PE Files 的本地化字符串。
+        /// </summary>
+        public static string PeFilter {
+            get {
+                return ResourceManager.GetString("PeFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PE Info 的本地化字符串。
+        /// </summary>
+        public static string PeInfo {
+            get {
+                return ResourceManager.GetString("PeInfo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 Save Path 的本地化字符串。
         /// </summary>
-        public static string TxtSavePath {
+        public static string SavePath {
             get {
-                return ResourceManager.GetString("TxtSavePath", resourceCulture);
+                return ResourceManager.GetString("SavePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Source URL 的本地化字符串。
+        /// </summary>
+        public static string SourceUrl {
+            get {
+                return ResourceManager.GetString("SourceUrl", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 System Dll 的本地化字符串。
         /// </summary>
-        public static string TxtSystemDll {
+        public static string SystemDll {
             get {
-                return ResourceManager.GetString("TxtSystemDll", resourceCulture);
+                return ResourceManager.GetString("SystemDll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Tools 的本地化字符串。
+        /// </summary>
+        public static string Tools {
+            get {
+                return ResourceManager.GetString("Tools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Visual Studio Solution 的本地化字符串。
+        /// </summary>
+        public static string VSSolution {
+            get {
+                return ResourceManager.GetString("VSSolution", resourceCulture);
             }
         }
     }

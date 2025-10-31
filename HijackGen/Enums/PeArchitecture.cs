@@ -1,8 +1,8 @@
-namespace HijackGen.Enums
+
+namespace HijackGen.Enums;
+
+public enum PeArchitecture
 {
-    public enum PeArchitecture
-    {
-        x86,
-        x64
-    }
+    x86,
+    x64
 }

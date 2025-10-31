@@ -24,7 +24,7 @@
         <TextBlock Margin="10" Text="{Binding Copyright}" />
         <TextBlock Margin="10">
             <Hyperlink Command="{Binding OpenLinkCommand}" CommandParameter="https://github.com/detached64/HijackGen">
-                <TextBlock Text="{x:Static s:GUIStrings.TxtDevSite}" />
+                <TextBlock Text="{x:Static s:GuiStrings.SourceUrl}" />
             </Hyperlink>
         </TextBlock>
     </StackPanel>
