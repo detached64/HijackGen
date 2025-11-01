@@ -14,9 +14,13 @@ A simple tool to generate dll source code for dll hijacking.
 
 ## Download
 
-You can download the latest release from the [Releases](https://github.com/detached64/HijackGen/releases/latest) page.
+[Release](https://github.com/detached64/HijackGen/releases/latest)
 
-If you do not have the .NET 9 runtime installed, you can download it from the [.NET download page](https://dotnet.microsoft.com/download/dotnet/9.0) or just download the self-contained version.
+Get ci builds [here](https://github.com/detached64/HijackGen/actions/workflows/build.yml).
+
+## Requirements
+
+* [.NET 9 Runtime](https://dotnet.microsoft.com/download/dotnet/9.0) or download the self-contained version.
 
 ## Usage
 
