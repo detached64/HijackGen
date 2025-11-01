@@ -1,7 +1,7 @@
 
 namespace HijackGen.Enums;
 
-public enum PeArchitecture
+internal enum PeArchitecture
 {
     x86,
     x64

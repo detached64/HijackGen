@@ -1,12 +1,12 @@
 
 namespace HijackGen.Models;
 
-public abstract class FunctionInfo
+internal abstract class FunctionInfo
 {
     public string Name { get; set; }
 }
 
-public sealed class ExportInfo : FunctionInfo
+internal sealed class ExportInfo : FunctionInfo
 {
     public int Ordinal { get; set; }
     public ulong Address { get; set; }
@@ -20,7 +20,7 @@ public sealed class ExportInfo : FunctionInfo
     private string _forwardName;
 }
 
-public sealed class ImportInfo : FunctionInfo
+internal sealed class ImportInfo : FunctionInfo
 {
     public string DllName { get; set; }
     public ushort Hint { get; set; }

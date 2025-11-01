@@ -1,7 +1,7 @@
 
 namespace HijackGen.Enums;
 
-public enum PeType
+internal enum PeType
 {
     System,
     Custom

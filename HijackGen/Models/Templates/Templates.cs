@@ -3,7 +3,7 @@ using System.IO;
 
 namespace HijackGen.Models.Templates;
 
-public abstract class Templates
+internal abstract class Templates
 {
     protected static string GetTemplate(string name)
     {
@@ -21,7 +21,7 @@ public abstract class Templates
     }
 }
 
-public sealed class HeaderTemplates : Templates
+internal sealed class HeaderTemplates : Templates
 {
     public static readonly string Tab = "    ";
     public static readonly string BaseHeaders =
@@ -46,7 +46,7 @@ public sealed class HeaderTemplates : Templates
         @"#include ""{0}.h""";
 }
 
-public sealed class FunctionTemplates : Templates
+internal sealed class FunctionTemplates : Templates
 {
     public static readonly string GetAddress = GetTemplate("GetAddress");
     public static readonly string Free = GetTemplate("Free");
@@ -57,7 +57,7 @@ public sealed class FunctionTemplates : Templates
     public static readonly string DllMain = GetTemplate("DllMain");
 }
 
-public sealed class FileTemplates : Templates
+internal sealed class FileTemplates : Templates
 {
     public static readonly string Solution = GetTemplate("Solution");
     public static readonly string Project = GetTemplate("Project");

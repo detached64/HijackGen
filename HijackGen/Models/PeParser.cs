@@ -8,7 +8,7 @@ using System.IO;
 
 namespace HijackGen.Models;
 
-public sealed class PeParser : IDisposable
+internal sealed class PeParser : IDisposable
 {
     private readonly string SystemDir32 = "C:\\Windows\\SysWOW64\\";
     private readonly string SystemDir64 = "C:\\Windows\\System32\\";

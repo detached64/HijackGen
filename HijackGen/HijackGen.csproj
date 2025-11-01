@@ -96,8 +96,4 @@
         <Content Update="Models\Templates\Solution.txt" Link="Templates\Solution.txt" />
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Models\Tools\" />
-    </ItemGroup>
-
 </Project>

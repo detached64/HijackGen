@@ -1,7 +1,7 @@
 
 namespace HijackGen.Enums;
 
-public enum GenerationFormat
+internal enum GenerationFormat
 {
     H,
     Def,

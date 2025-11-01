@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HijackGen.Models;
 
-public static class InvalidChars
+internal static class InvalidChars
 {
     private const string FilePath = "InvalidChars.txt";
     private readonly static char[] DefaultInvalidCharList = ['?', '@', '$'];
