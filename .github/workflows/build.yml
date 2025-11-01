@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: HijackGen-ci-win-x64
-          path: HijackGen/bin/Release/net9.0/win-x64/publish
+          path: HijackGen/bin/Release/net9.0-windows/win-x64/publish
 
   build-win-x64-self-contained:
     runs-on: windows-latest
@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: HijackGen-ci-win-x64-selfcontained
-          path: HijackGen/bin/Release/net9.0/win-x64/publish
+          path: HijackGen/bin/Release/net9.0-windows/win-x64/publish
