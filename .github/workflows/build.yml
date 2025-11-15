@@ -10,36 +10,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-win-x64:
+  build:
+    strategy:
+      matrix:
+        include:
+          - run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --no-self-contained
+            name: HijackGen-ci-win-x64
+          - run: dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
+            name: HijackGen-ci-win-x64-selfcontained
+
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: 10.0.x
 
-      - run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --no-self-contained
-
-      - if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: HijackGen-ci-win-x64
-          path: HijackGen/bin/Release/net10.0-windows7.0/win-x64/publish
-
-  build-win-x64-self-contained:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '10.0.x'
-
-      - run: dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
+      - run: ${{ matrix.run }}
 
       - if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: HijackGen-ci-win-x64-selfcontained
-          path: HijackGen/bin/Release/net10.0-windows7.0/win-x64/publish
+          name: ${{ matrix.name }}
+          path: HijackGen/bin/Release/net10.0-windows7.0/publish
