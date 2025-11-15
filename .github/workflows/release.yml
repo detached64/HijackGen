@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --no-self-contained
+            artifact: HijackGen-${{ github.ref_name }}-win-x64.zip
+          - run: dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
+            artifact: HijackGen-${{ github.ref_name }}-win-x64-selfcontained.zip
+
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - run: ${{ matrix.run }}
+
+      - shell: pwsh
+        run: Compress-Archive -Path HijackGen/bin/Release/net10.0-windows/win-x64/publish* -DestinationPath ${{ matrix.artifact }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/download-artifact@v4
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            HijackGen-${{ github.ref_name }}-win-x64.zip/*
+            HijackGen-${{ github.ref_name }}-win-x64-selfcontained.zip/*
+          draft: false
+          prerelease: false
+          generate_release_notes: true

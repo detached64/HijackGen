@@ -13,41 +13,33 @@ jobs:
   build-win-x64:
     runs-on: windows-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET 9 SDK
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: '10.0.x'
 
-      - name: Publish the project
-        run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --no-self-contained
+      - run: dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true -p:PublishSingleFile=true --no-self-contained
 
-      - name: Archive the published output
-        if: success()
+      - if: success()
         uses: actions/upload-artifact@v4
         with:
           name: HijackGen-ci-win-x64
-          path: HijackGen/bin/Release/net9.0-windows/win-x64/publish
+          path: HijackGen/bin/Release/net10.0-windows7.0/win-x64/publish
 
   build-win-x64-self-contained:
     runs-on: windows-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET 9 SDK
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: '10.0.x'
 
-      - name: Publish the project
-        run: dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true
+      - run: dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true
 
-      - name: Archive the published output
-        if: success()
+      - if: success()
         uses: actions/upload-artifact@v4
         with:
           name: HijackGen-ci-win-x64-selfcontained
-          path: HijackGen/bin/Release/net9.0-windows/win-x64/publish
+          path: HijackGen/bin/Release/net10.0-windows7.0/win-x64/publish
