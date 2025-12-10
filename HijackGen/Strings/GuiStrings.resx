@@ -207,7 +207,4 @@
   <data name="Tools" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="VSSolution" xml:space="preserve">
-    <value>Visual Studio Solution</value>
-  </data>
 </root>

@@ -207,7 +207,4 @@
   <data name="Tools" xml:space="preserve">
     <value>工具</value>
   </data>
-  <data name="VSSolution" xml:space="preserve">
-    <value>Visual Studio 解决方案</value>
-  </data>
 </root>

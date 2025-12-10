@@ -15,5 +15,5 @@ internal sealed class AppSettings
     public PeArchitecture SelectedArchitecture { get; set; }
     [JsonIgnore]
     public PeType SelectedType { get; set; }
-    public GenerationFormat SelectedFormat { get; set; } = GenerationFormat.Solution;
+    public GenerationFormat SelectedFormat { get; set; } = GenerationFormat.Sln;
 }

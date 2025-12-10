@@ -155,9 +155,9 @@
                              Margin="0,5"
                              HorizontalAlignment="Center"
                              VerticalContentAlignment="Center"
-                             Content="{x:Static s:GuiStrings.VSSolution}"
+                             Content=".sln"
                              GroupName="GrpFormat"
-                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Solution}}" />
+                             IsChecked="{Binding SelectedFormat, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static enum:GenerationFormat.Sln}}" />
             </Grid>
         </GroupBox>
         <TextBlock Margin="0,5"

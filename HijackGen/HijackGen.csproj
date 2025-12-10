@@ -89,8 +89,4 @@
         </Content>
     </ItemGroup>
 
-    <ItemGroup>
-        <Content Update="Models\Templates\Solution.txt" Link="Templates\Solution.txt" />
-    </ItemGroup>
-
 </Project>

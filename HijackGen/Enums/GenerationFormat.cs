@@ -9,5 +9,5 @@ internal enum GenerationFormat
     Cpp,
     CMake,
     Xmake,
-    Solution
+    Sln
 }

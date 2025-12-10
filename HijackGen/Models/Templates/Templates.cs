@@ -48,18 +48,18 @@ internal sealed class HeaderTemplates : Templates
 
 internal sealed class FunctionTemplates : Templates
 {
-    public static readonly string GetAddress = GetTemplate("GetAddress");
-    public static readonly string Free = GetTemplate("Free");
-    public static readonly string Init = GetTemplate("Init");
-    public static readonly string ExternX86 = GetTemplate("ExternX86");
-    public static readonly string ExternX64 = GetTemplate("ExternX64");
-    public static readonly string DllMainWithHijack = GetTemplate("DllMainWithHijack");
-    public static readonly string DllMain = GetTemplate("DllMain");
+    public static readonly string GetAddress = GetTemplate(nameof(GetAddress));
+    public static readonly string Free = GetTemplate(nameof(Free));
+    public static readonly string Init = GetTemplate(nameof(Init));
+    public static readonly string ExternX86 = GetTemplate(nameof(ExternX86));
+    public static readonly string ExternX64 = GetTemplate(nameof(ExternX64));
+    public static readonly string DllMainWithHijack = GetTemplate(nameof(DllMainWithHijack));
+    public static readonly string DllMain = GetTemplate(nameof(DllMain));
 }
 
 internal sealed class FileTemplates : Templates
 {
-    public static readonly string Solution = GetTemplate("Solution");
-    public static readonly string Project = GetTemplate("Project");
-    public static readonly string ProjectWithDef = GetTemplate("ProjectWithDef");
+    public static readonly string Sln = GetTemplate(nameof(Sln));
+    public static readonly string Project = GetTemplate(nameof(Project));
+    public static readonly string ProjectWithDef = GetTemplate(nameof(ProjectWithDef));
 }

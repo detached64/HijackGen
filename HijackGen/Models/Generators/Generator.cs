@@ -32,7 +32,7 @@ internal abstract class Generator : IDisposable
             GenerationFormat.Def => new DefGenerator(),
             GenerationFormat.C => new CGenerator(),
             GenerationFormat.Cpp => new CppGenerator(),
-            GenerationFormat.Solution => new SolutionGenerator(),
+            GenerationFormat.Sln => new SlnGenerator(),
             GenerationFormat.CMake => new CMakeGenerator(),
             GenerationFormat.Xmake => new XmakeGenerator(),
             _ => throw new NotSupportedException(format.ToString()),

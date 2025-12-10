@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HijackGen.Models.Generators;
 
-internal class SolutionGenerator : HGenerator
+internal class SlnGenerator : HGenerator
 {
     private const string CppProjectGUID = "{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}";
     private string ProjectGUID;
@@ -16,19 +16,10 @@ internal class SolutionGenerator : HGenerator
     public override Dictionary<string, string> Generate()
     {
         Dictionary<string, string> files = base.Generate().ToDictionary(kvp => $"{DllName}\\{kvp.Key}", kvp => kvp.Value);
-        files[$"{SlnName}"] = GenerateSolution();
+        files[$"{SlnName}"] = GenerateSln();
         files[$"{DllName}\\{ProjectName}"] = GenerateProject();
         files[$"{DllName}\\{CppName}"] = GenerateCpp();
         return files;
-    }
-
-    private string GenerateSolution()
-    {
-        StringBuilder sb = new();
-        ProjectGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
-        SolutionGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
-        sb.AppendFormat(FileTemplates.Solution, CppProjectGUID, DllName, ProjectGUID, SolutionGUID);
-        return sb.ToString();
     }
 
     private string GenerateProject()
@@ -42,6 +33,15 @@ internal class SolutionGenerator : HGenerator
         {
             sb.AppendFormat(FileTemplates.Project, ProjectGUID, DllName);
         }
+        return sb.ToString();
+    }
+
+    private string GenerateSln()
+    {
+        StringBuilder sb = new();
+        ProjectGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
+        SolutionGUID = $"{{{Guid.NewGuid().ToString().ToUpper()}}}";
+        sb.AppendFormat(FileTemplates.Sln, CppProjectGUID, DllName, ProjectGUID, SolutionGUID);
         return sb.ToString();
     }
 }
