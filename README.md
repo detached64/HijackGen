@@ -20,7 +20,7 @@ Get ci builds [here](https://github.com/detached64/HijackGen/actions/workflows/b
 
 ## Requirements
 
-* [.NET 9 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/9.0) or download the self-contained version.
+* [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) or download the self-contained version.
 
 ## Usage
 
