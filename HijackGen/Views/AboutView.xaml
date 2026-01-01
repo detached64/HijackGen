@@ -6,11 +6,10 @@
         xmlns:s="clr-namespace:HijackGen.Strings"
         xmlns:vm="clr-namespace:HijackGen.ViewModels"
         Title="About"
-        Width="250"
         Background="#FFF0F0F0"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
-        SizeToContent="Height"
+        SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
 
