@@ -28,7 +28,7 @@
         <SatelliteResourceLanguages>zh-Hans;en-US</SatelliteResourceLanguages>
         <Authors>detached64</Authors>
         <Version>2.2.1</Version>
-        <Copyright>Copyright © detached64 2025</Copyright>
+        <Copyright>Copyright © 2025-2026 detached64</Copyright>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)'=='Release'">
