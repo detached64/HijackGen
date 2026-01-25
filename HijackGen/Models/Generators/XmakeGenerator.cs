@@ -1,4 +1,5 @@
 using HijackGen.Enums;
+using HijackGen.Models.Templates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ internal class XmakeGenerator : HGenerator
         }, kvp => kvp.Value);
         files[$"src\\{CppName}"] = GenerateCpp();
         files["xmake.lua"] = GenerateXmakeLua();
+        files[".gitignore"] = FileTemplates.Gitignore;
         return files;
     }
 

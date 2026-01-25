@@ -62,4 +62,5 @@ internal sealed class FileTemplates : Templates
     public static readonly string Sln = GetTemplate(nameof(Sln));
     public static readonly string Project = GetTemplate(nameof(Project));
     public static readonly string ProjectWithDef = GetTemplate(nameof(ProjectWithDef));
+    public static readonly string Gitignore = GetTemplate(nameof(Gitignore));
 }
