@@ -38,7 +38,7 @@
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.2" />
-        <PackageReference Include="PeNet" Version="5.1.0" />
+        <PackageReference Include="PeNet" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
