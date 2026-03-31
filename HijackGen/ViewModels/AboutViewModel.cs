@@ -8,10 +8,10 @@ namespace HijackGen.ViewModels;
 internal partial class AboutViewModel : ViewModelBase
 {
     [ObservableProperty]
-    public string name;
+    public partial string Name { get; set; }
 
     [ObservableProperty]
-    public string copyright;
+    public partial string Copyright { get; set; }
 
     public AboutViewModel()
     {

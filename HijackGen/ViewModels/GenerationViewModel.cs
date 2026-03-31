@@ -32,16 +32,19 @@ internal partial class GenerationViewModel : ViewModelBase
     }
 
     [ObservableProperty]
-    private string saveDir;
+    public partial string SaveDir { get; set; }
+
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(TextVisibility))]
-    private PeArchitecture selectedArchitecture;
+    public partial PeArchitecture SelectedArchitecture { get; set; }
+
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(TextVisibility))]
-    private PeType selectedType;
+    public partial PeType SelectedType { get; set; }
+
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(TextVisibility))]
-    private GenerationFormat selectedFormat;
+    public partial GenerationFormat SelectedFormat { get; set; }
 
     private bool ContainsSpecialChars => _settingsService.Settings.ExportInfos.Any(x => !string.IsNullOrWhiteSpace(x.Name) && x.Name.IndexOfAny(InvalidChars.InvalidCharList) >= 0);
     public Visibility TextVisibility => SelectedType is PeType.System && SelectedFormat is not GenerationFormat.Def && ContainsSpecialChars

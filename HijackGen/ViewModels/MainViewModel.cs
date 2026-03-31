@@ -28,25 +28,33 @@ internal partial class MainViewModel : ViewModelBase
     }
 
     [ObservableProperty]
-    private string filePath;
+    public partial string FilePath { get; set; }
+
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(GenerateCommand))]
-    private PeParser parser;
+    public partial PeParser Parser { get; set; }
+
     [ObservableProperty]
-    private List<ImportInfo> importInfos;
+    public partial List<ImportInfo> ImportInfos { get; set; }
+
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(GenerateCommand))]
-    private List<ExportInfo> exportInfos;
+    public partial List<ExportInfo> ExportInfos { get; set; }
+
     [ObservableProperty]
-    private ObservableCollection<ImportInfo> importSearchedInfos;
+    public partial ObservableCollection<ImportInfo> ImportSearchedInfos { get; set; }
+
     [ObservableProperty]
-    private string importSearchText;
+    public partial string ImportSearchText { get; set; }
+
     [ObservableProperty]
-    private ObservableCollection<ExportInfo> exportSearchedInfos;
+    public partial ObservableCollection<ExportInfo> ExportSearchedInfos { get; set; }
+
     [ObservableProperty]
-    private string exportSearchText;
+    public partial string ExportSearchText { get; set; }
+
     [ObservableProperty]
-    private string peInfo;
+    public partial string PeInfo { get; set; }
 
     [RelayCommand(CanExecute = nameof(CanGenerate))]
     private void Generate(Window window)
@@ -138,8 +146,8 @@ internal partial class MainViewModel : ViewModelBase
     partial void OnImportSearchTextChanged(string value)
     {
         ImportSearchedInfos = new ObservableCollection<ImportInfo>(string.IsNullOrWhiteSpace(value) ?
-            ImportInfos : ImportInfos.FindAll(x => !string.IsNullOrWhiteSpace(x.DllName) && x.DllName.Contains(importSearchText, StringComparison.OrdinalIgnoreCase) ||
-                    !string.IsNullOrWhiteSpace(x.Name) && x.Name.Contains(importSearchText, StringComparison.OrdinalIgnoreCase)));
+            ImportInfos : ImportInfos.FindAll(x => !string.IsNullOrWhiteSpace(x.DllName) && x.DllName.Contains(ImportSearchText, StringComparison.OrdinalIgnoreCase) ||
+                    !string.IsNullOrWhiteSpace(x.Name) && x.Name.Contains(ImportSearchText, StringComparison.OrdinalIgnoreCase)));
     }
 
     partial void OnExportSearchTextChanged(string value)
